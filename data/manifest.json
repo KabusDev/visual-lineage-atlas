@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "datasets": [
+    {
+      "id": "game-engines",
+      "title": "Game Engine Lineage Atlas - Esports",
+      "description": "Game engine families, forks, source ports, company ecosystems, notable AAA/indie games, and esports tags.",
+      "path": "./data/lineages/game-engines.json",
+      "defaultView": "force"
+    }
+  ]
+}

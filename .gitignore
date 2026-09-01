@@ -1,0 +1,10 @@
+﻿# local/generated files
+.codex_*
+*.png
+
+# unrelated course materials in this workspace
+EDI Workshop 2/
+
+# editor/system noise
+.DS_Store
+Thumbs.db

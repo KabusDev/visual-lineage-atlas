@@ -1,0 +1,155 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visual Lineage Atlas</title>
+  <link rel="stylesheet" href="./atlas.css" />
+  <script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/force-graph@1.49.5/dist/force-graph.min.js"></script>
+  <script src="https://unpkg.com/3d-force-graph@1.77.0/dist/3d-force-graph.min.js"></script>
+</head>
+<body>
+  <div class="appShell">
+    <header class="topbar">
+      <div class="brandMark">LA</div>
+      <div class="brandText">
+        <h1>Visual Lineage Atlas</h1>
+        <p id="datasetDescription">WebGL lineage visualisation for engines, companies, forks, ports and future datasets.</p>
+      </div>
+      <div class="topbarStats" id="stats">No dataset loaded</div>
+    </header>
+
+    <aside class="sidebar leftPanel">
+      <section>
+        <h2>Dataset</h2>
+        <select id="datasetSelect" aria-label="Dataset"></select>
+        <div class="fileFallback" id="fileFallback" hidden>
+          <p>JSON files cannot be fetched from a raw file URL in some browsers. Run the local server or load a dataset manually.</p>
+          <input id="datasetFile" type="file" accept="application/json,.json" />
+        </div>
+      </section>
+
+      <section>
+        <h2>Curriculum focus</h2>
+        <label class="ctlLabel" for="curriculumSelect">Teaching preset</label>
+        <select id="curriculumSelect" aria-label="Curriculum teaching preset"></select>
+        <p class="presetDescription" id="curriculumDescription">Choose a dataset to load its teaching presets.</p>
+      </section>
+
+      <section>
+        <h2>Visualisation</h2>
+        <div class="modeSwitch" role="tablist" aria-label="Render mode">
+          <button data-render-mode="2d" role="tab" aria-selected="true" class="active">2D canvas</button>
+          <button data-render-mode="3d" role="tab" aria-selected="false">3D WebGL</button>
+        </div>
+        <div class="viewGrid" role="tablist" aria-label="Visualisation mode">
+          <button data-view="force" class="active" role="tab" aria-selected="true">Force-directed network</button>
+          <button data-view="radial" role="tab" aria-selected="false">Radial dendrogram</button>
+          <button data-view="sunburst" role="tab" aria-selected="false">Sunburst partition</button>
+          <button data-view="layered" role="tab" aria-selected="false">Layered dendrogram</button>
+          <button data-view="timeline" role="tab" aria-selected="false">Timeline swimlanes</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Display</h2>
+        <label class="ctlLabel" for="paletteSelect">Colour palette</label>
+        <select id="paletteSelect" aria-label="Colour palette">
+          <option value="default">Default</option>
+          <option value="colorblind">Colour-blind safe</option>
+          <option value="highcontrast">High contrast</option>
+        </select>
+        <label class="ctlLabel" for="bgSelect">Background</label>
+        <select id="bgSelect" aria-label="Background">
+          <option value="space">Deep space</option>
+          <option value="black">True black</option>
+          <option value="charcoal">Charcoal</option>
+        </select>
+      </section>
+
+      <section>
+        <h2>Focus</h2>
+        <input id="search" type="search" placeholder="Search names, tags, notes..." aria-label="Search" />
+        <label class="ctlLabel" for="lineageSelect">Lineage</label>
+        <select id="lineageSelect" aria-label="Lineage filter"></select>
+        <label class="ctlLabel" for="tagSelect">Tag</label>
+        <select id="tagSelect" aria-label="Tag filter"><option value="all">All tags</option></select>
+      </section>
+
+      <section>
+        <h2>Visibility</h2>
+        <label><input id="showFamily" type="checkbox" checked /> Families</label>
+        <label><input id="showEngine" type="checkbox" checked /> Engines</label>
+        <label><input id="showGames" type="checkbox" checked /> Games</label>
+        <label><input id="showPorts" type="checkbox" checked /> Ports &amp; mods</label>
+        <label><input id="showTools" type="checkbox" checked /> Tools</label>
+        <label><input id="showCrossLinks" type="checkbox" checked /> Cross-links</label>
+        <label><input id="showLabels" type="checkbox" checked /> Labels</label>
+      </section>
+
+      <section>
+        <h2>Viewport</h2>
+        <div class="buttonRow">
+          <button id="fitBtn">Fit view</button>
+          <button id="resetBtn">Reset camera</button>
+        </div>
+        <label class="rangeLabel">Node scale <output id="nodeScaleOut">1.00x</output><input id="nodeScale" type="range" min="0.5" max="2.4" step="0.05" value="1" /></label>
+        <label class="rangeLabel">Label density <output id="labelDensityOut">0.72</output><input id="labelDensity" type="range" min="0.2" max="1" step="0.02" value="0.72" /></label>
+      </section>
+
+      <section>
+        <h2>Node sizes</h2>
+        <p class="hint">Per-type size, on top of the global Node scale.</p>
+        <label class="rangeLabel">Esports <output id="sizeEsportsOut">1.50x</output><input id="sizeEsports" type="range" min="0.4" max="3" step="0.05" value="1.5" /></label>
+        <label class="rangeLabel">Families <output id="sizeFamilyOut">1.00x</output><input id="sizeFamily" type="range" min="0.4" max="3" step="0.05" value="1" /></label>
+        <label class="rangeLabel">Engines <output id="sizeEngineOut">1.00x</output><input id="sizeEngine" type="range" min="0.4" max="3" step="0.05" value="1" /></label>
+        <label class="rangeLabel">Games <output id="sizeGameOut">1.00x</output><input id="sizeGame" type="range" min="0.4" max="3" step="0.05" value="1" /></label>
+        <label class="rangeLabel">Ports &amp; mods <output id="sizePortmodOut">1.00x</output><input id="sizePortmod" type="range" min="0.4" max="3" step="0.05" value="1" /></label>
+        <label class="rangeLabel">Tools <output id="sizeToolOut">1.00x</output><input id="sizeTool" type="range" min="0.4" max="3" step="0.05" value="1" /></label>
+        <div class="buttonRow"><button id="sizeReset">Reset sizes</button></div>
+      </section>
+
+      <section>
+        <h2>Physics</h2>
+        <p class="hint">Live tuning for the force-directed view.</p>
+        <label class="rangeLabel">Repulsion <output id="physRepelOut">260</output><input id="physRepel" type="range" min="40" max="700" step="10" value="260" /></label>
+        <label class="rangeLabel">Link distance <output id="physLinkOut">1.00x</output><input id="physLink" type="range" min="0.4" max="2.6" step="0.05" value="1" /></label>
+        <label class="rangeLabel">Spacing <output id="physSpaceOut">7</output><input id="physSpace" type="range" min="0" max="26" step="1" value="7" /></label>
+        <label class="rangeLabel">Gravity <output id="physGravityOut">0.045</output><input id="physGravity" type="range" min="0" max="0.2" step="0.005" value="0.045" /></label>
+        <div class="buttonRow"><button id="physReset">Reset physics</button></div>
+      </section>
+    </aside>
+
+    <main class="stagePanel">
+      <div id="graphHost" aria-label="Lineage visualisation"></div>
+      <div class="hud" id="hud">Loading dataset...</div>
+      <button class="clearFocus" id="clearFocus" hidden>&larr; Clear focus</button>
+      <div class="legend" id="legend" aria-label="Node type legend">
+        <span class="legendItem"><i style="background:var(--family)"></i>Family</span>
+        <span class="legendItem"><i style="background:var(--engine)"></i>Engine</span>
+        <span class="legendItem"><i style="background:var(--game)"></i>Game</span>
+        <span class="legendItem"><i style="background:var(--portmod)"></i>Ports &amp; mods</span>
+        <span class="legendItem"><i style="background:var(--tool)"></i>Tool</span>
+        <span class="legendItem"><i style="background:var(--esports)"></i>Esports</span>
+      </div>
+    </main>
+
+    <aside class="sidebar rightPanel">
+      <section class="detail" id="detail"></section>
+      <section>
+        <h2>Accessible node browser</h2>
+        <p class="hint">Keyboard-accessible alternative to selecting nodes on the canvas.</p>
+        <div class="nodeList" id="nodeList" role="list"></div>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="sourceList" id="sourceList"></div>
+      </section>
+    </aside>
+  </div>
+
+  <script src="./atlas.js" defer></script>
+</body>
+</html>
