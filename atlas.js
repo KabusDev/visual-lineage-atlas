@@ -111,6 +111,7 @@ let highlightLinks = new Set();
 let frameLabelRects = [];
 let timelineLayout = null;
 let layoutTween = null;
+let fitTimer = null;
 let scaleTween = null;
 const positionMemory = new Map();
 const LAYOUT_MS = 720;
@@ -1076,8 +1077,15 @@ function render(){
   renderDetail(selectedId || graphData.nodes[0]?.id);
   renderNodeList();
   animateLayoutTargets();
-  // Fixed layouts are final immediately; free layouts need time to settle.
-  setTimeout(() => fitGraph(FREE_VIEWS.has(currentView) ? 900 : 180), FREE_VIEWS.has(currentView) ? 900 : 180);
+  // Fixed layouts animate into their targets. Fit after that transition so
+  // the camera measures final positions rather than an off-centre midpoint.
+  if(fitTimer) clearTimeout(fitTimer);
+  const fitDelay = reducedMotion ? 0 : (free ? 900 : LAYOUT_MS + 60);
+  const fitDuration = reducedMotion ? 0 : (free ? 900 : 420);
+  fitTimer = setTimeout(() => {
+    fitGraph(fitDuration);
+    fitTimer = null;
+  }, fitDelay);
 }
 
 function renderNodeList(){
