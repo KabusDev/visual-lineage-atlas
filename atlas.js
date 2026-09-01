@@ -1024,10 +1024,20 @@ function animateLayoutTargets(){
 }
 
 function fitGraph(duration = VIEWPORT_MS, padding = 70){
-  // Timeline labels now occupy an internal column; modest screen padding keeps
-  // the axis clear without shrinking dense atlases into a thumbnail.
-  const resolvedPadding = currentView === 'timeline' ? Math.max(96, padding) : padding;
-  graph?.zoomToFit?.(reducedMotion ? 0 : duration, resolvedPadding);
+  const resolvedDuration = reducedMotion ? 0 : duration;
+  if(currentView === 'timeline' && renderMode === '2d' && timelineLayout){
+    // Fit the time axis, not every vertical lane. Dense atlases can contain
+    // dozens of packed tracks; fitting all of them produces an unreadable
+    // thumbnail. Users can pan vertically while years remain legible.
+    const width = Math.max(320, els.graphHost.clientWidth || 0);
+    const screenPadding = Math.min(96, Math.max(44, width * 0.14));
+    const graphWidth = Math.max(1, timelineLayout.xMax - timelineLayout.xMin);
+    const zoom = Math.max(0.08, (width - screenPadding * 2) / graphWidth);
+    graph?.centerAt?.((timelineLayout.xMin + timelineLayout.xMax) / 2, 0, resolvedDuration);
+    graph?.zoom?.(zoom, resolvedDuration);
+    return;
+  }
+  graph?.zoomToFit?.(resolvedDuration, padding);
 }
 
 function resetViewport(){
@@ -1081,7 +1091,7 @@ function render(){
   }
   graph.graphData(graphData);
   els.stats.textContent = `${graphData.nodes.length} nodes | ${graphData.links.length} links`;
-  els.hud.textContent = `${renderMode.toUpperCase()} · ${viewLabel(currentView)} · ${activeLineage === 'all' ? 'all lineages' : activeLineage}`;
+  els.hud.textContent = `${renderMode.toUpperCase()} · ${viewLabel(currentView)} · ${activeLineage === 'all' ? 'all lineages' : activeLineage}${currentView === 'timeline' ? ' · drag to pan lanes' : ''}`;
   renderDetail(selectedId || graphData.nodes[0]?.id);
   renderNodeList();
   animateLayoutTargets();
