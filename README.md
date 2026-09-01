@@ -1,4 +1,4 @@
-﻿# Visual Lineage Atlas
+# Visual Lineage Atlas
 
 An extensible 2D and 3D visualisation platform for exploring lineages, relationships and curriculum case studies. Game Engine Lineage is the first dataset. Additional datasets can be added without changing the renderer.
 
@@ -55,7 +55,7 @@ The atlas has two render modes:
 
 The app code handles dataset loading, filtering, view presets, and the details panel.
 
-The HTML currently loads pinned CDN builds of `d3` (for the force tuning — collision/charge/centering forces and drag physics), Three.js, `force-graph`, and `3d-force-graph`. Vendor those libraries locally if the atlas needs to run fully offline.
+The HTML currently loads pinned CDN builds of `d3` for collision, charge, centering and drag physics, plus Three.js, `force-graph`, and `3d-force-graph`. Vendor those libraries locally if the atlas needs to run fully offline.
 
 ## Deprecated files
 
@@ -68,6 +68,10 @@ node scripts/validate-data.mjs
 ```
 
 Validation also runs automatically for pushes and pull requests.
+
+## Publish with GitHub Pages
+
+The repository includes a manual `Deploy Pages` workflow. Before its first run, open **Settings > Pages** in GitHub and set **Build and deployment > Source** to **GitHub Actions**. Then run **Deploy Pages** from the Actions tab. Keeping deployment manual prevents failed runs before Pages is enabled and leaves curriculum or data changes subject to validation first.
 
 ## Licence
 
