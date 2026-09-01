@@ -7,6 +7,13 @@
       "description": "Game engine families, forks, source ports, company ecosystems, notable AAA/indie games, and esports tags.",
       "path": "./data/lineages/game-engines.json",
       "defaultView": "force"
+    },
+    {
+      "id": "web-platform",
+      "title": "Web Platform Lineage Atlas",
+      "description": "HTML, CSS, ECMAScript, HTTP, browser APIs and WebAssembly standards evolution.",
+      "path": "./data/lineages/web-platform.json",
+      "defaultView": "timeline"
     }
   ]
 }

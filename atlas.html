@@ -80,11 +80,11 @@
 
       <section>
         <h2>Visibility</h2>
-        <label><input id="showFamily" type="checkbox" checked /> Families</label>
-        <label><input id="showEngine" type="checkbox" checked /> Engines</label>
-        <label><input id="showGames" type="checkbox" checked /> Games</label>
-        <label><input id="showPorts" type="checkbox" checked /> Ports &amp; mods</label>
-        <label><input id="showTools" type="checkbox" checked /> Tools</label>
+        <label id="showFamilyRow"><input id="showFamily" type="checkbox" checked /> <span data-group-label="family">Families</span></label>
+        <label id="showEngineRow"><input id="showEngine" type="checkbox" checked /> <span data-group-label="engine">Engines</span></label>
+        <label id="showGamesRow"><input id="showGames" type="checkbox" checked /> <span data-group-label="game">Games</span></label>
+        <label id="showPortsRow"><input id="showPorts" type="checkbox" checked /> <span data-group-label="portmod">Ports &amp; mods</span></label>
+        <label id="showToolsRow"><input id="showTools" type="checkbox" checked /> <span data-group-label="tool">Tools</span></label>
         <label><input id="showCrossLinks" type="checkbox" checked /> Cross-links</label>
         <label><input id="showLabels" type="checkbox" checked /> Labels</label>
       </section>
@@ -102,12 +102,12 @@
       <section>
         <h2>Node sizes</h2>
         <p class="hint">Per-type size, on top of the global Node scale.</p>
-        <label class="rangeLabel">Esports <output id="sizeEsportsOut">1.50x</output><input id="sizeEsports" type="range" min="0.4" max="3" step="0.05" value="1.5" /></label>
-        <label class="rangeLabel">Families <output id="sizeFamilyOut">1.00x</output><input id="sizeFamily" type="range" min="0.4" max="3" step="0.05" value="1" /></label>
-        <label class="rangeLabel">Engines <output id="sizeEngineOut">1.00x</output><input id="sizeEngine" type="range" min="0.4" max="3" step="0.05" value="1" /></label>
-        <label class="rangeLabel">Games <output id="sizeGameOut">1.00x</output><input id="sizeGame" type="range" min="0.4" max="3" step="0.05" value="1" /></label>
-        <label class="rangeLabel">Ports &amp; mods <output id="sizePortmodOut">1.00x</output><input id="sizePortmod" type="range" min="0.4" max="3" step="0.05" value="1" /></label>
-        <label class="rangeLabel">Tools <output id="sizeToolOut">1.00x</output><input id="sizeTool" type="range" min="0.4" max="3" step="0.05" value="1" /></label>
+        <label class="rangeLabel" id="sizeEsportsRow"><span data-size-label="esports">Esports</span> <output id="sizeEsportsOut">1.50x</output><input id="sizeEsports" type="range" min="0.4" max="3" step="0.05" value="1.5" /></label>
+        <label class="rangeLabel" id="sizeFamilyRow"><span data-size-label="family">Families</span> <output id="sizeFamilyOut">1.00x</output><input id="sizeFamily" type="range" min="0.4" max="3" step="0.05" value="1" /></label>
+        <label class="rangeLabel" id="sizeEngineRow"><span data-size-label="engine">Engines</span> <output id="sizeEngineOut">1.00x</output><input id="sizeEngine" type="range" min="0.4" max="3" step="0.05" value="1" /></label>
+        <label class="rangeLabel" id="sizeGameRow"><span data-size-label="game">Games</span> <output id="sizeGameOut">1.00x</output><input id="sizeGame" type="range" min="0.4" max="3" step="0.05" value="1" /></label>
+        <label class="rangeLabel" id="sizePortmodRow"><span data-size-label="portmod">Ports &amp; mods</span> <output id="sizePortmodOut">1.00x</output><input id="sizePortmod" type="range" min="0.4" max="3" step="0.05" value="1" /></label>
+        <label class="rangeLabel" id="sizeToolRow"><span data-size-label="tool">Tools</span> <output id="sizeToolOut">1.00x</output><input id="sizeTool" type="range" min="0.4" max="3" step="0.05" value="1" /></label>
         <div class="buttonRow"><button id="sizeReset">Reset sizes</button></div>
       </section>
 
@@ -126,14 +126,7 @@
       <div id="graphHost" aria-label="Lineage visualisation"></div>
       <div class="hud" id="hud">Loading dataset...</div>
       <button class="clearFocus" id="clearFocus" hidden>&larr; Clear focus</button>
-      <div class="legend" id="legend" aria-label="Node type legend">
-        <span class="legendItem"><i style="background:var(--family)"></i>Family</span>
-        <span class="legendItem"><i style="background:var(--engine)"></i>Engine</span>
-        <span class="legendItem"><i style="background:var(--game)"></i>Game</span>
-        <span class="legendItem"><i style="background:var(--portmod)"></i>Ports &amp; mods</span>
-        <span class="legendItem"><i style="background:var(--tool)"></i>Tool</span>
-        <span class="legendItem"><i style="background:var(--esports)"></i>Esports</span>
-      </div>
+      <div class="legend" id="legend" aria-label="Node type legend"></div>
     </main>
 
     <aside class="sidebar rightPanel">

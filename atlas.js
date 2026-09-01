@@ -30,7 +30,7 @@ const isEsports = node => (node.tags || []).some(tag => ESPORTS_RE.test(tag));
 let activePalette = 'default';
 const palette = () => PALETTES[activePalette] || PALETTES.default;
 const TYPE_COLORS = PALETTES.default; // legacy alias; live colours come from palette()
-const TYPE_LABELS = {
+const DEFAULT_TYPE_LABELS = {
   root: 'Root',
   family: 'Company / engine family',
   engine: 'Engine / successor',
@@ -39,6 +39,12 @@ const TYPE_LABELS = {
   mod: 'Mod',
   tool: 'Tool / update'
 };
+const DEFAULT_GROUP_LABELS = {
+  family: 'Families', engine: 'Engines', game: 'Games', portmod: 'Ports & mods', tool: 'Tools', esports: 'Esports'
+};
+let typeLabels = { ...DEFAULT_TYPE_LABELS };
+let groupLabels = { ...DEFAULT_GROUP_LABELS };
+const typeLabel = type => typeLabels[type] || type;
 const STORAGE_KEY = 'lineage-atlas-platform:v1';
 
 const els = {
@@ -75,7 +81,8 @@ const els = {
   paletteSelect: document.getElementById('paletteSelect'),
   bgSelect: document.getElementById('bgSelect'),
   sizeReset: document.getElementById('sizeReset'),
-  clearFocus: document.getElementById('clearFocus')
+  clearFocus: document.getElementById('clearFocus'),
+  legend: document.getElementById('legend')
 };
 
 const PHYSICS_DEFAULTS = { physRepel: 260, physLink: 1, physSpace: 7, physGravity: 0.045 };
@@ -363,6 +370,35 @@ function includeByType(node){
   return true;
 }
 
+function applyDatasetChrome(){
+  typeLabels = { ...DEFAULT_TYPE_LABELS, ...(dataset.ui?.typeLabels || {}) };
+  groupLabels = { ...DEFAULT_GROUP_LABELS, ...(dataset.ui?.groupLabels || {}) };
+  document.querySelectorAll('[data-group-label]').forEach(element => {
+    element.textContent = groupLabels[element.dataset.groupLabel] || element.dataset.groupLabel;
+  });
+  document.querySelectorAll('[data-size-label]').forEach(element => {
+    element.textContent = groupLabels[element.dataset.sizeLabel] || element.dataset.sizeLabel;
+  });
+
+  const counts = new Map();
+  dataset.nodes.forEach(node => counts.set(sizeKey(node.type), (counts.get(sizeKey(node.type)) || 0) + 1));
+  const groupRows = {family:'showFamilyRow', engine:'showEngineRow', game:'showGamesRow', portmod:'showPortsRow', tool:'showToolsRow'};
+  const sizeRows = {esports:'sizeEsportsRow', family:'sizeFamilyRow', engine:'sizeEngineRow', game:'sizeGameRow', portmod:'sizePortmodRow', tool:'sizeToolRow'};
+  Object.entries(groupRows).forEach(([group, rowId]) => { document.getElementById(rowId).hidden = !counts.get(group); });
+  Object.entries(sizeRows).forEach(([group, rowId]) => {
+    const present = group === 'esports' ? dataset.nodes.some(isEsports) : Boolean(counts.get(group));
+    document.getElementById(rowId).hidden = !present;
+  });
+
+  const legendGroups = [
+    ['family', 'family'], ['engine', 'engine'], ['game', 'game'], ['portmod', 'portmod'], ['tool', 'tool']
+  ].filter(([group]) => counts.get(group));
+  if(dataset.nodes.some(isEsports)) legendGroups.push(['esports', 'esports']);
+  els.legend.innerHTML = legendGroups.map(([group, colour]) =>
+    `<span class="legendItem"><i style="background:var(--${colour})"></i>${escapeHtml(groupLabels[group])}</span>`
+  ).join('');
+}
+
 function nodeSearchText(node){
   return [node.name,node.year,node.type,node.lineage,node.note,node.hook,(node.tags||[]).join(' ')].join(' ').toLowerCase();
 }
@@ -610,6 +646,7 @@ async function loadDataset(id){
   const item = manifest.datasets.find(entry => entry.id === id) || manifest.datasets[0];
   const raw = await fetchJson(item.path);
   dataset = normalizeDataset(raw);
+  applyDatasetChrome();
   currentView = dataset.defaultView || item.defaultView || 'force';
   selectedId = null;
   activeLineage = 'all';
@@ -937,7 +974,7 @@ function renderNodeList(){
     button.type = 'button';
     button.setAttribute('role', 'listitem');
     button.setAttribute('aria-current', node.id === selectedId ? 'true' : 'false');
-    button.textContent = `${node.name} · ${TYPE_LABELS[node.type] || node.type}`;
+    button.textContent = `${node.name} · ${typeLabel(node.type)}`;
     button.addEventListener('click', () => selectNode(node.id));
     return button;
   }));
@@ -1273,7 +1310,7 @@ function renderDetail(id){
   els.detail.innerHTML = `
     <h2>${escapeHtml(node.name)}</h2>
     <div class="chips">
-      <span class="chip">${escapeHtml(TYPE_LABELS[node.type] || node.type)}</span>
+      <span class="chip">${escapeHtml(typeLabel(node.type))}</span>
       ${node.year ? `<span class="chip">${escapeHtml(node.year)}</span>` : ''}
       ${node.lineage ? `<span class="chip">${escapeHtml(node.lineage)}</span>` : ''}
       ${node.branch ? '<span class="chip">Branch root</span>' : ''}
@@ -1282,7 +1319,7 @@ function renderDetail(id){
     <h3>Why it matters</h3>
     <p>${escapeHtml(node.note || 'No note yet.')}</p>
     <h3>Teaching angle</h3>
-    <p>${escapeHtml(node.hook || 'Use this node to discuss how lineage, licensing and production constraints shape outcomes.')}</p>
+    <p>${escapeHtml(node.hook || 'Use this node to discuss how lineage, constraints and adoption shape later developments.')}</p>
     ${node.verifiedOn ? `<p class="verification">Verified against current sources: ${escapeHtml(node.verifiedOn)}</p>` : ''}
     ${nodeSources.length ? `<h3>Evidence</h3><div class="sourceList">${nodeSources.map(source => `<div class="source"><a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.label)}</a><small>${escapeHtml(source.note || '')}</small></div>`).join('')}</div>` : ''}
     ${node.tags?.length ? `<h3>Tags <span class="hintInline">(select to filter)</span></h3><div class="chips">${node.tags.map(tag => `<button type="button" class="chip tagChip${tag === activeTag ? ' active' : ''}" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`).join('')}</div>` : ''}
@@ -1350,6 +1387,7 @@ function bindControls(){
     if(!file) return;
     const raw = JSON.parse(await file.text());
     dataset = normalizeDataset(raw);
+    applyDatasetChrome();
     currentView = dataset.defaultView || 'force';
     selectedId = null;
     activeLineage = 'all';

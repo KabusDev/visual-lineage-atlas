@@ -1,6 +1,6 @@
-# Visual Lineage Atlas
+﻿# Visual Lineage Atlas
 
-An extensible 2D and 3D visualisation platform for exploring lineages, relationships and curriculum case studies. Game Engine Lineage is the first dataset. Additional datasets can be added without changing the renderer.
+An extensible 2D and 3D visualisation platform for exploring lineages, relationships and curriculum case studies. It currently includes Game Engine and Web Platform datasets. Additional datasets can be added without changing the renderer.
 
 The platform is designed for classroom exploration and research prompts. It is not a substitute for learner analysis or independently verified assessment evidence.
 
@@ -22,6 +22,7 @@ http://localhost:8080/
 
 - `data/manifest.json` lists available datasets.
 - `data/lineages/game-engines.json` contains the current game engine lineage dataset.
+- `data/lineages/web-platform.json` maps HTML, CSS, ECMAScript, HTTP, browser APIs and WebAssembly.
 - To add another lineage, create another JSON file under `data/lineages/` and register it in `data/manifest.json`.
 
 Datasets can include `curriculumPresets` to provide focused views and teaching prompts without coupling the visualisation code to one qualification.
@@ -33,6 +34,8 @@ The Game Engine Lineage dataset includes presets for:
 - Pearson BTEC Level 3 Esports Unit 9 learning aims A, B and C.
 - Pearson BTEC Level 2 Esports Unit 6.
 - Full exploratory use outside assessed activity.
+
+The Web Platform dataset adds focused views for web foundations, HTTP and networking, modern browser applications, and standards literacy.
 
 Future atlas candidates include software and programming-language lineages, esports organisations and competition ecosystems, computing hardware generations, web technology stacks, and production-tool pipelines.
 
