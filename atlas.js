@@ -589,7 +589,13 @@ function applyPresetPositions(data){
       // Give dense modern datasets enough horizontal space without turning a
       // century-scale map into an unusably wide strip.
       const xSpan = Math.max(1180, Math.min(2800, span * 54));
-      const xForYear = year => ((year - minYear) / span - 0.5) * xSpan;
+      const xMin = -xSpan / 2;
+      const xMax = xSpan / 2;
+      // Keep lane names inside the canvas in a dedicated column. Canvas text
+      // is not part of zoomToFit's node bounds, so drawing it outside the axis
+      // caused otherwise-correct labels to be clipped at the stage edge.
+      const laneLabelColumn = Math.min(420, xSpan * 0.34);
+      const xForYear = year => xMin + laneLabelColumn + ((year - minYear) / span) * (xSpan - laneLabelColumn);
       const laneMeta = [];
       let cursorY = 0;
 
@@ -647,7 +653,7 @@ function applyPresetPositions(data){
       }
       if(maxYear !== minYear) years.push(maxYear);
       timelineLayout = {
-        minYear, maxYear, xMin: -xSpan / 2, xMax: xSpan / 2,
+        minYear, maxYear, xMin, xMax,
         yMin: -totalHeight / 2, yMax: totalHeight / 2,
         years: [...new Set(years)].sort((a,b) => a-b), lanes: laneMeta, xForYear
       };
@@ -693,11 +699,11 @@ function drawTimelineBackdrop(ctx, globalScale){
     ctx.strokeStyle = 'rgba(148,163,184,.12)';
     ctx.stroke();
     ctx.font = `700 ${11 / globalScale}px Inter, Arial, sans-serif`;
-    ctx.textAlign = 'right';
+    ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = '#c7d2fe';
     const laneLabel = lane.name.length > 28 ? `${lane.name.slice(0, 27)}…` : lane.name;
-    ctx.fillText(laneLabel, xMin - 12 / globalScale, lane.centre, 96 / globalScale);
+    ctx.fillText(laneLabel, xMin + 12 / globalScale, lane.centre, 112 / globalScale);
   });
   ctx.restore();
 }
