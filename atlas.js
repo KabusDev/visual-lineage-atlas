@@ -570,8 +570,10 @@ function applyPresetPositions(data){
     };
     const datedYears = nodes.map(parsedYear).filter(Boolean);
     const currentYear = new Date().getUTCFullYear();
-    const minYear = Math.min(...datedYears, 1990);
-    const maxYear = Math.max(...datedYears, currentYear);
+    // Use the actual dated range. A hard 1990 floor left newer subjects such
+    // as AI models compressed into the far-right edge of a mostly empty axis.
+    const minYear = datedYears.length ? Math.min(...datedYears) : 1990;
+    const maxYear = datedYears.length ? Math.max(...datedYears, currentYear) : currentYear;
     const yearOf = node => parsedYear(node) ?? (/ongoing|present|current/i.test(String(node.year || '')) ? maxYear : minYear);
     const levels = new Map();
     function depth(id){
@@ -631,14 +633,18 @@ function applyPresetPositions(data){
         lane.bottom += yOffset;
         lane.centre += yOffset;
       });
-      const targetTickCount = Math.max(4, Math.min(12, Math.round(xSpan / 180)));
+      // zoomToFit scales the whole graph to the viewport, so tick density must
+      // follow the visible axis rather than its graph-unit width.
+      const targetTickCount = 7;
       const rawStep = span / targetTickCount;
       const stepChoices = [1, 2, 5, 10, 20, 25, 50, 100];
       const yearStep = stepChoices.find(step => step >= rawStep) || 100;
-      const years = [];
-      for(let year = Math.ceil(minYear / yearStep) * yearStep; year <= maxYear; year += yearStep) years.push(year);
-      if(!years.includes(minYear)) years.unshift(minYear);
-      if(!years.includes(maxYear)) years.push(maxYear);
+      const minTickGap = span / targetTickCount;
+      const years = [minYear];
+      for(let year = Math.ceil(minYear / yearStep) * yearStep; year <= maxYear; year += yearStep) {
+        if(year - minYear >= minTickGap && maxYear - year >= minTickGap) years.push(year);
+      }
+      if(maxYear !== minYear) years.push(maxYear);
       timelineLayout = {
         minYear, maxYear, xMin: -xSpan / 2, xMax: xSpan / 2,
         yMin: -totalHeight / 2, yMax: totalHeight / 2,
@@ -689,7 +695,8 @@ function drawTimelineBackdrop(ctx, globalScale){
     ctx.textAlign = 'right';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = '#c7d2fe';
-    ctx.fillText(lane.name, xMin - 14 / globalScale, lane.centre);
+    const laneLabel = lane.name.length > 28 ? `${lane.name.slice(0, 27)}…` : lane.name;
+    ctx.fillText(laneLabel, xMin - 12 / globalScale, lane.centre, 96 / globalScale);
   });
   ctx.restore();
 }
@@ -1010,7 +1017,8 @@ function animateLayoutTargets(){
 }
 
 function fitGraph(duration = VIEWPORT_MS, padding = 70){
-  graph?.zoomToFit?.(reducedMotion ? 0 : duration, padding);
+  const resolvedPadding = currentView === 'timeline' ? Math.max(96, padding) : padding;
+  graph?.zoomToFit?.(reducedMotion ? 0 : duration, resolvedPadding);
 }
 
 function resetViewport(){
