@@ -14,6 +14,34 @@
       "description": "HTML, CSS, ECMAScript, HTTP, browser APIs and WebAssembly standards evolution.",
       "path": "./data/lineages/web-platform.json",
       "defaultView": "timeline"
+    },
+    {
+      "id": "programming-languages",
+      "title": "Programming Language Release Atlas",
+      "description": "Selected language releases, standards, runtimes, editions and current release status.",
+      "path": "./data/lineages/programming-languages.json",
+      "defaultView": "timeline"
+    },
+    {
+      "id": "ai-models",
+      "title": "AI Model Family Atlas",
+      "description": "Selected model-family releases, variants, open-weight branches and cross-family distillation links.",
+      "path": "./data/lineages/ai-models.json",
+      "defaultView": "timeline"
+    },
+    {
+      "id": "esports-ecosystem",
+      "title": "Esports Ecosystem Atlas",
+      "description": "Publishers, operators, competitions, education pathways, teams, careers, media and commercial relationships.",
+      "path": "./data/lineages/esports-ecosystem.json",
+      "defaultView": "force"
+    },
+    {
+      "id": "live-broadcast",
+      "title": "Live Esports Broadcast Pipeline Atlas",
+      "description": "Gameplay and camera sources through capture, production, encoding, transport, distribution and audience assurance.",
+      "path": "./data/lineages/live-broadcast.json",
+      "defaultView": "layered"
     }
   ]
 }

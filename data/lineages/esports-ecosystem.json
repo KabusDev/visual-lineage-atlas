@@ -1,0 +1,1219 @@
+{
+  "schemaVersion": 1,
+  "citationMode": "referenced",
+  "id": "esports-ecosystem",
+  "title": "Esports Ecosystem Atlas",
+  "description": "A curriculum-focused map of publishers, tournament operators, competitions, education pathways, teams, careers, broadcast and commercial relationships.",
+  "ui": {
+    "typeLabels": {
+      "root": "Atlas",
+      "family": "Ecosystem sector",
+      "engine": "Organisation / competition",
+      "sourcePort": "Parallel pathway",
+      "mod": "Extension",
+      "tool": "Role / function"
+    },
+    "groupLabels": {
+      "family": "Ecosystem sectors",
+      "engine": "Organisation / competitions",
+      "game": "Case studies",
+      "portmod": "Parallel pathways",
+      "tool": "Role / functions",
+      "esports": "Highlighted"
+    }
+  },
+  "curriculumPresets": [
+    {
+      "id": "all",
+      "title": "Full esports ecosystem",
+      "description": "Explore how rights holders, competitions, operators, teams, talent, education, media and commercial partners interact.",
+      "tag": "all",
+      "view": "force"
+    },
+    {
+      "id": "l2-games",
+      "title": "L2 Unit 1: games, teams and tournaments",
+      "description": "Identify tournament structures, current titles, team roles and organising bodies, then compare two competition pathways.",
+      "tag": "l2-u1",
+      "view": "radial"
+    },
+    {
+      "id": "l3-intro",
+      "title": "L3 Unit 1: introduction to esports",
+      "description": "Investigate the size, structure, technology, roles and related industries that make esports an ecosystem rather than only competitive play.",
+      "tag": "l3-u1",
+      "view": "force"
+    },
+    {
+      "id": "events",
+      "title": "L3 Unit 5: esports events",
+      "description": "Follow the dependencies between rights holder, operator, venue, officials, production, platform, teams and audience. Use the map to build an event responsibility matrix.",
+      "tag": "l3-u5",
+      "view": "layered"
+    },
+    {
+      "id": "enterprise",
+      "title": "Enterprise, careers and branding",
+      "description": "Connect L2 Unit 5 and L3 Units 3, 7, 10 and 11 through revenue, sponsorship, audience, brand, social media, casting and employability roles.",
+      "tag": "enterprise",
+      "view": "force"
+    }
+  ],
+  "sources": [
+    {
+      "id": "pearson-l2",
+      "label": "Pearson BTEC Level 2 Skills: Esports",
+      "url": "https://qualifications.pearson.com/en/qualifications/btec-level-2-skills/esports.html",
+      "note": "Official qualification page for Level 2 curriculum context."
+    },
+    {
+      "id": "pearson-l3",
+      "label": "Pearson BTEC Nationals: Esports",
+      "url": "https://qualifications.pearson.com/en/qualifications/btec-nationals/esports.html",
+      "note": "Official qualification page for Level 3 curriculum context."
+    },
+    {
+      "id": "champs",
+      "label": "British Esports Student Champs",
+      "url": "https://champs.britishesports.org/",
+      "note": "Current Student Champs competition portal."
+    },
+    {
+      "id": "champs-about",
+      "label": "British Esports Student Champs: About",
+      "url": "https://champs.britishesports.org/about",
+      "note": "2026/27 game and format information checked 2026-09-01."
+    },
+    {
+      "id": "nse",
+      "label": "National Student Esports",
+      "url": "https://nse.gg/",
+      "note": "UK university esports competition and community."
+    },
+    {
+      "id": "vct",
+      "label": "Riot Games Competitive Operations: VALORANT",
+      "url": "https://competitiveops.riotgames.com/VALORANT",
+      "note": "Official VALORANT Esports and Game Changers competition information."
+    },
+    {
+      "id": "lol-esports",
+      "label": "LoL Esports",
+      "url": "https://lolesports.com/",
+      "note": "Official League of Legends esports portal."
+    },
+    {
+      "id": "efg",
+      "label": "ESL FACEIT Group",
+      "url": "https://eslfaceitgroup.com/",
+      "note": "Tournament operator and esports platform group."
+    },
+    {
+      "id": "iem2026",
+      "label": "Counter-Strike: IEM Cologne Major 2026",
+      "url": "https://www.counter-strike.net/newsentry/672869045073084948",
+      "note": "Valve announcement for the 2026 Major."
+    },
+    {
+      "id": "rlcs2026",
+      "label": "Rocket League: RLCS 2026",
+      "url": "https://www.rocketleague.com/news/register-for-rlcs-2026-today-and-compete-for-a-share-of-the-6-1-million-dollar-prize-pool",
+      "note": "Official RLCS 2026 competition announcement."
+    },
+    {
+      "id": "owcs2026",
+      "label": "Overwatch: OWCS 2026",
+      "url": "https://overwatch.blizzard.com/en-gb/news/24246297/owcs-2026-season-competitive-details/",
+      "note": "Official 2026 season structure."
+    },
+    {
+      "id": "fcpro",
+      "label": "EA SPORTS FC Pro rules",
+      "url": "https://www.ea.com/games/ea-sports-fc/fc-pro/rules",
+      "note": "Current official competition rules portal."
+    },
+    {
+      "id": "twitch",
+      "label": "Twitch",
+      "url": "https://www.twitch.tv/",
+      "note": "Major live-streaming distribution platform."
+    },
+    {
+      "id": "youtube",
+      "label": "YouTube Live",
+      "url": "https://www.youtube.com/live",
+      "note": "Live video distribution platform."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "root",
+      "name": "Esports Ecosystem",
+      "year": "1972-present",
+      "type": "root",
+      "lineage": "Esports",
+      "parent": null,
+      "note": "Esports depends on game ownership, organised competition, teams, technology, media, audiences and commercial support.",
+      "hook": "Select one event and identify who owns the game, runs the event, competes, broadcasts and pays.",
+      "tags": [
+        "overview",
+        "l2-u1",
+        "l3-u1"
+      ],
+      "sourceIds": [
+        "pearson-l2",
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "living ecosystem"
+    },
+    {
+      "id": "rights",
+      "name": "Publishers and Rights Holders",
+      "year": "1990s-present",
+      "type": "family",
+      "lineage": "Rights holders",
+      "parent": "root",
+      "branch": true,
+      "note": "Publishers control game intellectual property and usually set or license official competition rules.",
+      "hook": "Explain how publisher ownership makes esports governance different from many traditional sports.",
+      "tags": [
+        "l2-u1",
+        "l3-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "vct",
+        "lol-esports"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "riot",
+      "name": "Riot Games",
+      "year": "2006-present",
+      "type": "engine",
+      "lineage": "Rights holders",
+      "parent": "rights",
+      "note": "Riot operates official ecosystems for League of Legends and VALORANT.",
+      "hook": "Compare one publisher-operated circuit with a third-party operated circuit.",
+      "tags": [
+        "l2-u1",
+        "l3-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "vct",
+        "lol-esports"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "lol",
+      "name": "League of Legends Esports",
+      "year": "2010-present",
+      "type": "tool",
+      "lineage": "Rights holders",
+      "parent": "riot",
+      "note": "League of Legends has regional and international organised competition.",
+      "hook": "Trace qualification from a regional league to an international event.",
+      "tags": [
+        "l2-u1",
+        "l3-u1"
+      ],
+      "sourceIds": [
+        "lol-esports",
+        "champs-about"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "vct",
+      "name": "VALORANT Champions Tour",
+      "year": "2021-present",
+      "type": "tool",
+      "lineage": "Rights holders",
+      "parent": "riot",
+      "note": "VCT is Riot’s official global VALORANT competition pathway.",
+      "hook": "Identify open, regional and international stages in the current pathway.",
+      "tags": [
+        "l2-u1",
+        "l3-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "vct"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "gamechangers",
+      "name": "VALORANT Game Changers",
+      "year": "2021-present",
+      "type": "tool",
+      "lineage": "Rights holders",
+      "parent": "vct",
+      "note": "Game Changers is a complementary competition pathway within VALORANT esports.",
+      "hook": "Assess how targeted pathways can broaden participation.",
+      "tags": [
+        "l3-u1",
+        "ethics"
+      ],
+      "sourceIds": [
+        "vct"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "valve",
+      "name": "Valve",
+      "year": "1996-present",
+      "type": "engine",
+      "lineage": "Rights holders",
+      "parent": "rights",
+      "note": "Valve owns Counter-Strike and licenses a tournament ecosystem with external operators.",
+      "hook": "Compare publisher control with operator responsibility.",
+      "tags": [
+        "l2-u1",
+        "l3-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "iem2026"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "counterstrike",
+      "name": "Counter-Strike",
+      "year": "2000-present",
+      "type": "tool",
+      "lineage": "Rights holders",
+      "parent": "valve",
+      "note": "Counter-Strike’s competitive ecosystem includes Valve Majors and operator circuits.",
+      "hook": "Differentiate a game title, circuit, tournament and match.",
+      "tags": [
+        "l2-u1",
+        "l3-u1"
+      ],
+      "sourceIds": [
+        "iem2026"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "epic-psyonix",
+      "name": "Epic Games / Psyonix",
+      "year": "2019-present",
+      "type": "engine",
+      "lineage": "Rights holders",
+      "parent": "rights",
+      "note": "Psyonix runs Rocket League esports under Epic Games ownership.",
+      "hook": "Investigate how game updates can affect competitive integrity.",
+      "tags": [
+        "l2-u1",
+        "l3-u1"
+      ],
+      "sourceIds": [
+        "rlcs2026"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "rlcs",
+      "name": "Rocket League Championship Series",
+      "year": "2016-present",
+      "type": "tool",
+      "lineage": "Rights holders",
+      "parent": "epic-psyonix",
+      "note": "RLCS is the official Rocket League competition circuit.",
+      "hook": "Map an RLCS season from online qualification to Major or World Championship.",
+      "tags": [
+        "l2-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "rlcs2026",
+        "champs-about"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard Entertainment",
+      "year": "1991-present",
+      "type": "engine",
+      "lineage": "Rights holders",
+      "parent": "rights",
+      "note": "Blizzard owns Overwatch and publishes the official OWCS structure.",
+      "hook": "Identify what the publisher delegates to regional operators.",
+      "tags": [
+        "l2-u1",
+        "l3-u1"
+      ],
+      "sourceIds": [
+        "owcs2026"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "owcs",
+      "name": "Overwatch Champions Series",
+      "year": "2024-present",
+      "type": "tool",
+      "lineage": "Rights holders",
+      "parent": "blizzard",
+      "note": "OWCS is the current official Overwatch competition circuit.",
+      "hook": "Compare its regional stages and international qualification.",
+      "tags": [
+        "l2-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "owcs2026",
+        "champs-about"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "ea",
+      "name": "EA SPORTS",
+      "year": "1991-present",
+      "type": "engine",
+      "lineage": "Rights holders",
+      "parent": "rights",
+      "note": "EA publishes the FC Pro competition rules for EA SPORTS FC.",
+      "hook": "Use rules to identify eligibility, platform and conduct requirements.",
+      "tags": [
+        "l2-u1",
+        "l3-u1"
+      ],
+      "sourceIds": [
+        "fcpro"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "fcpro",
+      "name": "FC Pro",
+      "year": "2023-present",
+      "type": "tool",
+      "lineage": "Rights holders",
+      "parent": "ea",
+      "note": "FC Pro is the official EA SPORTS FC competitive programme.",
+      "hook": "Compare individual and team-based competition requirements.",
+      "tags": [
+        "l2-u1",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "fcpro"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "operators",
+      "name": "Tournament Operators",
+      "year": "2000s-present",
+      "type": "family",
+      "lineage": "Operators",
+      "parent": "root",
+      "branch": true,
+      "note": "Operators deliver brackets, rules administration, officials, venues, production and participant services.",
+      "hook": "Build a RACI matrix for a tournament operator and rights holder.",
+      "tags": [
+        "l2-u1",
+        "l3-u1",
+        "l3-u5",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "efg"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "efg",
+      "name": "ESL FACEIT Group",
+      "year": "2022-present",
+      "type": "engine",
+      "lineage": "Operators",
+      "parent": "operators",
+      "note": "EFG combines major tournament-operation and competitive-platform brands.",
+      "hook": "Identify platform, event, production and commercial functions within the group.",
+      "tags": [
+        "l3-u1",
+        "l3-u5",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "efg"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "iem",
+      "name": "Intel Extreme Masters",
+      "year": "2007-present",
+      "type": "tool",
+      "lineage": "Operators",
+      "parent": "efg",
+      "note": "IEM is a long-running international tournament brand.",
+      "hook": "Use IEM Cologne 2026 to identify organiser, game owner, title sponsor and venue.",
+      "tags": [
+        "l2-u1",
+        "l3-u5",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "iem2026",
+        "efg"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "grassroots",
+      "name": "Education and Grassroots",
+      "year": "2010s-present",
+      "type": "family",
+      "lineage": "Education",
+      "parent": "root",
+      "branch": true,
+      "note": "School, college and university competitions create participation and development pathways.",
+      "hook": "Compare the aims and eligibility of school/college and university competitions.",
+      "tags": [
+        "l2-u1",
+        "l3-u1",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "champs",
+        "nse"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "british-esports",
+      "name": "British Esports",
+      "year": "2016-present",
+      "type": "engine",
+      "lineage": "Education",
+      "parent": "grassroots",
+      "note": "British Esports supports UK pathways, education and the Student Champs.",
+      "hook": "Identify governing, education, event and community functions.",
+      "tags": [
+        "l2-u1",
+        "l3-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "champs"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "student-champs",
+      "name": "Student Champs 2026/27",
+      "year": "2026-2027",
+      "type": "tool",
+      "lineage": "Education",
+      "parent": "british-esports",
+      "note": "The 2026/27 Champs lists League of Legends, Overwatch 2, Rocket League, Marvel Rivals and age-restricted VALORANT team competitions.",
+      "hook": "Compare team size, age rules and match format for two current titles.",
+      "tags": [
+        "l2-u1",
+        "l3-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "champs-about"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current season"
+    },
+    {
+      "id": "nse",
+      "name": "National Student Esports",
+      "year": "2018-present",
+      "type": "sourcePort",
+      "lineage": "Education",
+      "parent": "grassroots",
+      "note": "NSE provides a UK higher-education competition and community pathway.",
+      "hook": "Check current eligibility and explain why verification matters.",
+      "tags": [
+        "l2-u1",
+        "l3-u1",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "nse"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "competition",
+      "name": "Competition Delivery",
+      "year": "1970s-present",
+      "type": "family",
+      "lineage": "Competition",
+      "parent": "root",
+      "branch": true,
+      "note": "A competition converts game rules into formats, schedules, seeding, officiating and results.",
+      "hook": "Design a format and justify fairness, time, venue and broadcast trade-offs.",
+      "tags": [
+        "l2-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "pearson-l2",
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "formats",
+      "name": "Formats and Brackets",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Competition",
+      "parent": "competition",
+      "note": "Round robin, Swiss, groups and elimination formats create different competitive and scheduling properties.",
+      "hook": "Simulate eight teams under two formats and compare match count and elimination risk.",
+      "tags": [
+        "l2-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "pearson-l2"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "curriculum concept"
+    },
+    {
+      "id": "rules-integrity",
+      "name": "Rules and Competitive Integrity",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Competition",
+      "parent": "competition",
+      "note": "Eligibility, anti-cheat, pauses, disputes and sanctions support credible results.",
+      "hook": "Write an evidence chain for resolving one match dispute.",
+      "tags": [
+        "l2-u1",
+        "l3-u5",
+        "ethics"
+      ],
+      "sourceIds": [
+        "fcpro",
+        "vct"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active function"
+    },
+    {
+      "id": "events-ops",
+      "name": "Event Operations",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Competition",
+      "parent": "competition",
+      "note": "Event delivery coordinates venue, stage, networking, hardware, safety, staffing and schedules.",
+      "hook": "Identify three single points of failure and propose contingencies.",
+      "tags": [
+        "l3-u5",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active function"
+    },
+    {
+      "id": "people",
+      "name": "Teams, Talent and Careers",
+      "year": "ongoing",
+      "type": "family",
+      "lineage": "People",
+      "parent": "root",
+      "branch": true,
+      "note": "Competitive and production outcomes depend on specialist playing, coaching, operational, creative and technical roles.",
+      "hook": "Map one role’s responsibilities, evidence of skill and progression route.",
+      "tags": [
+        "l2-u1",
+        "l3-u1",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "pearson-l2",
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "players",
+      "name": "Players and Teams",
+      "year": "ongoing",
+      "type": "engine",
+      "lineage": "People",
+      "parent": "people",
+      "note": "Players compete within rosters, contracts, practice structures and team culture.",
+      "hook": "Compare in-game role, team role and employment responsibility.",
+      "tags": [
+        "l2-u1",
+        "l3-u1"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active role"
+    },
+    {
+      "id": "performance",
+      "name": "Coaching and Performance",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "People",
+      "parent": "people",
+      "note": "Coaches and analysts turn game data, review and practice into strategy and development.",
+      "hook": "Create a review cycle from replay evidence to a measurable training goal.",
+      "tags": [
+        "l3-u1",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active role"
+    },
+    {
+      "id": "officials",
+      "name": "Admins and Officials",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "People",
+      "parent": "people",
+      "note": "Tournament admins enforce rules, manage lobbies and resolve incidents.",
+      "hook": "Write a decision log that separates observation, rule and ruling.",
+      "tags": [
+        "l2-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active role"
+    },
+    {
+      "id": "casters",
+      "name": "Shoutcasters and Analysts",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "People",
+      "parent": "people",
+      "note": "On-air talent explains action, builds narrative and serves different audience knowledge levels.",
+      "hook": "Produce a play-by-play line and an analytical follow-up for the same clip.",
+      "tags": [
+        "l3-u1",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active role"
+    },
+    {
+      "id": "media",
+      "name": "Media and Audience",
+      "year": "2000s-present",
+      "type": "family",
+      "lineage": "Media",
+      "parent": "root",
+      "branch": true,
+      "note": "Broadcast and social platforms connect live competition to audiences, communities and measurable engagement.",
+      "hook": "Trace one match from game server through production to audience interaction.",
+      "tags": [
+        "l3-u1",
+        "l3-u5",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "twitch",
+        "youtube"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "broadcast",
+      "name": "Live Broadcast Production",
+      "year": "ongoing",
+      "type": "engine",
+      "lineage": "Media",
+      "parent": "media",
+      "note": "Observers, directors, audio, graphics, replay and streaming systems turn matches into programmes.",
+      "hook": "Allocate essential roles for a small student broadcast and justify each one.",
+      "tags": [
+        "l3-u1",
+        "l3-u5",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active function"
+    },
+    {
+      "id": "twitch",
+      "name": "Twitch distribution",
+      "year": "2011-present",
+      "type": "tool",
+      "lineage": "Media",
+      "parent": "broadcast",
+      "note": "Twitch is a major live distribution and audience-interaction platform for esports.",
+      "hook": "Evaluate discoverability, moderation and analytics for an event channel.",
+      "tags": [
+        "l3-u1",
+        "l3-u5",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "twitch"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube Live distribution",
+      "year": "2011-present",
+      "type": "tool",
+      "lineage": "Media",
+      "parent": "broadcast",
+      "note": "YouTube supports live and on-demand distribution around the same event content.",
+      "hook": "Compare live reach with the value of searchable archives and highlights.",
+      "tags": [
+        "l3-u1",
+        "l3-u5",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "youtube"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "commercial",
+      "name": "Commercial and Support",
+      "year": "ongoing",
+      "type": "family",
+      "lineage": "Commercial",
+      "parent": "root",
+      "branch": true,
+      "note": "Revenue and support can include sponsorship, media rights, ticketing, merchandise, publisher funding and services.",
+      "hook": "Build a value exchange showing what each partner gives and receives.",
+      "tags": [
+        "l3-u1",
+        "l3-u5",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "efg"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "sponsors",
+      "name": "Sponsors and Partners",
+      "year": "ongoing",
+      "type": "engine",
+      "lineage": "Commercial",
+      "parent": "commercial",
+      "note": "Partners exchange funding, products or services for rights, activation and audience association.",
+      "hook": "Design a sponsorship inventory without promising unverifiable audience outcomes.",
+      "tags": [
+        "enterprise",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "efg"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active function"
+    },
+    {
+      "id": "brand-social",
+      "name": "Brand and Social Media",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Commercial",
+      "parent": "commercial",
+      "note": "Brand identity and social content connect teams, events, communities and partners.",
+      "hook": "Create a platform-specific content plan tied to one measurable objective.",
+      "tags": [
+        "enterprise",
+        "l3-u1"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active function"
+    },
+    {
+      "id": "enterprise",
+      "name": "Esports Enterprise",
+      "year": "ongoing",
+      "type": "sourcePort",
+      "lineage": "Commercial",
+      "parent": "commercial",
+      "note": "Esports ventures need a value proposition, target market, resources, finance, legal awareness and risk controls.",
+      "hook": "Test a venture idea using customer evidence and a basic cost model.",
+      "tags": [
+        "enterprise"
+      ],
+      "sourceIds": [
+        "pearson-l2",
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "curriculum concept"
+    }
+  ],
+  "edges": [
+    {
+      "source": "root",
+      "target": "rights",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "rights",
+      "target": "riot",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "riot",
+      "target": "lol",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "riot",
+      "target": "vct",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "vct",
+      "target": "gamechangers",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "rights",
+      "target": "valve",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "valve",
+      "target": "counterstrike",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "rights",
+      "target": "epic-psyonix",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "epic-psyonix",
+      "target": "rlcs",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "rights",
+      "target": "blizzard",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "blizzard",
+      "target": "owcs",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "rights",
+      "target": "ea",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "ea",
+      "target": "fcpro",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "operators",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "operators",
+      "target": "efg",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "efg",
+      "target": "iem",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "grassroots",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "grassroots",
+      "target": "british-esports",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "british-esports",
+      "target": "student-champs",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "grassroots",
+      "target": "nse",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "competition",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "competition",
+      "target": "formats",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "competition",
+      "target": "rules-integrity",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "competition",
+      "target": "events-ops",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "people",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "people",
+      "target": "players",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "people",
+      "target": "performance",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "people",
+      "target": "officials",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "people",
+      "target": "casters",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "media",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "media",
+      "target": "broadcast",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "broadcast",
+      "target": "twitch",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "broadcast",
+      "target": "youtube",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "commercial",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "commercial",
+      "target": "sponsors",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "commercial",
+      "target": "brand-social",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "commercial",
+      "target": "enterprise",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "valve",
+      "target": "iem",
+      "type": "licensed-ecosystem",
+      "strength": 0.72,
+      "note": "Valve owns Counter-Strike; EFG operates IEM events."
+    },
+    {
+      "source": "counterstrike",
+      "target": "iem",
+      "type": "competition-title",
+      "strength": 0.72,
+      "note": "IEM Cologne 2026 is a Counter-Strike Major."
+    },
+    {
+      "source": "lol",
+      "target": "student-champs",
+      "type": "education-title",
+      "strength": 0.72,
+      "note": "League of Legends is a current Student Champs title."
+    },
+    {
+      "source": "rlcs",
+      "target": "student-champs",
+      "type": "education-title",
+      "strength": 0.72,
+      "note": "Rocket League also appears in the Student Champs pathway."
+    },
+    {
+      "source": "owcs",
+      "target": "student-champs",
+      "type": "education-title",
+      "strength": 0.72,
+      "note": "Overwatch 2 connects professional and student competition contexts."
+    },
+    {
+      "source": "vct",
+      "target": "student-champs",
+      "type": "education-title",
+      "strength": 0.72,
+      "note": "VALORANT appears with an age restriction in Student Champs."
+    },
+    {
+      "source": "competition",
+      "target": "broadcast",
+      "type": "produced-as",
+      "strength": 0.72,
+      "note": "Competition is converted into a viewer-facing programme."
+    },
+    {
+      "source": "broadcast",
+      "target": "twitch",
+      "type": "distributed-by",
+      "strength": 0.72,
+      "note": "A production may be delivered through Twitch."
+    },
+    {
+      "source": "broadcast",
+      "target": "youtube",
+      "type": "distributed-by",
+      "strength": 0.72,
+      "note": "A production may be delivered through YouTube Live."
+    },
+    {
+      "source": "sponsors",
+      "target": "iem",
+      "type": "supports",
+      "strength": 0.72,
+      "note": "Title and event partnerships support competition delivery."
+    },
+    {
+      "source": "players",
+      "target": "performance",
+      "type": "developed-by",
+      "strength": 0.72,
+      "note": "Coaching and analysis support player performance."
+    },
+    {
+      "source": "brand-social",
+      "target": "sponsors",
+      "type": "activates",
+      "strength": 0.72,
+      "note": "Brand content can activate sponsorship rights."
+    }
+  ]
+}

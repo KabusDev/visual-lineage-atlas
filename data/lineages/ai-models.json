@@ -1,0 +1,1362 @@
+{
+  "schemaVersion": 1,
+  "citationMode": "referenced",
+  "id": "ai-models",
+  "title": "AI Model Family Atlas",
+  "description": "Selected public model-family releases and relationships from major developers. Links show succession, variants, distillation or comparable branches, not claims of shared training data.",
+  "ui": {
+    "typeLabels": {
+      "root": "Atlas",
+      "family": "Developer family",
+      "engine": "Model release",
+      "sourcePort": "Open-weight branch",
+      "mod": "Extension",
+      "tool": "Variant / modality"
+    },
+    "groupLabels": {
+      "family": "Developer familys",
+      "engine": "Model releases",
+      "game": "Case studies",
+      "portmod": "Open-weight branchs",
+      "tool": "Variant / modalitys",
+      "esports": "Highlighted"
+    }
+  },
+  "curriculumPresets": [
+    {
+      "id": "all",
+      "title": "Full AI model atlas",
+      "description": "Explore selected model families, release cadence, open-weight branches and cross-family distillation links.",
+      "tag": "all",
+      "view": "timeline"
+    },
+    {
+      "id": "current",
+      "title": "Current model landscape",
+      "description": "Focus on 2026 releases and verify status from linked developer sources before making capability comparisons.",
+      "tag": "current",
+      "view": "force"
+    },
+    {
+      "id": "open-models",
+      "title": "Open-weight ecosystems",
+      "description": "Compare Llama, Mistral, Qwen, DeepSeek and gpt-oss. Distinguish downloadable weights from open-source software and open training data.",
+      "tag": "open-weights",
+      "view": "radial"
+    },
+    {
+      "id": "reasoning",
+      "title": "Reasoning model branches",
+      "description": "Trace reasoning-oriented releases and distillation links. Evaluate benchmark claims alongside task design, cost and deployment constraints.",
+      "tag": "reasoning",
+      "view": "layered"
+    },
+    {
+      "id": "ethics",
+      "title": "Responsible AI investigation",
+      "description": "Use release notes as claims to verify, then investigate licensing, privacy, bias, energy, safety evaluation and acceptable-use constraints.",
+      "tag": "ethics",
+      "view": "force"
+    }
+  ],
+  "sources": [
+    {
+      "id": "gpt5",
+      "label": "OpenAI: Introducing GPT-5",
+      "url": "https://openai.com/index/introducing-gpt-5/",
+      "note": "GPT-5 release announcement, 2025-08-07."
+    },
+    {
+      "id": "gpt55",
+      "label": "OpenAI: Introducing GPT-5.5",
+      "url": "https://openai.com/index/introducing-gpt-5-5/",
+      "note": "GPT-5.5 release announcement, 2026-04-23."
+    },
+    {
+      "id": "gpt56",
+      "label": "OpenAI: GPT-5.6",
+      "url": "https://openai.com/index/gpt-5-6/",
+      "note": "GPT-5.6 family announcement, 2026-07-09."
+    },
+    {
+      "id": "gptoss",
+      "label": "OpenAI: Introducing gpt-oss",
+      "url": "https://openai.com/index/introducing-gpt-oss/",
+      "note": "Open-weight reasoning models, 2025-08-05."
+    },
+    {
+      "id": "claude4",
+      "label": "Anthropic: Claude 4",
+      "url": "https://www.anthropic.com/news/claude-4",
+      "note": "Claude 4 family announcement, 2025-05-22."
+    },
+    {
+      "id": "claude46",
+      "label": "Anthropic: Claude Opus 4.6",
+      "url": "https://www.anthropic.com/news/claude-opus-4-6",
+      "note": "Opus 4.6 announcement, 2026-02-05."
+    },
+    {
+      "id": "claude48",
+      "label": "Anthropic: Claude Opus 4.8",
+      "url": "https://www.anthropic.com/news/claude-opus-4-8",
+      "note": "Opus 4.8 announcement, 2026-05-28."
+    },
+    {
+      "id": "claude5",
+      "label": "Anthropic: Claude Opus 5",
+      "url": "https://www.anthropic.com/news/claude-opus-5",
+      "note": "Opus 5 announcement, 2026-07-24."
+    },
+    {
+      "id": "gemini1",
+      "label": "Google: Introducing Gemini",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-gemini-ai/",
+      "note": "Original Gemini family announcement, 2023-12-06."
+    },
+    {
+      "id": "gemini25",
+      "label": "Google AI: Gemini 2.5 Pro",
+      "url": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-pro",
+      "note": "Primary model documentation."
+    },
+    {
+      "id": "gemini3",
+      "label": "Google Developers: Gemini 3 API",
+      "url": "https://developers.googleblog.com/new-gemini-api-updates-for-gemini-3/",
+      "note": "Gemini 3 API announcement, 2025."
+    },
+    {
+      "id": "gemini37",
+      "label": "Google AI: Gemini 3.7 Flash",
+      "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.7-flash",
+      "note": "Gemini 3.7 Flash documentation, 2026-08-13."
+    },
+    {
+      "id": "llama3",
+      "label": "Meta: Introducing Meta Llama 3",
+      "url": "https://ai.meta.com/blog/meta-llama-3/",
+      "note": "Llama 3 family announcement, 2024-04-18."
+    },
+    {
+      "id": "llama31",
+      "label": "Meta: Llama 3.1",
+      "url": "https://ai.meta.com/blog/meta-llama-3-1/",
+      "note": "Llama 3.1 announcement, 2024-07-23."
+    },
+    {
+      "id": "llama4",
+      "label": "Meta: Llama 4",
+      "url": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/",
+      "note": "Llama 4 announcement, 2025-04-05."
+    },
+    {
+      "id": "mistral3",
+      "label": "Mistral AI: Mistral 3",
+      "url": "https://mistral.ai/news/mistral-3/",
+      "note": "Mistral 3 family announcement, 2025-12."
+    },
+    {
+      "id": "mistralsmall4",
+      "label": "Mistral AI: Mistral Small 4",
+      "url": "https://mistral.ai/news/mistral-small-4/",
+      "note": "Mistral Small 4 announcement, 2026-03."
+    },
+    {
+      "id": "qwen",
+      "label": "Qwen technical blog",
+      "url": "https://qwenlm.github.io/blog/qwen/",
+      "note": "Original Qwen release."
+    },
+    {
+      "id": "qwen2",
+      "label": "Qwen2 technical blog",
+      "url": "https://qwenlm.github.io/blog/qwen2/",
+      "note": "Qwen2 announcement."
+    },
+    {
+      "id": "qwen25",
+      "label": "Qwen2.5 technical blog",
+      "url": "https://qwenlm.github.io/blog/qwen2.5/",
+      "note": "Qwen2.5 announcement."
+    },
+    {
+      "id": "qwen3",
+      "label": "Qwen3 technical blog",
+      "url": "https://qwenlm.github.io/blog/qwen3/",
+      "note": "Qwen3 announcement, 2025-04."
+    },
+    {
+      "id": "deepseekr1",
+      "label": "DeepSeek: R1 release",
+      "url": "https://api-docs.deepseek.com/news/news250120",
+      "note": "DeepSeek-R1 and distillation releases, 2025-01-20."
+    },
+    {
+      "id": "deepseekv31",
+      "label": "DeepSeek: V3.1 release",
+      "url": "https://api-docs.deepseek.com/news/news250821/",
+      "note": "DeepSeek V3.1 announcement, 2025-08-21."
+    },
+    {
+      "id": "deepseekv4",
+      "label": "DeepSeek: V4 Pro",
+      "url": "https://api-docs.deepseek.com/news/news260813/",
+      "note": "DeepSeek V4 Pro announcement, 2026-08-13."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "root",
+      "name": "AI Model Families",
+      "year": "2018-present",
+      "type": "root",
+      "lineage": "AI Models",
+      "parent": null,
+      "note": "This map samples public releases from several developers. A successor line does not imply identical architecture, data or evaluation.",
+      "hook": "Choose a capability claim and follow its source before treating it as evidence.",
+      "tags": [
+        "overview",
+        "ethics"
+      ],
+      "sourceIds": [
+        "gpt56",
+        "claude5",
+        "gemini37"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "living ecosystem"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI GPT",
+      "year": "2018-present",
+      "type": "family",
+      "lineage": "OpenAI",
+      "parent": "root",
+      "branch": true,
+      "note": "The GPT family includes hosted frontier releases and a separate open-weight gpt-oss branch.",
+      "hook": "Distinguish product names, API model IDs and downloadable model weights.",
+      "tags": [
+        "current",
+        "ethics"
+      ],
+      "sourceIds": [
+        "gpt5",
+        "gptoss"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "gpt4",
+      "name": "GPT-4 generation",
+      "year": "2023-2024",
+      "type": "engine",
+      "lineage": "OpenAI",
+      "parent": "openai",
+      "note": "GPT-4 and multimodal variants preceded the unified GPT-5 line.",
+      "hook": "Compare a generation label with a specific dated model snapshot.",
+      "tags": [
+        "history"
+      ],
+      "sourceIds": [
+        "gpt5"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded generation"
+    },
+    {
+      "id": "gpt5",
+      "name": "GPT-5",
+      "year": "2025",
+      "type": "engine",
+      "lineage": "OpenAI",
+      "parent": "gpt4",
+      "note": "GPT-5 introduced a unified system spanning fast and deeper reasoning behaviour.",
+      "hook": "Separate developer capability claims from independently reproducible evaluation.",
+      "tags": [
+        "reasoning",
+        "ethics"
+      ],
+      "sourceIds": [
+        "gpt5"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "gpt55",
+      "name": "GPT-5.5",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "OpenAI",
+      "parent": "gpt5",
+      "note": "GPT-5.5 extended the hosted GPT-5 family in April 2026.",
+      "hook": "Build a test set tied to a real task before comparing versions.",
+      "tags": [
+        "current",
+        "reasoning",
+        "ethics"
+      ],
+      "sourceIds": [
+        "gpt55"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "gpt56",
+      "name": "GPT-5.6 family",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "OpenAI",
+      "parent": "gpt55",
+      "note": "GPT-5.6 launched as a family in July 2026.",
+      "hook": "Explain why a family name may cover models with different speed and capability targets.",
+      "tags": [
+        "current",
+        "reasoning",
+        "ethics"
+      ],
+      "sourceIds": [
+        "gpt56"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current"
+    },
+    {
+      "id": "gpt56luna",
+      "name": "GPT-5.6 Luna",
+      "year": "2026",
+      "type": "tool",
+      "lineage": "OpenAI",
+      "parent": "gpt56",
+      "note": "A fast, economical member of the GPT-5.6 family.",
+      "hook": "Choose a latency-sensitive task and define an acceptable quality threshold.",
+      "tags": [
+        "current"
+      ],
+      "sourceIds": [
+        "gpt56"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current"
+    },
+    {
+      "id": "gpt56terra",
+      "name": "GPT-5.6 Terra",
+      "year": "2026",
+      "type": "tool",
+      "lineage": "OpenAI",
+      "parent": "gpt56",
+      "note": "A balanced GPT-5.6 family member.",
+      "hook": "Compare total workflow cost rather than token price alone.",
+      "tags": [
+        "current"
+      ],
+      "sourceIds": [
+        "gpt56"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current"
+    },
+    {
+      "id": "gpt56sol",
+      "name": "GPT-5.6 Sol",
+      "year": "2026",
+      "type": "tool",
+      "lineage": "OpenAI",
+      "parent": "gpt56",
+      "note": "A frontier capability member of the GPT-5.6 family.",
+      "hook": "Identify when additional capability is worth greater latency or cost.",
+      "tags": [
+        "current",
+        "reasoning"
+      ],
+      "sourceIds": [
+        "gpt56"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current"
+    },
+    {
+      "id": "gptoss",
+      "name": "gpt-oss",
+      "year": "2025",
+      "type": "sourcePort",
+      "lineage": "OpenAI",
+      "parent": "openai",
+      "note": "OpenAI released downloadable open-weight reasoning models in 2025.",
+      "hook": "Distinguish open weights, source code, training data and licence permissions.",
+      "tags": [
+        "open-weights",
+        "reasoning",
+        "ethics"
+      ],
+      "sourceIds": [
+        "gptoss"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic Claude",
+      "year": "2023-present",
+      "type": "family",
+      "lineage": "Anthropic",
+      "parent": "root",
+      "branch": true,
+      "note": "Claude uses capability tiers and dated generation releases across hosted models.",
+      "hook": "Compare tier naming with version numbering before selecting a model.",
+      "tags": [
+        "current",
+        "ethics"
+      ],
+      "sourceIds": [
+        "claude4",
+        "claude5"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "claude3",
+      "name": "Claude 3 generation",
+      "year": "2024",
+      "type": "engine",
+      "lineage": "Anthropic",
+      "parent": "anthropic",
+      "note": "Claude 3 established Haiku, Sonnet and Opus tier names.",
+      "hook": "Explain how tier and generation answer different selection questions.",
+      "tags": [
+        "history",
+        "ethics"
+      ],
+      "sourceIds": [
+        "claude4"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded generation"
+    },
+    {
+      "id": "claude4",
+      "name": "Claude 4",
+      "year": "2025",
+      "type": "engine",
+      "lineage": "Anthropic",
+      "parent": "claude3",
+      "note": "Claude 4 launched with Sonnet and Opus variants.",
+      "hook": "Compare release-note claims using one controlled prompt set.",
+      "tags": [
+        "reasoning",
+        "ethics"
+      ],
+      "sourceIds": [
+        "claude4"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "opus46",
+      "name": "Claude Opus 4.6",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "Anthropic",
+      "parent": "claude4",
+      "note": "Opus 4.6 was announced in February 2026.",
+      "hook": "Record model version and date so an evaluation can be reproduced.",
+      "tags": [
+        "current",
+        "reasoning"
+      ],
+      "sourceIds": [
+        "claude46"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "opus48",
+      "name": "Claude Opus 4.8",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "Anthropic",
+      "parent": "opus46",
+      "note": "Opus 4.8 followed in May 2026.",
+      "hook": "Investigate what changed between two point releases rather than inferring from numbering.",
+      "tags": [
+        "current",
+        "reasoning"
+      ],
+      "sourceIds": [
+        "claude48"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "claude5",
+      "name": "Claude Opus 5",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "Anthropic",
+      "parent": "opus48",
+      "note": "Opus 5 was announced in July 2026.",
+      "hook": "Assess suitability using task accuracy, safety, latency and cost.",
+      "tags": [
+        "current",
+        "reasoning",
+        "ethics"
+      ],
+      "sourceIds": [
+        "claude5"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current"
+    },
+    {
+      "id": "google",
+      "name": "Google Gemini",
+      "year": "2023-present",
+      "type": "family",
+      "lineage": "Google",
+      "parent": "root",
+      "branch": true,
+      "note": "Gemini is a multimodal family delivered through products and developer APIs.",
+      "hook": "Separate a model family announcement from an API availability state.",
+      "tags": [
+        "current",
+        "ethics"
+      ],
+      "sourceIds": [
+        "gemini1",
+        "gemini37"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "gemini1",
+      "name": "Gemini 1.0",
+      "year": "2023",
+      "type": "engine",
+      "lineage": "Google",
+      "parent": "google",
+      "note": "The original Gemini launch presented Ultra, Pro and Nano variants.",
+      "hook": "Match variant scale to device and service constraints.",
+      "tags": [
+        "history"
+      ],
+      "sourceIds": [
+        "gemini1"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded generation"
+    },
+    {
+      "id": "gemini15",
+      "name": "Gemini 1.5",
+      "year": "2024",
+      "type": "engine",
+      "lineage": "Google",
+      "parent": "gemini1",
+      "note": "Gemini 1.5 developed the family’s long-context and multimodal direction.",
+      "hook": "Design a test that measures useful retrieval rather than context-window size alone.",
+      "tags": [
+        "ethics"
+      ],
+      "sourceIds": [
+        "gemini25"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded generation"
+    },
+    {
+      "id": "gemini25",
+      "name": "Gemini 2.5 Pro",
+      "year": "2025",
+      "type": "engine",
+      "lineage": "Google",
+      "parent": "gemini15",
+      "note": "Gemini 2.5 Pro is documented as a reasoning-capable multimodal model.",
+      "hook": "Verify current lifecycle status on the model documentation page.",
+      "tags": [
+        "reasoning",
+        "ethics"
+      ],
+      "sourceIds": [
+        "gemini25"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "stable"
+    },
+    {
+      "id": "gemini3",
+      "name": "Gemini 3",
+      "year": "2025",
+      "type": "engine",
+      "lineage": "Google",
+      "parent": "gemini25",
+      "note": "Gemini 3 extended the developer API family.",
+      "hook": "Compare a preview identifier with a stable identifier before production use.",
+      "tags": [
+        "reasoning",
+        "ethics"
+      ],
+      "sourceIds": [
+        "gemini3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "gemini37",
+      "name": "Gemini 3.7 Flash",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "Google",
+      "parent": "gemini3",
+      "note": "Gemini 3.7 Flash documentation was current in August 2026.",
+      "hook": "Evaluate a fast model on throughput and failure cost, not speed alone.",
+      "tags": [
+        "current",
+        "reasoning"
+      ],
+      "sourceIds": [
+        "gemini37"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current"
+    },
+    {
+      "id": "meta",
+      "name": "Meta Llama",
+      "year": "2023-present",
+      "type": "family",
+      "lineage": "Meta",
+      "parent": "root",
+      "branch": true,
+      "note": "Llama is a downloadable model-weight family with licence terms that must be checked per release.",
+      "hook": "Audit licence, hardware and data-governance constraints before deployment.",
+      "tags": [
+        "open-weights",
+        "ethics"
+      ],
+      "sourceIds": [
+        "llama3",
+        "llama4"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "llama2",
+      "name": "Llama 2",
+      "year": "2023",
+      "type": "sourcePort",
+      "lineage": "Meta",
+      "parent": "meta",
+      "note": "Llama 2 broadened the public model-weight family.",
+      "hook": "Explain why downloadable does not automatically mean unrestricted.",
+      "tags": [
+        "open-weights",
+        "ethics"
+      ],
+      "sourceIds": [
+        "llama3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded"
+    },
+    {
+      "id": "llama3",
+      "name": "Llama 3",
+      "year": "2024",
+      "type": "engine",
+      "lineage": "Meta",
+      "parent": "llama2",
+      "note": "Llama 3 introduced a new generation of pretrained and instruction-tuned weights.",
+      "hook": "Compare base and instruction-tuned purposes.",
+      "tags": [
+        "open-weights"
+      ],
+      "sourceIds": [
+        "llama3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "llama31",
+      "name": "Llama 3.1",
+      "year": "2024",
+      "type": "engine",
+      "lineage": "Meta",
+      "parent": "llama3",
+      "note": "Llama 3.1 expanded the family and included a 405B model.",
+      "hook": "Estimate deployment requirements before comparing headline capability.",
+      "tags": [
+        "open-weights",
+        "ethics"
+      ],
+      "sourceIds": [
+        "llama31"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "llama4",
+      "name": "Llama 4",
+      "year": "2025",
+      "type": "engine",
+      "lineage": "Meta",
+      "parent": "llama31",
+      "note": "Llama 4 introduced multimodal mixture-of-experts models.",
+      "hook": "Separate total parameters from active parameters when interpreting architecture.",
+      "tags": [
+        "open-weights",
+        "ethics"
+      ],
+      "sourceIds": [
+        "llama4"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current family"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "year": "2023-present",
+      "type": "family",
+      "lineage": "Mistral",
+      "parent": "root",
+      "branch": true,
+      "note": "Mistral publishes both open-weight and hosted commercial model lines.",
+      "hook": "Classify each model by access method and licence, not developer name alone.",
+      "tags": [
+        "open-weights",
+        "ethics"
+      ],
+      "sourceIds": [
+        "mistral3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "mistral7b",
+      "name": "Mistral 7B",
+      "year": "2023",
+      "type": "sourcePort",
+      "lineage": "Mistral",
+      "parent": "mistral",
+      "note": "Mistral 7B established the developer’s compact open-weight line.",
+      "hook": "Test whether model size predicts performance on your chosen task.",
+      "tags": [
+        "open-weights"
+      ],
+      "sourceIds": [
+        "mistral3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical"
+    },
+    {
+      "id": "mixtral",
+      "name": "Mixtral",
+      "year": "2023-2024",
+      "type": "engine",
+      "lineage": "Mistral",
+      "parent": "mistral7b",
+      "note": "Mixtral developed a sparse mixture-of-experts branch.",
+      "hook": "Explain active versus total parameters with a resource budget.",
+      "tags": [
+        "open-weights"
+      ],
+      "sourceIds": [
+        "mistral3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical family"
+    },
+    {
+      "id": "mistral3",
+      "name": "Mistral 3",
+      "year": "2025",
+      "type": "engine",
+      "lineage": "Mistral",
+      "parent": "mixtral",
+      "note": "Mistral 3 is a family spanning small and frontier-scale releases.",
+      "hook": "Compare a family portfolio rather than treating one score as universal.",
+      "tags": [
+        "open-weights",
+        "ethics"
+      ],
+      "sourceIds": [
+        "mistral3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "small4",
+      "name": "Mistral Small 4",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "Mistral",
+      "parent": "mistral3",
+      "note": "Mistral Small 4 continued the compact model line in 2026.",
+      "hook": "Define a local-deployment scenario and test memory, speed and quality.",
+      "tags": [
+        "current",
+        "open-weights"
+      ],
+      "sourceIds": [
+        "mistralsmall4"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current"
+    },
+    {
+      "id": "qwen-family",
+      "name": "Alibaba Qwen",
+      "year": "2023-present",
+      "type": "family",
+      "lineage": "Qwen",
+      "parent": "root",
+      "branch": true,
+      "note": "Qwen has public multilingual and multimodal model-weight families.",
+      "hook": "Verify model card, licence and intended use for a specific checkpoint.",
+      "tags": [
+        "open-weights",
+        "ethics"
+      ],
+      "sourceIds": [
+        "qwen",
+        "qwen3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "qwen1",
+      "name": "Qwen",
+      "year": "2023",
+      "type": "sourcePort",
+      "lineage": "Qwen",
+      "parent": "qwen-family",
+      "note": "The original Qwen release began the public family.",
+      "hook": "Use the technical blog to identify stated languages and evaluation scope.",
+      "tags": [
+        "open-weights"
+      ],
+      "sourceIds": [
+        "qwen"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical"
+    },
+    {
+      "id": "qwen2",
+      "name": "Qwen2",
+      "year": "2024",
+      "type": "engine",
+      "lineage": "Qwen",
+      "parent": "qwen1",
+      "note": "Qwen2 expanded the family’s model sizes and multilingual support.",
+      "hook": "Compare a base checkpoint with an instruction-tuned checkpoint.",
+      "tags": [
+        "open-weights"
+      ],
+      "sourceIds": [
+        "qwen2"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "qwen25",
+      "name": "Qwen2.5",
+      "year": "2024",
+      "type": "engine",
+      "lineage": "Qwen",
+      "parent": "qwen2",
+      "note": "Qwen2.5 developed specialist and general model variants.",
+      "hook": "Select a specialist model only after checking domain and output requirements.",
+      "tags": [
+        "open-weights"
+      ],
+      "sourceIds": [
+        "qwen25"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "qwen3",
+      "name": "Qwen3",
+      "year": "2025",
+      "type": "engine",
+      "lineage": "Qwen",
+      "parent": "qwen25",
+      "note": "Qwen3 introduced hybrid thinking modes across a broad model family.",
+      "hook": "Test when explicit reasoning improves or harms task efficiency.",
+      "tags": [
+        "open-weights",
+        "reasoning",
+        "ethics"
+      ],
+      "sourceIds": [
+        "qwen3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current family"
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "year": "2024-present",
+      "type": "family",
+      "lineage": "DeepSeek",
+      "parent": "root",
+      "branch": true,
+      "note": "DeepSeek includes general, code and reasoning releases, plus distilled checkpoints based on other model families.",
+      "hook": "Trace model provenance and licences when a checkpoint is distilled from another family.",
+      "tags": [
+        "open-weights",
+        "reasoning",
+        "ethics"
+      ],
+      "sourceIds": [
+        "deepseekr1",
+        "deepseekv4"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "deepseekv3",
+      "name": "DeepSeek-V3",
+      "year": "2024",
+      "type": "sourcePort",
+      "lineage": "DeepSeek",
+      "parent": "deepseek",
+      "note": "V3 established the general mixture-of-experts branch used alongside reasoning releases.",
+      "hook": "Compare general and reasoning-tuned model purposes.",
+      "tags": [
+        "open-weights"
+      ],
+      "sourceIds": [
+        "deepseekv31"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "deepseekr1",
+      "name": "DeepSeek-R1",
+      "year": "2025",
+      "type": "engine",
+      "lineage": "DeepSeek",
+      "parent": "deepseekv3",
+      "note": "R1 is a reasoning release accompanied by distilled Qwen- and Llama-based checkpoints.",
+      "hook": "Explain distillation without describing the student model as a direct successor.",
+      "tags": [
+        "open-weights",
+        "reasoning",
+        "ethics"
+      ],
+      "sourceIds": [
+        "deepseekr1"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "r1qwen",
+      "name": "R1-Distill-Qwen",
+      "year": "2025",
+      "type": "tool",
+      "lineage": "DeepSeek",
+      "parent": "deepseekr1",
+      "note": "Distilled reasoning checkpoints use Qwen base models in several sizes.",
+      "hook": "Follow both source families when documenting provenance and licence constraints.",
+      "tags": [
+        "open-weights",
+        "reasoning"
+      ],
+      "sourceIds": [
+        "deepseekr1",
+        "qwen25"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "r1llama",
+      "name": "R1-Distill-Llama",
+      "year": "2025",
+      "type": "tool",
+      "lineage": "DeepSeek",
+      "parent": "deepseekr1",
+      "note": "Distilled reasoning checkpoints also use Llama base models.",
+      "hook": "Compare distillation with fine-tuning and retrieval augmentation.",
+      "tags": [
+        "open-weights",
+        "reasoning"
+      ],
+      "sourceIds": [
+        "deepseekr1",
+        "llama31"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "deepseekv31",
+      "name": "DeepSeek-V3.1",
+      "year": "2025",
+      "type": "engine",
+      "lineage": "DeepSeek",
+      "parent": "deepseekv3",
+      "note": "V3.1 developed the general/hybrid line in August 2025.",
+      "hook": "Record exact API or checkpoint version when testing.",
+      "tags": [
+        "open-weights",
+        "reasoning"
+      ],
+      "sourceIds": [
+        "deepseekv31"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "deepseekv4",
+      "name": "DeepSeek-V4 Pro",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "DeepSeek",
+      "parent": "deepseekv31",
+      "note": "DeepSeek announced V4 Pro in August 2026.",
+      "hook": "Treat a vendor announcement as a starting point for evaluation, not a conclusion.",
+      "tags": [
+        "current",
+        "open-weights",
+        "reasoning",
+        "ethics"
+      ],
+      "sourceIds": [
+        "deepseekv4"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current"
+    }
+  ],
+  "edges": [
+    {
+      "source": "root",
+      "target": "openai",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "openai",
+      "target": "gpt4",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "gpt4",
+      "target": "gpt5",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "gpt5",
+      "target": "gpt55",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "gpt55",
+      "target": "gpt56",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "gpt56",
+      "target": "gpt56luna",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "gpt56",
+      "target": "gpt56terra",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "gpt56",
+      "target": "gpt56sol",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "openai",
+      "target": "gptoss",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "anthropic",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "anthropic",
+      "target": "claude3",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "claude3",
+      "target": "claude4",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "claude4",
+      "target": "opus46",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "opus46",
+      "target": "opus48",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "opus48",
+      "target": "claude5",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "google",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "google",
+      "target": "gemini1",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "gemini1",
+      "target": "gemini15",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "gemini15",
+      "target": "gemini25",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "gemini25",
+      "target": "gemini3",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "gemini3",
+      "target": "gemini37",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "meta",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "meta",
+      "target": "llama2",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "llama2",
+      "target": "llama3",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "llama3",
+      "target": "llama31",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "llama31",
+      "target": "llama4",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "mistral",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "mistral",
+      "target": "mistral7b",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "mistral7b",
+      "target": "mixtral",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "mixtral",
+      "target": "mistral3",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "mistral3",
+      "target": "small4",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "qwen-family",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "qwen-family",
+      "target": "qwen1",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "qwen1",
+      "target": "qwen2",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "qwen2",
+      "target": "qwen25",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "qwen25",
+      "target": "qwen3",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "deepseek",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "deepseek",
+      "target": "deepseekv3",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "deepseekv3",
+      "target": "deepseekr1",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "deepseekr1",
+      "target": "r1qwen",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "deepseekr1",
+      "target": "r1llama",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "deepseekv3",
+      "target": "deepseekv31",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "deepseekv31",
+      "target": "deepseekv4",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "qwen25",
+      "target": "r1qwen",
+      "type": "distilled-into",
+      "strength": 0.72,
+      "note": "R1 reasoning outputs were distilled into Qwen-based checkpoints."
+    },
+    {
+      "source": "llama31",
+      "target": "r1llama",
+      "type": "distilled-into",
+      "strength": 0.72,
+      "note": "R1 reasoning outputs were distilled into Llama-based checkpoints."
+    },
+    {
+      "source": "gptoss",
+      "target": "deepseekr1",
+      "type": "compare-open-reasoning",
+      "strength": 0.72,
+      "note": "Comparable classroom branch for open-weight reasoning deployment."
+    },
+    {
+      "source": "llama4",
+      "target": "mistral3",
+      "type": "compare-open-weights",
+      "strength": 0.72,
+      "note": "Open-weight families with different architectures and licences."
+    },
+    {
+      "source": "gpt56",
+      "target": "claude5",
+      "type": "peer-generation",
+      "strength": 0.72,
+      "note": "Contemporary hosted frontier releases."
+    },
+    {
+      "source": "claude5",
+      "target": "gemini37",
+      "type": "peer-generation",
+      "strength": 0.72,
+      "note": "Contemporary hosted model families."
+    }
+  ]
+}

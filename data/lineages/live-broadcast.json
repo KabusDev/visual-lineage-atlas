@@ -1,0 +1,1213 @@
+{
+  "schemaVersion": 1,
+  "citationMode": "referenced",
+  "id": "live-broadcast",
+  "title": "Live Esports Broadcast Pipeline Atlas",
+  "description": "A production-system map from gameplay and cameras through capture, scenes, audio, encoding, transport, platforms, viewers, monitoring and rights-aware archiving.",
+  "ui": {
+    "typeLabels": {
+      "root": "Atlas",
+      "family": "Pipeline stage",
+      "engine": "Technology / process",
+      "sourcePort": "Alternative path",
+      "mod": "Extension",
+      "tool": "Role / control"
+    },
+    "groupLabels": {
+      "family": "Pipeline stages",
+      "engine": "Technology / processs",
+      "game": "Case studies",
+      "portmod": "Alternative paths",
+      "tool": "Role / controls",
+      "esports": "Highlighted"
+    }
+  },
+  "curriculumPresets": [
+    {
+      "id": "all",
+      "title": "Full broadcast pipeline",
+      "description": "Follow video, audio, data and control from sources to live viewers and archived content.",
+      "tag": "all",
+      "view": "layered"
+    },
+    {
+      "id": "l2-streaming",
+      "title": "L2 Unit 3: streaming for esports",
+      "description": "Build a simple one-PC or two-PC workflow, then justify capture, audio, scenes, encoder, platform and moderation choices.",
+      "tag": "l2-u3",
+      "view": "layered"
+    },
+    {
+      "id": "l3-broadcast",
+      "title": "L3 Unit 6: live-streamed broadcasting",
+      "description": "Analyse hardware, software, platform functions, overlays, lower thirds, data, audio and legal or data-protection controls across a full production.",
+      "tag": "l3-u6",
+      "view": "force"
+    },
+    {
+      "id": "networking",
+      "title": "L3 Unit 20: networking",
+      "description": "Focus on NDI, SRT, RTMP ingestion, HLS delivery, bitrate, latency, resilience and monitoring. Locate each protocol within the path.",
+      "tag": "networking",
+      "view": "timeline"
+    },
+    {
+      "id": "troubleshoot",
+      "title": "Production troubleshooting",
+      "description": "Start at the viewer symptom, work upstream through platform, transport, encoder, mixer and source, and record evidence before changing settings.",
+      "tag": "troubleshoot",
+      "view": "layered"
+    }
+  ],
+  "sources": [
+    {
+      "id": "pearson-l2",
+      "label": "Pearson BTEC Level 2 Skills: Esports",
+      "url": "https://qualifications.pearson.com/en/qualifications/btec-level-2-skills/esports.html",
+      "note": "Official qualification page for Unit 3 context."
+    },
+    {
+      "id": "pearson-l3",
+      "label": "Pearson BTEC Nationals: Esports",
+      "url": "https://qualifications.pearson.com/en/qualifications/btec-nationals/esports.html",
+      "note": "Official qualification page for Units 6 and 20 context."
+    },
+    {
+      "id": "obs",
+      "label": "OBS Studio",
+      "url": "https://obsproject.com/",
+      "note": "Official open-source video recording and live-streaming software site."
+    },
+    {
+      "id": "youtube-encoder",
+      "label": "YouTube Help: Create a live stream with an encoder",
+      "url": "https://support.google.com/youtube/answer/2907883?hl=en-GB",
+      "note": "Official encoder workflow guidance."
+    },
+    {
+      "id": "youtube-settings",
+      "label": "YouTube Help: Live encoder settings",
+      "url": "https://support.google.com/youtube/answer/2853702?hl=en",
+      "note": "Official bitrate, resolution and protocol guidance."
+    },
+    {
+      "id": "twitch-broadcast",
+      "label": "Twitch broadcasting guidelines",
+      "url": "https://help.twitch.tv/s/article/broadcasting-guidelines",
+      "note": "Official Twitch broadcast guidance."
+    },
+    {
+      "id": "twitch-enhanced",
+      "label": "Twitch Enhanced Broadcasting",
+      "url": "https://help.twitch.tv/s/article/enhanced-broadcasting",
+      "note": "Official multiple-encode workflow information."
+    },
+    {
+      "id": "srt",
+      "label": "Haivision: SRT",
+      "url": "https://www.haivision.com/products/srt-secure-reliable-transport/",
+      "note": "Developer information for Secure Reliable Transport."
+    },
+    {
+      "id": "hls",
+      "label": "Apple: HTTP Live Streaming",
+      "url": "https://developer.apple.com/streaming/",
+      "note": "Primary HLS developer information."
+    },
+    {
+      "id": "ndi",
+      "label": "NDI documentation: What is NDI?",
+      "url": "https://docs.ndi.video/all/getting-started/what-is-ndi",
+      "note": "Primary documentation for video, audio and metadata over IP."
+    },
+    {
+      "id": "elgato",
+      "label": "Elgato: choosing a capture card",
+      "url": "https://www.elgato.com/explorer/products/capture/which-elgato-capture-card-is-right-for-you/",
+      "note": "Official capture-card workflow guidance."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "root",
+      "name": "Live Broadcast System",
+      "year": "ongoing",
+      "type": "root",
+      "lineage": "Broadcast",
+      "parent": null,
+      "note": "A live stream is a chain of sources, capture, production, encoding, transport, distribution and audience feedback. Reliability is limited by the weakest stage.",
+      "hook": "Choose one viewer symptom and trace every upstream component that could cause it.",
+      "tags": [
+        "overview",
+        "l2-u3",
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "obs",
+        "youtube-encoder",
+        "twitch-broadcast"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active system"
+    },
+    {
+      "id": "sources",
+      "name": "1. Sources",
+      "year": "ongoing",
+      "type": "family",
+      "lineage": "Sources",
+      "parent": "root",
+      "branch": true,
+      "note": "Gameplay, cameras, microphones and data enter the production as distinct signals with different timing and privacy risks.",
+      "hook": "Create a source list including connector, format, owner and fallback.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "pearson-l2",
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active stage"
+    },
+    {
+      "id": "game-source",
+      "name": "Gameplay output",
+      "year": "ongoing",
+      "type": "engine",
+      "lineage": "Sources",
+      "parent": "sources",
+      "note": "A game PC or console supplies programme video and game audio.",
+      "hook": "Check resolution, refresh rate, colour range and copy-protection compatibility.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "elgato"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active source"
+    },
+    {
+      "id": "camera",
+      "name": "Cameras and webcams",
+      "year": "ongoing",
+      "type": "engine",
+      "lineage": "Sources",
+      "parent": "sources",
+      "note": "Cameras add presenters, players, stage and venue context.",
+      "hook": "Set framing, exposure and consent requirements before going live.",
+      "tags": [
+        "l2-u3",
+        "l3-u6"
+      ],
+      "sourceIds": [
+        "obs"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active source"
+    },
+    {
+      "id": "microphones",
+      "name": "Microphones and comms",
+      "year": "ongoing",
+      "type": "engine",
+      "lineage": "Sources",
+      "parent": "sources",
+      "note": "Commentary, presenters, game sound and communications need separate routing and monitoring.",
+      "hook": "Make an audio patch list and prevent private comms reaching programme output.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "obs"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active source"
+    },
+    {
+      "id": "game-data",
+      "name": "Game and event data",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Sources",
+      "parent": "sources",
+      "note": "Scores, names, clocks, statistics and bracket data drive graphics and commentary.",
+      "hook": "Define who may edit each field and how an error is corrected on air.",
+      "tags": [
+        "l3-u6"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active source"
+    },
+    {
+      "id": "capture",
+      "name": "2. Capture and Ingest",
+      "year": "ongoing",
+      "type": "family",
+      "lineage": "Capture",
+      "parent": "root",
+      "branch": true,
+      "note": "Capture converts or transfers source signals into the production system.",
+      "hook": "Compare one-PC, two-PC and network-video designs against budget and failure risk.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "elgato",
+        "ndi"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active stage"
+    },
+    {
+      "id": "one-pc",
+      "name": "One-PC workflow",
+      "year": "ongoing",
+      "type": "engine",
+      "lineage": "Capture",
+      "parent": "capture",
+      "note": "The game and production software share one computer’s resources.",
+      "hook": "Measure game frame time and encoder load under realistic scenes.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "obs"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "common design"
+    },
+    {
+      "id": "capture-card",
+      "name": "HDMI capture card",
+      "year": "ongoing",
+      "type": "engine",
+      "lineage": "Capture",
+      "parent": "capture",
+      "note": "A capture device ingests video from a console, camera or separate gaming PC.",
+      "hook": "Check input, passthrough and USB/PCIe bandwidth against the required format.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "elgato"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active component"
+    },
+    {
+      "id": "two-pc",
+      "name": "Two-PC workflow",
+      "year": "ongoing",
+      "type": "sourcePort",
+      "lineage": "Capture",
+      "parent": "capture-card",
+      "note": "A gaming system sends audio/video to a dedicated production computer.",
+      "hook": "Explain which failures are isolated and which new cables or routing risks appear.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "elgato"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "common design"
+    },
+    {
+      "id": "ndi",
+      "name": "NDI over IP",
+      "year": "ongoing",
+      "type": "sourcePort",
+      "lineage": "Capture",
+      "parent": "capture",
+      "note": "NDI transports video, audio and metadata across an IP network for production.",
+      "hook": "Calculate whether the LAN and switches can support every planned stream.",
+      "tags": [
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "ndi"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active technology"
+    },
+    {
+      "id": "production",
+      "name": "3. Production and Mixing",
+      "year": "ongoing",
+      "type": "family",
+      "lineage": "Production",
+      "parent": "root",
+      "branch": true,
+      "note": "Production software and operators compose sources into a coherent programme.",
+      "hook": "Turn a running order into scenes, cues, roles and contingencies.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "obs"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active stage"
+    },
+    {
+      "id": "obs",
+      "name": "OBS Studio",
+      "year": "ongoing",
+      "type": "engine",
+      "lineage": "Production",
+      "parent": "production",
+      "note": "OBS captures and mixes real-time video and audio into scenes for recording and streaming.",
+      "hook": "Build scenes with consistent naming and test every transition before broadcast.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "obs"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active software"
+    },
+    {
+      "id": "scenes",
+      "name": "Scenes and transitions",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Production",
+      "parent": "obs",
+      "note": "Scenes organise layouts such as holding, gameplay, desk, interview and results.",
+      "hook": "Create a minimum scene set and explain the purpose of each.",
+      "tags": [
+        "l2-u3",
+        "l3-u6"
+      ],
+      "sourceIds": [
+        "obs"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "production control"
+    },
+    {
+      "id": "overlays",
+      "name": "Overlays and lower thirds",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Production",
+      "parent": "obs",
+      "note": "Graphics communicate identity, names, score, state and sponsorship without hiding critical play.",
+      "hook": "Test legibility at phone size and against changing game backgrounds.",
+      "tags": [
+        "l2-u3",
+        "l3-u6"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "production control"
+    },
+    {
+      "id": "audio-mix",
+      "name": "Audio mixing and monitoring",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Production",
+      "parent": "obs",
+      "note": "Level, routing, delay, filters and monitoring determine whether speech and game audio remain intelligible and synchronised.",
+      "hook": "Use meters and headphones to set a repeatable speech-over-game balance.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "obs"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "production control"
+    },
+    {
+      "id": "observer-replay",
+      "name": "Observer and replay",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Production",
+      "parent": "production",
+      "note": "Observers select in-game viewpoints; replay operators recover important action.",
+      "hook": "Prioritise information and narrative when several events happen simultaneously.",
+      "tags": [
+        "l3-u6"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "production role"
+    },
+    {
+      "id": "encoding",
+      "name": "4. Encoding",
+      "year": "ongoing",
+      "type": "family",
+      "lineage": "Encoding",
+      "parent": "root",
+      "branch": true,
+      "note": "An encoder compresses programme video and audio within platform, hardware and bandwidth limits.",
+      "hook": "Justify codec, resolution, frame rate, bitrate and keyframe interval as one connected choice.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "youtube-settings",
+        "twitch-broadcast"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active stage"
+    },
+    {
+      "id": "software-encode",
+      "name": "Software encoding",
+      "year": "ongoing",
+      "type": "engine",
+      "lineage": "Encoding",
+      "parent": "encoding",
+      "note": "CPU-based encoding shares general compute with production and other applications.",
+      "hook": "Monitor utilisation and dropped frames during a stress test.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "obs"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active method"
+    },
+    {
+      "id": "hardware-encode",
+      "name": "Hardware encoding",
+      "year": "ongoing",
+      "type": "sourcePort",
+      "lineage": "Encoding",
+      "parent": "encoding",
+      "note": "Dedicated media blocks can reduce CPU load, with quality and feature trade-offs.",
+      "hook": "Compare output quality at equal bitrate using a moving gameplay sequence.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "obs"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active method"
+    },
+    {
+      "id": "renditions",
+      "name": "Multiple renditions",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Encoding",
+      "parent": "encoding",
+      "note": "Multiple resolution and bitrate versions can improve viewer adaptation but increase encoding and upload demand.",
+      "hook": "Create a bandwidth budget before enabling simultaneous encodes.",
+      "tags": [
+        "l3-u6",
+        "networking"
+      ],
+      "sourceIds": [
+        "twitch-enhanced"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active method"
+    },
+    {
+      "id": "transport",
+      "name": "5. Contribution Transport",
+      "year": "ongoing",
+      "type": "family",
+      "lineage": "Transport",
+      "parent": "root",
+      "branch": true,
+      "note": "Contribution protocols carry the encoded programme from production to a platform or remote production centre.",
+      "hook": "Place each protocol on the path and avoid confusing contribution with viewer delivery.",
+      "tags": [
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "srt",
+        "youtube-settings"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active stage"
+    },
+    {
+      "id": "rtmp",
+      "name": "RTMP / RTMPS ingest",
+      "year": "ongoing",
+      "type": "engine",
+      "lineage": "Transport",
+      "parent": "transport",
+      "note": "RTMP and encrypted RTMPS remain common live-platform ingest protocols.",
+      "hook": "Check platform server URL, stream-key security and firewall requirements.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "youtube-settings",
+        "twitch-broadcast"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active protocol"
+    },
+    {
+      "id": "srt",
+      "name": "SRT contribution",
+      "year": "2017-present",
+      "type": "sourcePort",
+      "lineage": "Transport",
+      "parent": "transport",
+      "note": "SRT is designed for secure, reliable, low-latency contribution across unpredictable networks.",
+      "hook": "Test latency and packet loss while changing the recovery buffer.",
+      "tags": [
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "srt"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active protocol"
+    },
+    {
+      "id": "connectivity",
+      "name": "Internet and redundancy",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Transport",
+      "parent": "transport",
+      "note": "Upload capacity, stability, routing and backup connectivity determine contribution reliability.",
+      "hook": "Measure sustained upload and define the trigger for switching to a backup path.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "youtube-settings"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "operational control"
+    },
+    {
+      "id": "distribution",
+      "name": "6. Platform Distribution",
+      "year": "ongoing",
+      "type": "family",
+      "lineage": "Distribution",
+      "parent": "root",
+      "branch": true,
+      "note": "Platforms ingest, process, moderate, transcode, package and distribute live content.",
+      "hook": "Compare creator controls with platform-controlled processing.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "youtube-encoder",
+        "twitch-enhanced"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active stage"
+    },
+    {
+      "id": "twitch",
+      "name": "Twitch",
+      "year": "ongoing",
+      "type": "engine",
+      "lineage": "Distribution",
+      "parent": "distribution",
+      "note": "Twitch provides live distribution, chat and broadcast workflows, including enhanced multi-encode options.",
+      "hook": "Configure a private test and document moderation plus failure-recovery controls.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "networking"
+      ],
+      "sourceIds": [
+        "twitch-broadcast",
+        "twitch-enhanced"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active platform"
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube Live",
+      "year": "ongoing",
+      "type": "engine",
+      "lineage": "Distribution",
+      "parent": "distribution",
+      "note": "YouTube accepts encoder contribution and creates viewer-compatible output formats.",
+      "hook": "Match official encoder settings to the event’s resolution and frame rate.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "networking"
+      ],
+      "sourceIds": [
+        "youtube-encoder",
+        "youtube-settings"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active platform"
+    },
+    {
+      "id": "transcoding",
+      "name": "Platform transcoding",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Distribution",
+      "parent": "distribution",
+      "note": "Platforms may create multiple renditions to suit different viewer connections and devices.",
+      "hook": "Explain why the creator’s upload bitrate is not the viewer’s only option.",
+      "tags": [
+        "l3-u6",
+        "networking"
+      ],
+      "sourceIds": [
+        "twitch-enhanced",
+        "youtube-settings"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "platform function"
+    },
+    {
+      "id": "hls",
+      "name": "HLS delivery",
+      "year": "2009-present",
+      "type": "tool",
+      "lineage": "Distribution",
+      "parent": "distribution",
+      "note": "HTTP Live Streaming segments and playlists support adaptive viewer delivery through ordinary web infrastructure.",
+      "hook": "Trace manifest, media segments, CDN cache and player adaptation.",
+      "tags": [
+        "l3-u6",
+        "networking"
+      ],
+      "sourceIds": [
+        "hls"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active protocol"
+    },
+    {
+      "id": "audience",
+      "name": "7. Audience and Assurance",
+      "year": "ongoing",
+      "type": "family",
+      "lineage": "Audience",
+      "parent": "root",
+      "branch": true,
+      "note": "Viewer experience, moderation, analytics, monitoring and archiving close the production loop.",
+      "hook": "Define quality indicators from both operator and viewer perspectives.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "twitch-broadcast",
+        "youtube-encoder"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active stage"
+    },
+    {
+      "id": "player",
+      "name": "Viewer player and device",
+      "year": "ongoing",
+      "type": "engine",
+      "lineage": "Audience",
+      "parent": "audience",
+      "note": "The player selects a rendition, buffers content and presents it under device and network constraints.",
+      "hook": "Test the programme on mobile, desktop and a restricted connection.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "hls"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active endpoint"
+    },
+    {
+      "id": "chat-mod",
+      "name": "Chat and moderation",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Audience",
+      "parent": "audience",
+      "note": "Live interaction needs clear rules, moderation tools, escalation and safeguarding.",
+      "hook": "Create a moderation matrix for spam, harassment, spoilers and safeguarding concerns.",
+      "tags": [
+        "l2-u3",
+        "l3-u6"
+      ],
+      "sourceIds": [
+        "twitch-broadcast"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "operational control"
+    },
+    {
+      "id": "monitoring",
+      "name": "Confidence monitoring",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Audience",
+      "parent": "audience",
+      "note": "Operators should monitor local programme, platform return and public output because each proves a different stage.",
+      "hook": "Match each monitoring point to the failures it can reveal.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "obs",
+        "youtube-encoder"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "operational control"
+    },
+    {
+      "id": "analytics",
+      "name": "Stream health and analytics",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Audience",
+      "parent": "audience",
+      "note": "Dropped frames, bitrate, latency, playback failures and engagement metrics support technical and editorial review.",
+      "hook": "Separate real-time fault indicators from post-event success measures.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "youtube-encoder",
+        "twitch-broadcast"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "operational control"
+    },
+    {
+      "id": "archive-rights",
+      "name": "Recording, rights and data",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Audience",
+      "parent": "audience",
+      "note": "Recordings, music, player images, chat, names and analytics may create copyright, consent, retention and data-protection duties.",
+      "hook": "Build a pre-flight rights and data checklist with named owners and retention periods.",
+      "tags": [
+        "l3-u6"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "governance control"
+    }
+  ],
+  "edges": [
+    {
+      "source": "root",
+      "target": "sources",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "sources",
+      "target": "game-source",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "sources",
+      "target": "camera",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "sources",
+      "target": "microphones",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "sources",
+      "target": "game-data",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "capture",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "capture",
+      "target": "one-pc",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "capture",
+      "target": "capture-card",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "capture-card",
+      "target": "two-pc",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "capture",
+      "target": "ndi",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "production",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "production",
+      "target": "obs",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "obs",
+      "target": "scenes",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "obs",
+      "target": "overlays",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "obs",
+      "target": "audio-mix",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "production",
+      "target": "observer-replay",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "encoding",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "encoding",
+      "target": "software-encode",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "encoding",
+      "target": "hardware-encode",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "encoding",
+      "target": "renditions",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "transport",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "transport",
+      "target": "rtmp",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "transport",
+      "target": "srt",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "transport",
+      "target": "connectivity",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "distribution",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "distribution",
+      "target": "twitch",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "distribution",
+      "target": "youtube",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "distribution",
+      "target": "transcoding",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "distribution",
+      "target": "hls",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "audience",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "audience",
+      "target": "player",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "audience",
+      "target": "chat-mod",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "audience",
+      "target": "monitoring",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "audience",
+      "target": "analytics",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "audience",
+      "target": "archive-rights",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "game-source",
+      "target": "capture-card",
+      "type": "feeds",
+      "strength": 0.72,
+      "note": "HDMI or similar output is ingested by the capture device."
+    },
+    {
+      "source": "camera",
+      "target": "obs",
+      "type": "feeds",
+      "strength": 0.72,
+      "note": "Camera capture becomes a production source."
+    },
+    {
+      "source": "microphones",
+      "target": "audio-mix",
+      "type": "feeds",
+      "strength": 0.72,
+      "note": "Microphone signals are routed and mixed."
+    },
+    {
+      "source": "game-data",
+      "target": "overlays",
+      "type": "drives",
+      "strength": 0.72,
+      "note": "Validated data populates graphics."
+    },
+    {
+      "source": "capture-card",
+      "target": "obs",
+      "type": "ingested-by",
+      "strength": 0.72,
+      "note": "Capture devices expose video and audio to production software."
+    },
+    {
+      "source": "ndi",
+      "target": "obs",
+      "type": "ingested-by",
+      "strength": 0.72,
+      "note": "NDI sources can enter IP-based production."
+    },
+    {
+      "source": "obs",
+      "target": "software-encode",
+      "type": "outputs-to",
+      "strength": 0.72,
+      "note": "The mixed programme is passed to an encoder."
+    },
+    {
+      "source": "obs",
+      "target": "hardware-encode",
+      "type": "outputs-to",
+      "strength": 0.72,
+      "note": "OBS can use supported hardware encoders."
+    },
+    {
+      "source": "software-encode",
+      "target": "rtmp",
+      "type": "contributes-via",
+      "strength": 0.72,
+      "note": "Encoded output is sent using a contribution protocol."
+    },
+    {
+      "source": "hardware-encode",
+      "target": "srt",
+      "type": "contributes-via",
+      "strength": 0.72,
+      "note": "Remote workflows may use SRT contribution."
+    },
+    {
+      "source": "rtmp",
+      "target": "twitch",
+      "type": "ingest-to",
+      "strength": 0.72,
+      "note": "RTMP/RTMPS can feed a live platform."
+    },
+    {
+      "source": "rtmp",
+      "target": "youtube",
+      "type": "ingest-to",
+      "strength": 0.72,
+      "note": "RTMP/RTMPS can feed YouTube Live."
+    },
+    {
+      "source": "srt",
+      "target": "distribution",
+      "type": "ingest-to",
+      "strength": 0.72,
+      "note": "SRT may feed compatible platforms or remote production gateways."
+    },
+    {
+      "source": "twitch",
+      "target": "transcoding",
+      "type": "creates",
+      "strength": 0.72,
+      "note": "Platform processing can create viewer renditions."
+    },
+    {
+      "source": "youtube",
+      "target": "transcoding",
+      "type": "creates",
+      "strength": 0.72,
+      "note": "YouTube automatically processes live output formats."
+    },
+    {
+      "source": "transcoding",
+      "target": "hls",
+      "type": "packaged-as",
+      "strength": 0.72,
+      "note": "Viewer renditions can be packaged for adaptive delivery."
+    },
+    {
+      "source": "hls",
+      "target": "player",
+      "type": "delivered-to",
+      "strength": 0.72,
+      "note": "The player retrieves playlists and media segments."
+    },
+    {
+      "source": "player",
+      "target": "monitoring",
+      "type": "observed-by",
+      "strength": 0.72,
+      "note": "Public-output monitoring confirms end-to-end delivery."
+    },
+    {
+      "source": "analytics",
+      "target": "encoding",
+      "type": "feedback-to",
+      "strength": 0.72,
+      "note": "Stream-health evidence informs encoder changes."
+    }
+  ]
+}

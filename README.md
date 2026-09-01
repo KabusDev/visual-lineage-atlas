@@ -1,6 +1,6 @@
 ﻿# Visual Lineage Atlas
 
-An extensible 2D and 3D visualisation platform for exploring lineages, relationships and curriculum case studies. It currently includes Game Engine and Web Platform datasets. Additional datasets can be added without changing the renderer.
+An extensible 2D and 3D visualisation platform for exploring lineages, relationships and curriculum case studies. It currently includes six datasets spanning game engines, web standards, programming-language releases, AI model families, the esports ecosystem and live-broadcast technology. Additional datasets can be added without changing the renderer.
 
 The platform is designed for classroom exploration and research prompts. It is not a substitute for learner analysis or independently verified assessment evidence.
 
@@ -23,6 +23,10 @@ http://localhost:8080/
 - `data/manifest.json` lists available datasets.
 - `data/lineages/game-engines.json` contains the current game engine lineage dataset.
 - `data/lineages/web-platform.json` maps HTML, CSS, ECMAScript, HTTP, browser APIs and WebAssembly.
+- `data/lineages/programming-languages.json` compares selected language releases, editions, standards and runtimes.
+- `data/lineages/ai-models.json` maps selected AI model families, variants, open-weight branches and distillation links.
+- `data/lineages/esports-ecosystem.json` connects rights holders, operators, competition, education, careers, media and commerce.
+- `data/lineages/live-broadcast.json` follows sources through production, encoding, transport, distribution and audience assurance.
 - To add another lineage, create another JSON file under `data/lineages/` and register it in `data/manifest.json`.
 
 Datasets can include `curriculumPresets` to provide focused views and teaching prompts without coupling the visualisation code to one qualification.
@@ -37,7 +41,14 @@ The Game Engine Lineage dataset includes presets for:
 
 The Web Platform dataset adds focused views for web foundations, HTTP and networking, modern browser applications, and standards literacy.
 
-Future atlas candidates include software and programming-language lineages, esports organisations and competition ecosystems, computing hardware generations, web technology stacks, and production-tool pipelines.
+The four expanded datasets add presets for:
+
+- Software-development choices, language standards, web programming and systems programming.
+- Current AI releases, open-weight ecosystems, reasoning models and responsible-AI investigation.
+- Pearson BTEC Level 2 Esports Units 1 and 5, and Level 3 Units 1, 3, 5, 7, 10 and 11 through linked esports ecosystem views.
+- Pearson BTEC Level 2 Esports Unit 3 and Level 3 Units 6 and 20 through live-production and networking views.
+
+Future atlas candidates include computing hardware generations, operating systems, storage and networking standards, cybersecurity attack-and-defence relationships, data structures and software-development lifecycles.
 
 ## Evidence and freshness
 
@@ -68,6 +79,12 @@ The HTML currently loads pinned CDN builds of `d3` for collision, charge, center
 
 ```bash
 node scripts/validate-data.mjs
+```
+
+The four expanded curriculum datasets are generated reproducibly from their reviewed definitions:
+
+```bash
+node scripts/generate-expanded-datasets.mjs
 ```
 
 Validation also runs automatically for pushes and pull requests.

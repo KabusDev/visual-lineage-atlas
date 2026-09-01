@@ -1,0 +1,1347 @@
+{
+  "schemaVersion": 1,
+  "citationMode": "referenced",
+  "id": "programming-languages",
+  "title": "Programming Language Release Atlas",
+  "description": "Selected language and platform release lines, editions and standards. Dates describe public releases or standard editions, not direct code inheritance.",
+  "ui": {
+    "typeLabels": {
+      "root": "Atlas",
+      "family": "Language family",
+      "engine": "Release / edition",
+      "sourcePort": "Related branch",
+      "mod": "Extension",
+      "tool": "Runtime / platform"
+    },
+    "groupLabels": {
+      "family": "Language familys",
+      "engine": "Release / editions",
+      "game": "Case studies",
+      "portmod": "Related branchs",
+      "tool": "Runtime / platforms",
+      "esports": "Highlighted"
+    }
+  },
+  "curriculumPresets": [
+    {
+      "id": "all",
+      "title": "Full programming atlas",
+      "description": "Compare release cadence, language editions, runtimes and standardisation models across the complete map.",
+      "tag": "all",
+      "view": "timeline"
+    },
+    {
+      "id": "software-dev",
+      "title": "Software development choices",
+      "description": "Compare current Python, C#, Java, TypeScript, Rust, Go, Kotlin, PHP and Swift lines. Justify a language choice using purpose, ecosystem and support status.",
+      "tag": "current",
+      "view": "layered"
+    },
+    {
+      "id": "standards",
+      "title": "Standards versus implementations",
+      "description": "Contrast ISO C and C++ editions, Java/OpenJDK releases and vendor-led languages. Explain why a standard and an implementation are not interchangeable.",
+      "tag": "standards",
+      "view": "timeline"
+    },
+    {
+      "id": "web-stack",
+      "title": "Web programming stack",
+      "description": "Trace JavaScript, TypeScript and PHP releases, then identify which code executes in a browser, server or build tool.",
+      "tag": "web",
+      "view": "force"
+    },
+    {
+      "id": "systems",
+      "title": "Systems programming",
+      "description": "Compare the C, C++, Rust and Go branches. Investigate memory safety, concurrency and compatibility without assuming newer means suitable for every task.",
+      "tag": "systems",
+      "view": "radial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "python-history",
+      "label": "Python documentation: What’s New index",
+      "url": "https://docs.python.org/3/whatsnew/index.html",
+      "note": "Primary index for Python release histories."
+    },
+    {
+      "id": "python-3147",
+      "label": "Python 3.14.7 release",
+      "url": "https://www.python.org/downloads/release/python-3147/",
+      "note": "Current Python 3.14 maintenance release checked 2026-09-01."
+    },
+    {
+      "id": "python-315rc1",
+      "label": "Python 3.15.0rc1 release",
+      "url": "https://www.python.org/downloads/release/python-3150rc1/",
+      "note": "Pre-release milestone, not a final release."
+    },
+    {
+      "id": "java-history",
+      "label": "OpenJDK JDK Project",
+      "url": "https://openjdk.org/projects/jdk/",
+      "note": "Primary OpenJDK release-project index."
+    },
+    {
+      "id": "jdk26",
+      "label": "OpenJDK JDK 26",
+      "url": "https://openjdk.org/projects/jdk/26/",
+      "note": "JDK 26 reached general availability on 2026-03-17."
+    },
+    {
+      "id": "jdk27",
+      "label": "OpenJDK JDK 27",
+      "url": "https://openjdk.org/projects/jdk/27/",
+      "note": "JDK 27 release-candidate project status checked 2026-09-01."
+    },
+    {
+      "id": "csharp-history",
+      "label": "Microsoft: C# language version history",
+      "url": "https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history",
+      "note": "Primary Microsoft language-version history."
+    },
+    {
+      "id": "csharp14",
+      "label": "Microsoft: What’s new in C# 14",
+      "url": "https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14",
+      "note": "C# 14 is supported on .NET 10."
+    },
+    {
+      "id": "ecma262",
+      "label": "Ecma TC39: ECMAScript",
+      "url": "https://tc39.es/ecma262/",
+      "note": "Current ECMAScript language specification."
+    },
+    {
+      "id": "ts-history",
+      "label": "TypeScript release notes",
+      "url": "https://www.typescriptlang.org/docs/handbook/release-notes/overview.html",
+      "note": "Primary TypeScript version index."
+    },
+    {
+      "id": "ts6",
+      "label": "Microsoft: Announcing TypeScript 6.0",
+      "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-6-0/",
+      "note": "TypeScript 6.0 release announcement, 2026-03-23."
+    },
+    {
+      "id": "ts7",
+      "label": "Microsoft: Announcing TypeScript 7.0",
+      "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/",
+      "note": "TypeScript 7.0 release announcement, 2026-07-08."
+    },
+    {
+      "id": "rust-history",
+      "label": "Rust release notes",
+      "url": "https://doc.rust-lang.org/stable/releases.html",
+      "note": "Primary Rust release history."
+    },
+    {
+      "id": "rust185",
+      "label": "Rust 1.85.0 and Rust 2024",
+      "url": "https://blog.rust-lang.org/2025/02/20/Rust-1.85.0/",
+      "note": "Rust 2024 edition stabilisation release."
+    },
+    {
+      "id": "rust198",
+      "label": "Rust latest release",
+      "url": "https://blog.rust-lang.org/releases/latest/",
+      "note": "Rust 1.98 release announcement, 2026-08-20."
+    },
+    {
+      "id": "go-history",
+      "label": "Go release history",
+      "url": "https://go.dev/doc/devel/release",
+      "note": "Primary Go release history."
+    },
+    {
+      "id": "go126",
+      "label": "Go 1.26 is released",
+      "url": "https://go.dev/blog/go1.26",
+      "note": "Go 1.26 release announcement, 2026-02-10."
+    },
+    {
+      "id": "kotlin-releases",
+      "label": "Kotlin releases",
+      "url": "https://kotlinlang.org/docs/releases.html",
+      "note": "Primary Kotlin release and support index."
+    },
+    {
+      "id": "cpp-status",
+      "label": "Standard C++ status",
+      "url": "https://isocpp.org/std/status",
+      "note": "Current published C++ standard and work in progress."
+    },
+    {
+      "id": "c-status",
+      "label": "WG14 projects and milestones",
+      "url": "https://www.open-std.org/jtc1/sc22/wg14/www/projects",
+      "note": "ISO C working-group projects."
+    },
+    {
+      "id": "php85",
+      "label": "PHP 8.5 release",
+      "url": "https://www.php.net/releases/8_5_0.php",
+      "note": "Primary PHP 8.5 release page."
+    },
+    {
+      "id": "swift63",
+      "label": "Swift.org blog",
+      "url": "https://www.swift.org/blog/",
+      "note": "Primary Swift announcements; Swift 6.3 released 2026-03-24."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "root",
+      "name": "Programming Languages",
+      "year": "1957-present",
+      "type": "root",
+      "lineage": "Programming Languages",
+      "parent": null,
+      "note": "Languages evolve through standards, vendor releases, open-source governance and runtime ecosystems. Lines here show selected milestones rather than every version.",
+      "hook": "Choose two branches and explain whether their numbered releases represent specifications, implementations or both.",
+      "tags": [
+        "overview",
+        "standards"
+      ],
+      "sourceIds": [
+        "ecma262",
+        "cpp-status"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "living ecosystem"
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "year": "1991-present",
+      "type": "family",
+      "lineage": "Python",
+      "parent": "root",
+      "branch": true,
+      "note": "Python uses numbered language releases implemented primarily through CPython.",
+      "hook": "Trace one Python feature through the What’s New index and test whether old code remains valid.",
+      "tags": [
+        "current",
+        "software"
+      ],
+      "sourceIds": [
+        "python-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "python2",
+      "name": "Python 2.0",
+      "year": "2000",
+      "type": "engine",
+      "lineage": "Python",
+      "parent": "python",
+      "note": "Python 2 established the historical line later separated from Python 3.",
+      "hook": "Explain why migration between major versions may require code changes.",
+      "tags": [
+        "history"
+      ],
+      "sourceIds": [
+        "python-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "end of life"
+    },
+    {
+      "id": "python3",
+      "name": "Python 3.0",
+      "year": "2008",
+      "type": "engine",
+      "lineage": "Python",
+      "parent": "python2",
+      "note": "Python 3 deliberately revised incompatible language behaviour.",
+      "hook": "Find one Python 2 to 3 incompatibility and describe its maintenance cost.",
+      "tags": [
+        "history",
+        "software"
+      ],
+      "sourceIds": [
+        "python-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "maintained line"
+    },
+    {
+      "id": "python314",
+      "name": "Python 3.14.7",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "Python",
+      "parent": "python3",
+      "note": "A current maintenance release in the 3.14 series.",
+      "hook": "Check the release page and separate security, bug-fix and language-feature changes.",
+      "tags": [
+        "current",
+        "software"
+      ],
+      "sourceIds": [
+        "python-3147"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current stable"
+    },
+    {
+      "id": "python315",
+      "name": "Python 3.15 RC1",
+      "year": "2026",
+      "type": "sourcePort",
+      "lineage": "Python",
+      "parent": "python314",
+      "note": "A release candidate for Python 3.15, not the final production release.",
+      "hook": "Explain why a team might test against an RC but avoid deploying it.",
+      "tags": [
+        "current",
+        "software",
+        "preview"
+      ],
+      "sourceIds": [
+        "python-315rc1"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "release candidate"
+    },
+    {
+      "id": "jvm",
+      "name": "Java and JVM",
+      "year": "1995-present",
+      "type": "family",
+      "lineage": "Java",
+      "parent": "root",
+      "branch": true,
+      "note": "Java language releases are closely connected to JVM and JDK implementations.",
+      "hook": "Distinguish the Java language, JVM and JDK in a deployment diagram.",
+      "tags": [
+        "current",
+        "software",
+        "standards"
+      ],
+      "sourceIds": [
+        "java-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "java8",
+      "name": "Java / JDK 8",
+      "year": "2014",
+      "type": "engine",
+      "lineage": "Java",
+      "parent": "jvm",
+      "note": "JDK 8 is an influential long-lived release line.",
+      "hook": "Investigate why long-term-support policies affect enterprise upgrade timing.",
+      "tags": [
+        "software"
+      ],
+      "sourceIds": [
+        "java-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical release"
+    },
+    {
+      "id": "jdk17",
+      "name": "JDK 17",
+      "year": "2021",
+      "type": "engine",
+      "lineage": "Java",
+      "parent": "java8",
+      "note": "JDK 17 is a later long-term-support reference point in many distributions.",
+      "hook": "Compare language features with runtime and library changes.",
+      "tags": [
+        "software"
+      ],
+      "sourceIds": [
+        "java-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "supported by vendors"
+    },
+    {
+      "id": "jdk21",
+      "name": "JDK 21",
+      "year": "2023",
+      "type": "engine",
+      "lineage": "Java",
+      "parent": "jdk17",
+      "note": "JDK 21 is another widely adopted long-term-support line.",
+      "hook": "Create an upgrade risk register from JDK 17 to 21.",
+      "tags": [
+        "current",
+        "software"
+      ],
+      "sourceIds": [
+        "java-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "supported by vendors"
+    },
+    {
+      "id": "jdk26",
+      "name": "JDK 26",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "Java",
+      "parent": "jdk21",
+      "note": "JDK 26 reached general availability on 17 March 2026.",
+      "hook": "Use the project page to classify final, preview and incubator features.",
+      "tags": [
+        "current",
+        "software"
+      ],
+      "sourceIds": [
+        "jdk26"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current feature release"
+    },
+    {
+      "id": "jdk27",
+      "name": "JDK 27 RC",
+      "year": "2026",
+      "type": "sourcePort",
+      "lineage": "Java",
+      "parent": "jdk26",
+      "note": "JDK 27 was at release-candidate status when checked.",
+      "hook": "Explain what evidence would justify changing this node to released.",
+      "tags": [
+        "current",
+        "preview",
+        "software"
+      ],
+      "sourceIds": [
+        "jdk27"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "release candidate"
+    },
+    {
+      "id": "dotnet",
+      "name": "C# and .NET",
+      "year": "2000-present",
+      "type": "family",
+      "lineage": "C#",
+      "parent": "root",
+      "branch": true,
+      "note": "C# language versions are delivered with .NET SDK and compiler support.",
+      "hook": "Map source language, compiler, runtime and libraries for one C# application.",
+      "tags": [
+        "current",
+        "software"
+      ],
+      "sourceIds": [
+        "csharp-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "csharp1",
+      "name": "C# 1.0",
+      "year": "2002",
+      "type": "engine",
+      "lineage": "C#",
+      "parent": "dotnet",
+      "note": "The first standardised C# release established the managed-language line.",
+      "hook": "Compare managed execution with native compilation at a high level.",
+      "tags": [
+        "history",
+        "standards"
+      ],
+      "sourceIds": [
+        "csharp-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical"
+    },
+    {
+      "id": "csharp8",
+      "name": "C# 8.0",
+      "year": "2019",
+      "type": "engine",
+      "lineage": "C#",
+      "parent": "csharp1",
+      "note": "C# 8 introduced a major modern feature set including nullable reference types.",
+      "hook": "Assess how compiler analysis can reduce defects without changing runtime data.",
+      "tags": [
+        "software"
+      ],
+      "sourceIds": [
+        "csharp-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical"
+    },
+    {
+      "id": "csharp12",
+      "name": "C# 12",
+      "year": "2023",
+      "type": "engine",
+      "lineage": "C#",
+      "parent": "csharp8",
+      "note": "C# 12 shipped with .NET 8.",
+      "hook": "Identify which project settings select a language version.",
+      "tags": [
+        "software"
+      ],
+      "sourceIds": [
+        "csharp-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "supported"
+    },
+    {
+      "id": "csharp14",
+      "name": "C# 14",
+      "year": "2025",
+      "type": "engine",
+      "lineage": "C#",
+      "parent": "csharp12",
+      "note": "C# 14 is the current language version supported on .NET 10.",
+      "hook": "Evaluate whether one C# 14 feature improves readability or only shortens syntax.",
+      "tags": [
+        "current",
+        "software"
+      ],
+      "sourceIds": [
+        "csharp14"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current"
+    },
+    {
+      "id": "js",
+      "name": "JavaScript / ECMAScript",
+      "year": "1995-present",
+      "type": "family",
+      "lineage": "JavaScript",
+      "parent": "root",
+      "branch": true,
+      "note": "JavaScript implementations track the ECMAScript specification and host environments.",
+      "hook": "Separate language features from browser APIs in a short code sample.",
+      "tags": [
+        "current",
+        "web",
+        "standards"
+      ],
+      "sourceIds": [
+        "ecma262"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "living standard"
+    },
+    {
+      "id": "es5",
+      "name": "ECMAScript 5",
+      "year": "2009",
+      "type": "engine",
+      "lineage": "JavaScript",
+      "parent": "js",
+      "note": "ES5 was a major compatibility baseline for modern JavaScript.",
+      "hook": "Find an ES5 feature still common in current code.",
+      "tags": [
+        "web",
+        "history"
+      ],
+      "sourceIds": [
+        "ecma262"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical edition"
+    },
+    {
+      "id": "es2015",
+      "name": "ECMAScript 2015",
+      "year": "2015",
+      "type": "engine",
+      "lineage": "JavaScript",
+      "parent": "es5",
+      "note": "ES2015 began annual edition naming and delivered major syntax and module changes.",
+      "hook": "Classify one feature as syntax, semantics or module organisation.",
+      "tags": [
+        "web",
+        "software"
+      ],
+      "sourceIds": [
+        "ecma262"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical edition"
+    },
+    {
+      "id": "es2026",
+      "name": "ECMAScript 2026",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "JavaScript",
+      "parent": "es2015",
+      "note": "The 2026 edition sits within ECMAScript’s annual standardisation cycle.",
+      "hook": "Use the live specification and proposals process to distinguish standard from proposal.",
+      "tags": [
+        "current",
+        "web",
+        "standards"
+      ],
+      "sourceIds": [
+        "ecma262"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current edition"
+    },
+    {
+      "id": "typescript",
+      "name": "TypeScript",
+      "year": "2012-present",
+      "type": "sourcePort",
+      "lineage": "TypeScript",
+      "parent": "js",
+      "note": "TypeScript extends JavaScript syntax with static type checking and compiles to JavaScript.",
+      "hook": "Draw the path from TypeScript source to JavaScript execution.",
+      "tags": [
+        "current",
+        "web",
+        "software"
+      ],
+      "sourceIds": [
+        "ts-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "ts5",
+      "name": "TypeScript 5.x",
+      "year": "2023-2026",
+      "type": "engine",
+      "lineage": "TypeScript",
+      "parent": "typescript",
+      "note": "The 5.x line developed the established compiler before major 2026 releases.",
+      "hook": "Compare language service benefits with emitted JavaScript.",
+      "tags": [
+        "web",
+        "software"
+      ],
+      "sourceIds": [
+        "ts-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded line"
+    },
+    {
+      "id": "ts6",
+      "name": "TypeScript 6.0",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "TypeScript",
+      "parent": "ts5",
+      "note": "TypeScript 6.0 was released on 23 March 2026.",
+      "hook": "Read the migration notes and identify one potential breaking change.",
+      "tags": [
+        "current",
+        "web",
+        "software"
+      ],
+      "sourceIds": [
+        "ts6"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "ts7",
+      "name": "TypeScript 7.0",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "TypeScript",
+      "parent": "ts6",
+      "note": "TypeScript 7.0 was released on 8 July 2026.",
+      "hook": "Compare the 6.0 and 7.0 announcements, focusing on compiler architecture and migration.",
+      "tags": [
+        "current",
+        "web",
+        "software"
+      ],
+      "sourceIds": [
+        "ts7"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current"
+    },
+    {
+      "id": "systems",
+      "name": "Systems Languages",
+      "year": "1972-present",
+      "type": "family",
+      "lineage": "Systems",
+      "parent": "root",
+      "branch": true,
+      "note": "C, C++, Rust and Go illustrate different approaches to performance, safety and concurrency.",
+      "hook": "Select a systems task and defend one language choice against two alternatives.",
+      "tags": [
+        "current",
+        "systems",
+        "standards"
+      ],
+      "sourceIds": [
+        "c-status",
+        "cpp-status"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "c89",
+      "name": "C89 / C90",
+      "year": "1989-1990",
+      "type": "engine",
+      "lineage": "C",
+      "parent": "systems",
+      "note": "Early ISO standardisation provided a portable baseline for C.",
+      "hook": "Explain why decades-old C standards remain relevant to toolchains.",
+      "tags": [
+        "systems",
+        "standards",
+        "history"
+      ],
+      "sourceIds": [
+        "c-status"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical standard"
+    },
+    {
+      "id": "c11",
+      "name": "C11",
+      "year": "2011",
+      "type": "engine",
+      "lineage": "C",
+      "parent": "c89",
+      "note": "C11 extended the standard with concurrency and other facilities.",
+      "hook": "Investigate which C11 features depend on compiler and library support.",
+      "tags": [
+        "systems",
+        "standards"
+      ],
+      "sourceIds": [
+        "c-status"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "published standard"
+    },
+    {
+      "id": "c23",
+      "name": "C23",
+      "year": "2024",
+      "type": "engine",
+      "lineage": "C",
+      "parent": "c11",
+      "note": "C23 is the latest published ISO C revision in this selected line.",
+      "hook": "Compare a C23 change with its earlier compiler extension.",
+      "tags": [
+        "current",
+        "systems",
+        "standards"
+      ],
+      "sourceIds": [
+        "c-status"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current standard"
+    },
+    {
+      "id": "cpp98",
+      "name": "C++98",
+      "year": "1998",
+      "type": "engine",
+      "lineage": "C++",
+      "parent": "systems",
+      "note": "C++98 was the first ISO C++ standard.",
+      "hook": "Describe how C++ relates historically to C without calling it a simple replacement.",
+      "tags": [
+        "systems",
+        "standards",
+        "history"
+      ],
+      "sourceIds": [
+        "cpp-status"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical standard"
+    },
+    {
+      "id": "cpp11",
+      "name": "C++11",
+      "year": "2011",
+      "type": "engine",
+      "lineage": "C++",
+      "parent": "cpp98",
+      "note": "C++11 substantially modernised the language and standard library.",
+      "hook": "Find one C++11 feature that changed common coding style.",
+      "tags": [
+        "systems",
+        "standards"
+      ],
+      "sourceIds": [
+        "cpp-status"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "published standard"
+    },
+    {
+      "id": "cpp23",
+      "name": "C++23",
+      "year": "2023",
+      "type": "engine",
+      "lineage": "C++",
+      "parent": "cpp11",
+      "note": "C++23 is the current published standard while C++26 work continues.",
+      "hook": "Separate published-standard features from C++26 proposals.",
+      "tags": [
+        "current",
+        "systems",
+        "standards"
+      ],
+      "sourceIds": [
+        "cpp-status"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current standard"
+    },
+    {
+      "id": "cpp26",
+      "name": "C++26 work",
+      "year": "2026",
+      "type": "sourcePort",
+      "lineage": "C++",
+      "parent": "cpp23",
+      "note": "C++26 is work in progress rather than a published final standard.",
+      "hook": "Use proposal status to judge whether production guidance is premature.",
+      "tags": [
+        "current",
+        "systems",
+        "preview",
+        "standards"
+      ],
+      "sourceIds": [
+        "cpp-status"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "work in progress"
+    },
+    {
+      "id": "rust",
+      "name": "Rust",
+      "year": "2015-present",
+      "type": "sourcePort",
+      "lineage": "Rust",
+      "parent": "systems",
+      "note": "Rust combines native performance goals with compile-time memory-safety checks and explicit editions.",
+      "hook": "Contrast a Rust edition with a compiler release.",
+      "tags": [
+        "current",
+        "systems",
+        "software"
+      ],
+      "sourceIds": [
+        "rust-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "rust2018",
+      "name": "Rust 2018",
+      "year": "2018",
+      "type": "engine",
+      "lineage": "Rust",
+      "parent": "rust",
+      "note": "The 2018 edition evolved language ergonomics while preserving edition interoperability.",
+      "hook": "Explain why editions can coexist in one dependency graph.",
+      "tags": [
+        "systems"
+      ],
+      "sourceIds": [
+        "rust-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical edition"
+    },
+    {
+      "id": "rust2024",
+      "name": "Rust 2024 / 1.85",
+      "year": "2025",
+      "type": "engine",
+      "lineage": "Rust",
+      "parent": "rust2018",
+      "note": "Rust 1.85 stabilised the Rust 2024 edition.",
+      "hook": "Identify an edition migration lint and explain its purpose.",
+      "tags": [
+        "systems",
+        "software"
+      ],
+      "sourceIds": [
+        "rust185"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current edition"
+    },
+    {
+      "id": "rust198",
+      "name": "Rust 1.98",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "Rust",
+      "parent": "rust2024",
+      "note": "Rust 1.98 was released on 20 August 2026.",
+      "hook": "Classify changes as language, compiler, standard library or tooling.",
+      "tags": [
+        "current",
+        "systems",
+        "software"
+      ],
+      "sourceIds": [
+        "rust198"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current stable"
+    },
+    {
+      "id": "go",
+      "name": "Go",
+      "year": "2009-present",
+      "type": "sourcePort",
+      "lineage": "Go",
+      "parent": "systems",
+      "note": "Go emphasises simple tooling, fast builds and built-in concurrency primitives.",
+      "hook": "Compare goroutines with operating-system threads at an appropriate abstraction level.",
+      "tags": [
+        "current",
+        "systems",
+        "software"
+      ],
+      "sourceIds": [
+        "go-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "go1",
+      "name": "Go 1",
+      "year": "2012",
+      "type": "engine",
+      "lineage": "Go",
+      "parent": "go",
+      "note": "Go 1 established a compatibility promise for the major release line.",
+      "hook": "Assess how compatibility promises influence library maintenance.",
+      "tags": [
+        "systems",
+        "software"
+      ],
+      "sourceIds": [
+        "go-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "major line"
+    },
+    {
+      "id": "go126",
+      "name": "Go 1.26",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "Go",
+      "parent": "go1",
+      "note": "Go 1.26 was released on 10 February 2026.",
+      "hook": "Use the release notes to identify one compiler and one library change.",
+      "tags": [
+        "current",
+        "systems",
+        "software"
+      ],
+      "sourceIds": [
+        "go126"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current stable"
+    },
+    {
+      "id": "other",
+      "name": "Application Languages",
+      "year": "1995-present",
+      "type": "family",
+      "lineage": "Applications",
+      "parent": "root",
+      "branch": true,
+      "note": "Kotlin, PHP and Swift show different platform and application-development paths.",
+      "hook": "Match each language to typical runtime and deployment contexts without stereotyping its use.",
+      "tags": [
+        "current",
+        "software",
+        "web"
+      ],
+      "sourceIds": [
+        "kotlin-releases",
+        "php85",
+        "swift63"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "kotlin",
+      "name": "Kotlin 2.4.10",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "Kotlin",
+      "parent": "other",
+      "note": "Kotlin 2.4.10 is the current 2.4 bug-fix release listed by JetBrains.",
+      "hook": "Use the support table to distinguish latest, stable and supported.",
+      "tags": [
+        "current",
+        "software"
+      ],
+      "sourceIds": [
+        "kotlin-releases"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current stable"
+    },
+    {
+      "id": "php",
+      "name": "PHP 8.5",
+      "year": "2025",
+      "type": "engine",
+      "lineage": "PHP",
+      "parent": "other",
+      "note": "PHP 8.5 is a current server-side language release line.",
+      "hook": "Check platform requirements before proposing an upgrade.",
+      "tags": [
+        "current",
+        "web",
+        "software"
+      ],
+      "sourceIds": [
+        "php85"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current stable"
+    },
+    {
+      "id": "swift",
+      "name": "Swift 6.3",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "Swift",
+      "parent": "other",
+      "note": "Swift 6.3 was announced on 24 March 2026.",
+      "hook": "Identify one language or tooling change and connect it to an app-development workflow.",
+      "tags": [
+        "current",
+        "software"
+      ],
+      "sourceIds": [
+        "swift63"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current stable"
+    }
+  ],
+  "edges": [
+    {
+      "source": "root",
+      "target": "python",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "python",
+      "target": "python2",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "python2",
+      "target": "python3",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "python3",
+      "target": "python314",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "python314",
+      "target": "python315",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "jvm",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "jvm",
+      "target": "java8",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "java8",
+      "target": "jdk17",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "jdk17",
+      "target": "jdk21",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "jdk21",
+      "target": "jdk26",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "jdk26",
+      "target": "jdk27",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "dotnet",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "dotnet",
+      "target": "csharp1",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "csharp1",
+      "target": "csharp8",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "csharp8",
+      "target": "csharp12",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "csharp12",
+      "target": "csharp14",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "js",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "js",
+      "target": "es5",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "es5",
+      "target": "es2015",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "es2015",
+      "target": "es2026",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "js",
+      "target": "typescript",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "typescript",
+      "target": "ts5",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "ts5",
+      "target": "ts6",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "ts6",
+      "target": "ts7",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "systems",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "systems",
+      "target": "c89",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "c89",
+      "target": "c11",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "c11",
+      "target": "c23",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "systems",
+      "target": "cpp98",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "cpp98",
+      "target": "cpp11",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "cpp11",
+      "target": "cpp23",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "cpp23",
+      "target": "cpp26",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "systems",
+      "target": "rust",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "rust",
+      "target": "rust2018",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "rust2018",
+      "target": "rust2024",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "rust2024",
+      "target": "rust198",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "systems",
+      "target": "go",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "go",
+      "target": "go1",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "go1",
+      "target": "go126",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "other",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "other",
+      "target": "kotlin",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "other",
+      "target": "php",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "other",
+      "target": "swift",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "js",
+      "target": "typescript",
+      "type": "transpiles-to",
+      "strength": 0.72,
+      "note": "TypeScript is checked and transformed into JavaScript for execution."
+    },
+    {
+      "source": "c23",
+      "target": "cpp23",
+      "type": "historical-influence",
+      "strength": 0.72,
+      "note": "C++ developed from C but is a distinct standardised language."
+    },
+    {
+      "source": "jvm",
+      "target": "kotlin",
+      "type": "shared-runtime",
+      "strength": 0.72,
+      "note": "Kotlin commonly targets the JVM alongside Java."
+    },
+    {
+      "source": "csharp14",
+      "target": "jdk26",
+      "type": "compare-managed-platforms",
+      "strength": 0.72,
+      "note": "Useful comparison of managed application platforms."
+    }
+  ]
+}
