@@ -74,7 +74,7 @@ Validation also runs automatically for pushes and pull requests.
 
 ## Publish with GitHub Pages
 
-The repository includes a manual `Deploy Pages` workflow. Before its first run, open **Settings > Pages** in GitHub and set **Build and deployment > Source** to **GitHub Actions**. Then run **Deploy Pages** from the Actions tab. Keeping deployment manual prevents failed runs before Pages is enabled and leaves curriculum or data changes subject to validation first.
+The `Deploy Pages` workflow validates and publishes the atlas after each push to `main`. It can also be run manually from the Actions tab. GitHub Pages must use **GitHub Actions** as its build source.
 
 ## Licence
 
