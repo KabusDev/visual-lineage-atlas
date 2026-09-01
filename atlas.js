@@ -1018,7 +1018,9 @@ function animateLayoutTargets(){
 }
 
 function fitGraph(duration = VIEWPORT_MS, padding = 70){
-  const resolvedPadding = currentView === 'timeline' ? Math.max(96, padding) : padding;
+  // Timeline lane names sit outside the earliest-year bound. The graph
+  // library measures padding in graph units, so reserve a real label gutter.
+  const resolvedPadding = currentView === 'timeline' ? Math.max(360, padding) : padding;
   graph?.zoomToFit?.(reducedMotion ? 0 : duration, resolvedPadding);
 }
 
