@@ -57,6 +57,27 @@
       "description": "Compare the C, C++, Rust and Go branches. Investigate memory safety, concurrency and compatibility without assuming newer means suitable for every task.",
       "tag": "systems",
       "view": "radial"
+    },
+    {
+      "id": "data-science",
+      "title": "Data and scientific programming",
+      "description": "Compare R, Julia and Python release ecosystems, then design a reproducibility record covering interpreter, packages, data and environment.",
+      "tag": "data",
+      "view": "timeline"
+    },
+    {
+      "id": "functional",
+      "title": "Functional programming ideas",
+      "description": "Use Haskell, Scala and Clojure to investigate purity, immutable data, type systems and hosted runtimes.",
+      "tag": "standards",
+      "view": "radial"
+    },
+    {
+      "id": "automation",
+      "title": "Shell and automation",
+      "description": "Compare Bash and PowerShell pipelines, quoting, error handling and cross-platform deployment risks.",
+      "tag": "automation",
+      "view": "layered"
     }
   ],
   "sources": [
@@ -191,6 +212,66 @@
       "label": "Swift.org blog",
       "url": "https://www.swift.org/blog/",
       "note": "Primary Swift announcements; Swift 6.3 released 2026-03-24."
+    },
+    {
+      "id": "ruby4",
+      "label": "Ruby 4.0.0 release",
+      "url": "https://www.ruby-lang.org/en/news/2025/12/25/ruby-4-0-0-released/",
+      "note": "Primary Ruby 4.0 release announcement."
+    },
+    {
+      "id": "r-current",
+      "label": "CRAN: current R release",
+      "url": "https://cran.r-project.org/",
+      "note": "Primary R distribution; R 4.6.1 current when checked."
+    },
+    {
+      "id": "julia112",
+      "label": "Julia 1.12 highlights",
+      "url": "https://julialang.org/blog/2025/10/julia-1.12-highlights/",
+      "note": "Primary Julia 1.12 release overview."
+    },
+    {
+      "id": "lua-versions",
+      "label": "Lua version history",
+      "url": "https://www.lua.org/versions.html",
+      "note": "Primary Lua version and reference-manual index."
+    },
+    {
+      "id": "dart-evolution",
+      "label": "Dart language evolution",
+      "url": "https://dart.dev/resources/language/evolution",
+      "note": "Primary Dart language-version history."
+    },
+    {
+      "id": "scala3",
+      "label": "Scala 3 documentation",
+      "url": "https://docs.scala-lang.org/scala3/",
+      "note": "Primary Scala 3 language documentation."
+    },
+    {
+      "id": "clojure-releases",
+      "label": "Clojure releases",
+      "url": "https://clojure.org/releases/downloads",
+      "note": "Primary Clojure release index."
+    },
+    {
+      "id": "haskell-reports",
+      "label": "Haskell language reports",
+      "url": "https://www.haskell.org/onlinereport/",
+      "note": "Primary Haskell 98 and 2010 language reports."
+    },
+    {
+      "id": "powershell-life",
+      "label": "PowerShell support lifecycle",
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/install/powershell-support-lifecycle",
+      "note": "Microsoft support and release policy for PowerShell."
+    },
+    {
+      "id": "bash",
+      "label": "GNU Bash",
+      "url": "https://www.gnu.org/software/bash/",
+      "note": "Primary GNU Bash project and release information."
     }
   ],
   "nodes": [
@@ -1054,6 +1135,593 @@
       ],
       "verifiedOn": "2026-09-01",
       "status": "current stable"
+    },
+    {
+      "id": "data-languages",
+      "name": "Data and Scientific Languages",
+      "year": "1976-present",
+      "type": "family",
+      "lineage": "Data languages",
+      "parent": "root",
+      "branch": true,
+      "note": "R and Julia represent different approaches to statistical and technical computing.",
+      "hook": "Compare package ecosystems, execution models and reproducibility requirements for one analysis task.",
+      "tags": [
+        "current",
+        "software",
+        "data"
+      ],
+      "sourceIds": [
+        "r-current",
+        "julia112"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "r-language",
+      "name": "R",
+      "year": "1993-present",
+      "type": "sourcePort",
+      "lineage": "R",
+      "parent": "data-languages",
+      "note": "R is a language and environment for statistical computing distributed through CRAN.",
+      "hook": "Separate the language release, package version and analysis environment in a reproducibility record.",
+      "tags": [
+        "current",
+        "data"
+      ],
+      "sourceIds": [
+        "r-current"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "r10",
+      "name": "R 1.0",
+      "year": "2000",
+      "type": "engine",
+      "lineage": "R",
+      "parent": "r-language",
+      "note": "R 1.0 marked a major public release milestone.",
+      "hook": "Identify which historical scripts would need package or syntax migration.",
+      "tags": [
+        "history",
+        "data"
+      ],
+      "sourceIds": [
+        "r-current"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical"
+    },
+    {
+      "id": "r40",
+      "name": "R 4.0",
+      "year": "2020",
+      "type": "engine",
+      "lineage": "R",
+      "parent": "r10",
+      "note": "R 4.0 began the current major release series.",
+      "hook": "Investigate one compatibility change at the 4.0 boundary.",
+      "tags": [
+        "data"
+      ],
+      "sourceIds": [
+        "r-current"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical release"
+    },
+    {
+      "id": "r461",
+      "name": "R 4.6.1",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "R",
+      "parent": "r40",
+      "note": "R 4.6.1 was the current CRAN release when checked.",
+      "hook": "Capture session information and package versions for a repeatable practical.",
+      "tags": [
+        "current",
+        "data"
+      ],
+      "sourceIds": [
+        "r-current"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current stable"
+    },
+    {
+      "id": "julia",
+      "name": "Julia",
+      "year": "2012-present",
+      "type": "sourcePort",
+      "lineage": "Julia",
+      "parent": "data-languages",
+      "note": "Julia targets technical computing with a high-level language and just-in-time compilation.",
+      "hook": "Compare time-to-first-execution with steady-state performance for a small numerical task.",
+      "tags": [
+        "current",
+        "data",
+        "systems"
+      ],
+      "sourceIds": [
+        "julia112"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "julia10",
+      "name": "Julia 1.0",
+      "year": "2018",
+      "type": "engine",
+      "lineage": "Julia",
+      "parent": "julia",
+      "note": "Julia 1.0 established the stable 1.x language line.",
+      "hook": "Explain how a 1.x compatibility commitment affects library authors.",
+      "tags": [
+        "data"
+      ],
+      "sourceIds": [
+        "julia112"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical release"
+    },
+    {
+      "id": "julia112",
+      "name": "Julia 1.12",
+      "year": "2025",
+      "type": "engine",
+      "lineage": "Julia",
+      "parent": "julia10",
+      "note": "Julia 1.12 was released in October 2025.",
+      "hook": "Classify release changes as language, compiler, package manager or standard library.",
+      "tags": [
+        "current",
+        "data",
+        "systems"
+      ],
+      "sourceIds": [
+        "julia112"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current series"
+    },
+    {
+      "id": "dynamic-languages",
+      "name": "Dynamic Application Languages",
+      "year": "1993-present",
+      "type": "family",
+      "lineage": "Dynamic applications",
+      "parent": "root",
+      "branch": true,
+      "note": "Ruby, Lua and Dart show contrasting server, embedded and application-development ecosystems.",
+      "hook": "Match runtime, deployment target and tooling constraints to a suitable language.",
+      "tags": [
+        "current",
+        "software"
+      ],
+      "sourceIds": [
+        "ruby4",
+        "lua-versions",
+        "dart-evolution"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "ruby",
+      "name": "Ruby",
+      "year": "1995-present",
+      "type": "sourcePort",
+      "lineage": "Ruby",
+      "parent": "dynamic-languages",
+      "note": "Ruby is a dynamic language with a mature server and automation ecosystem.",
+      "hook": "Distinguish the Ruby language release from the Rails framework release.",
+      "tags": [
+        "current",
+        "software",
+        "web"
+      ],
+      "sourceIds": [
+        "ruby4"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "ruby18",
+      "name": "Ruby 1.8",
+      "year": "2003",
+      "type": "engine",
+      "lineage": "Ruby",
+      "parent": "ruby",
+      "note": "Ruby 1.8 was a widely used early production line.",
+      "hook": "Find a compatibility issue that affected later migration.",
+      "tags": [
+        "history",
+        "web"
+      ],
+      "sourceIds": [
+        "ruby4"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical"
+    },
+    {
+      "id": "ruby20",
+      "name": "Ruby 2.0",
+      "year": "2013",
+      "type": "engine",
+      "lineage": "Ruby",
+      "parent": "ruby18",
+      "note": "Ruby 2.0 began a long major-version period.",
+      "hook": "Compare a major release promise with semantic versioning expectations.",
+      "tags": [
+        "software",
+        "web"
+      ],
+      "sourceIds": [
+        "ruby4"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical"
+    },
+    {
+      "id": "ruby30",
+      "name": "Ruby 3.0",
+      "year": "2020",
+      "type": "engine",
+      "lineage": "Ruby",
+      "parent": "ruby20",
+      "note": "Ruby 3.0 introduced a new major release series.",
+      "hook": "Evaluate performance claims using a workload relevant to the learner project.",
+      "tags": [
+        "software",
+        "web"
+      ],
+      "sourceIds": [
+        "ruby4"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "supported line"
+    },
+    {
+      "id": "ruby40",
+      "name": "Ruby 4.0",
+      "year": "2025",
+      "type": "engine",
+      "lineage": "Ruby",
+      "parent": "ruby30",
+      "note": "Ruby 4.0.0 was released on 25 December 2025.",
+      "hook": "Read the release announcement and identify stable versus experimental features.",
+      "tags": [
+        "current",
+        "software",
+        "web"
+      ],
+      "sourceIds": [
+        "ruby4"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current major"
+    },
+    {
+      "id": "lua",
+      "name": "Lua",
+      "year": "1993-present",
+      "type": "sourcePort",
+      "lineage": "Lua",
+      "parent": "dynamic-languages",
+      "note": "Lua is a compact embeddable language used in games and applications.",
+      "hook": "Trace the boundary between a host application and embedded Lua scripts.",
+      "tags": [
+        "current",
+        "software",
+        "games"
+      ],
+      "sourceIds": [
+        "lua-versions"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "lua51",
+      "name": "Lua 5.1",
+      "year": "2006",
+      "type": "engine",
+      "lineage": "Lua",
+      "parent": "lua",
+      "note": "Lua 5.1 remains an important compatibility target in embedded ecosystems.",
+      "hook": "Explain why embedded products may retain an older language version.",
+      "tags": [
+        "games",
+        "software"
+      ],
+      "sourceIds": [
+        "lua-versions"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical but used"
+    },
+    {
+      "id": "lua54",
+      "name": "Lua 5.4",
+      "year": "2020",
+      "type": "engine",
+      "lineage": "Lua",
+      "parent": "lua51",
+      "note": "Lua 5.4 is the current official release series.",
+      "hook": "Compare one 5.4 language change with 5.1 compatibility.",
+      "tags": [
+        "current",
+        "games",
+        "software"
+      ],
+      "sourceIds": [
+        "lua-versions"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current stable"
+    },
+    {
+      "id": "dart",
+      "name": "Dart",
+      "year": "2011-present",
+      "type": "sourcePort",
+      "lineage": "Dart",
+      "parent": "dynamic-languages",
+      "note": "Dart is an application language closely associated with Flutter and multiple compilation targets.",
+      "hook": "Draw the build path for a Dart mobile or web application.",
+      "tags": [
+        "current",
+        "software",
+        "web"
+      ],
+      "sourceIds": [
+        "dart-evolution"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "dart1",
+      "name": "Dart 1",
+      "year": "2013",
+      "type": "engine",
+      "lineage": "Dart",
+      "parent": "dart",
+      "note": "Dart 1 established the initial stable language line.",
+      "hook": "Identify how early optional typing differed from later sound typing.",
+      "tags": [
+        "history",
+        "software"
+      ],
+      "sourceIds": [
+        "dart-evolution"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical"
+    },
+    {
+      "id": "dart2",
+      "name": "Dart 2",
+      "year": "2018",
+      "type": "engine",
+      "lineage": "Dart",
+      "parent": "dart1",
+      "note": "Dart 2 made a sound static type system central to the language.",
+      "hook": "Use a small example to show a compile-time type failure.",
+      "tags": [
+        "software",
+        "web"
+      ],
+      "sourceIds": [
+        "dart-evolution"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical major"
+    },
+    {
+      "id": "dart3",
+      "name": "Dart 3",
+      "year": "2023-present",
+      "type": "engine",
+      "lineage": "Dart",
+      "parent": "dart2",
+      "note": "Dart 3 continued sound null safety and modern language features.",
+      "hook": "Check the minimum SDK constraint before adopting a Dart 3 feature.",
+      "tags": [
+        "current",
+        "software",
+        "web"
+      ],
+      "sourceIds": [
+        "dart-evolution"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current major"
+    },
+    {
+      "id": "functional",
+      "name": "Functional and JVM Alternatives",
+      "year": "1990-present",
+      "type": "family",
+      "lineage": "Functional languages",
+      "parent": "root",
+      "branch": true,
+      "note": "Haskell, Scala and Clojure expose functional ideas through different runtime and type-system choices.",
+      "hook": "Implement the same transformation in two branches and compare state, types and runtime.",
+      "tags": [
+        "software",
+        "standards"
+      ],
+      "sourceIds": [
+        "haskell-reports",
+        "scala3",
+        "clojure-releases"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "haskell98",
+      "name": "Haskell 98",
+      "year": "1998",
+      "type": "engine",
+      "lineage": "Haskell",
+      "parent": "functional",
+      "note": "Haskell 98 defined a standardised lazy functional-language baseline.",
+      "hook": "Explain purity and lazy evaluation using one traceable expression.",
+      "tags": [
+        "standards",
+        "software"
+      ],
+      "sourceIds": [
+        "haskell-reports"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical standard"
+    },
+    {
+      "id": "haskell2010",
+      "name": "Haskell 2010",
+      "year": "2010",
+      "type": "engine",
+      "lineage": "Haskell",
+      "parent": "haskell98",
+      "note": "Haskell 2010 is the later published language report.",
+      "hook": "Separate report-standard features from compiler extensions.",
+      "tags": [
+        "standards",
+        "software"
+      ],
+      "sourceIds": [
+        "haskell-reports"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "published standard"
+    },
+    {
+      "id": "scala2",
+      "name": "Scala 2",
+      "year": "2006",
+      "type": "engine",
+      "lineage": "Scala",
+      "parent": "functional",
+      "note": "Scala 2 combined object-oriented and functional programming on the JVM.",
+      "hook": "Compare Scala bytecode deployment with Java deployment.",
+      "tags": [
+        "software"
+      ],
+      "sourceIds": [
+        "scala3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical major"
+    },
+    {
+      "id": "scala3",
+      "name": "Scala 3",
+      "year": "2021-present",
+      "type": "engine",
+      "lineage": "Scala",
+      "parent": "scala2",
+      "note": "Scala 3 revised the language while retaining the JVM ecosystem.",
+      "hook": "Use migration guidance to classify source and binary compatibility risks.",
+      "tags": [
+        "current",
+        "software"
+      ],
+      "sourceIds": [
+        "scala3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current major"
+    },
+    {
+      "id": "clojure1",
+      "name": "Clojure 1.x",
+      "year": "2009-present",
+      "type": "sourcePort",
+      "lineage": "Clojure",
+      "parent": "functional",
+      "note": "Clojure is a hosted Lisp whose main implementation targets the JVM.",
+      "hook": "Compare immutable data and managed references with conventional mutable state.",
+      "tags": [
+        "current",
+        "software"
+      ],
+      "sourceIds": [
+        "clojure-releases"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "shells",
+      "name": "Shell and Automation Languages",
+      "year": "1989-present",
+      "type": "family",
+      "lineage": "Shells",
+      "parent": "root",
+      "branch": true,
+      "note": "Bash and PowerShell combine language features with operating-system command ecosystems.",
+      "hook": "Write the same file-management task safely in both shells and compare object versus text pipelines.",
+      "tags": [
+        "current",
+        "software",
+        "automation"
+      ],
+      "sourceIds": [
+        "bash",
+        "powershell-life"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "bash5",
+      "name": "GNU Bash 5.x",
+      "year": "2019-present",
+      "type": "engine",
+      "lineage": "Bash",
+      "parent": "shells",
+      "note": "Bash 5.x is a current major shell line across Unix-like systems.",
+      "hook": "Audit quoting, globbing and exit-code handling in a deployment script.",
+      "tags": [
+        "current",
+        "automation"
+      ],
+      "sourceIds": [
+        "bash"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current major"
+    },
+    {
+      "id": "powershell7",
+      "name": "PowerShell 7",
+      "year": "2020-present",
+      "type": "engine",
+      "lineage": "PowerShell",
+      "parent": "shells",
+      "note": "PowerShell 7 is the cross-platform modern PowerShell line.",
+      "hook": "Compare an object pipeline with a text pipeline and identify data-loss risks.",
+      "tags": [
+        "current",
+        "automation"
+      ],
+      "sourceIds": [
+        "powershell-life"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
     }
   ],
   "edges": [
@@ -1342,6 +2010,207 @@
       "type": "compare-managed-platforms",
       "strength": 0.72,
       "note": "Useful comparison of managed application platforms."
+    },
+    {
+      "source": "root",
+      "target": "data-languages",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "data-languages",
+      "target": "r-language",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "r-language",
+      "target": "r10",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "r10",
+      "target": "r40",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "r40",
+      "target": "r461",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "data-languages",
+      "target": "julia",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "julia",
+      "target": "julia10",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "julia10",
+      "target": "julia112",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "dynamic-languages",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "dynamic-languages",
+      "target": "ruby",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "ruby",
+      "target": "ruby18",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "ruby18",
+      "target": "ruby20",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "ruby20",
+      "target": "ruby30",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "ruby30",
+      "target": "ruby40",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "dynamic-languages",
+      "target": "lua",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "lua",
+      "target": "lua51",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "lua51",
+      "target": "lua54",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "dynamic-languages",
+      "target": "dart",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "dart",
+      "target": "dart1",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "dart1",
+      "target": "dart2",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "dart2",
+      "target": "dart3",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "functional",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "functional",
+      "target": "haskell98",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "haskell98",
+      "target": "haskell2010",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "functional",
+      "target": "scala2",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "scala2",
+      "target": "scala3",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "functional",
+      "target": "clojure1",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "shells",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "shells",
+      "target": "bash5",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "shells",
+      "target": "powershell7",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "jvm",
+      "target": "scala2",
+      "type": "shared-runtime",
+      "strength": 0.72,
+      "note": "Scala commonly targets the JVM."
+    },
+    {
+      "source": "jvm",
+      "target": "clojure1",
+      "type": "shared-runtime",
+      "strength": 0.72,
+      "note": "Clojure commonly targets the JVM."
+    },
+    {
+      "source": "dart3",
+      "target": "js",
+      "type": "compiles-to",
+      "strength": 0.72,
+      "note": "Dart can compile applications for JavaScript-based web deployment."
     }
   ]
 }

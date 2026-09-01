@@ -81,11 +81,13 @@ The HTML currently loads pinned CDN builds of `d3` for collision, charge, center
 node scripts/validate-data.mjs
 ```
 
-The four expanded curriculum datasets are generated reproducibly from their reviewed definitions:
+All six datasets can be regenerated or expanded reproducibly from their reviewed definitions and expansion catalogue:
 
 ```bash
 node scripts/generate-expanded-datasets.mjs
 ```
+
+`scripts/atlas-expansions.mjs` holds the second-pass catalogue used to extend the generated datasets and the established Game Engine and Web Platform maps. Additions are idempotent, so regeneration does not duplicate nodes, sources or links.
 
 Validation also runs automatically for pushes and pull requests.
 

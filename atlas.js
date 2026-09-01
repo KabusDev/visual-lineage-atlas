@@ -109,11 +109,13 @@ const FREE_VIEWS = new Set(['force']);
 let highlightNodes = new Set();
 let highlightLinks = new Set();
 let frameLabelRects = [];
+let timelineLayout = null;
 let layoutTween = null;
 let scaleTween = null;
 const positionMemory = new Map();
 const LAYOUT_MS = 720;
 const VIEWPORT_MS = 850;
+const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false;
 // Node scale is eased toward its target each frame so the slider feels smooth
 // instead of snapping (lerp). 2D animates via the render loop; 3D snaps.
 let targetNodeScale = 1;
@@ -471,6 +473,7 @@ function depthForNode(node, depth = 0, lane = 0){
 function applyPresetPositions(data){
   const nodes = data.nodes;
   if(!nodes.length) return;
+  timelineLayout = null;
   if(currentView === 'force') {
     nodes.forEach(node => {
       const angle = (dataset.lineages.indexOf(node.lineage) / Math.max(1, dataset.lineages.length)) * Math.PI * 2;
@@ -561,12 +564,15 @@ function applyPresetPositions(data){
 
   if(currentView === 'layered' || currentView === 'timeline') {
     const lineages = [...new Set(nodes.map(n => n.lineage || 'Other'))].sort();
-    const yearOf = node => {
+    const parsedYear = node => {
       const match = String(node.year || '').match(/\d{4}/);
       return match ? Number(match[0]) : null;
     };
-    const years = nodes.map(yearOf).filter(Boolean);
-    const minYear = Math.min(...years, 1990), maxYear = Math.max(...years, 2026);
+    const datedYears = nodes.map(parsedYear).filter(Boolean);
+    const currentYear = new Date().getUTCFullYear();
+    const minYear = Math.min(...datedYears, 1990);
+    const maxYear = Math.max(...datedYears, currentYear);
+    const yearOf = node => parsedYear(node) ?? (/ongoing|present|current/i.test(String(node.year || '')) ? maxYear : minYear);
     const levels = new Map();
     function depth(id){
       if(levels.has(id)) return levels.get(id);
@@ -575,19 +581,117 @@ function applyPresetPositions(data){
       levels.set(id, value);
       return value;
     }
+    if(currentView === 'timeline'){
+      const span = Math.max(1, maxYear - minYear);
+      // Give dense modern datasets enough horizontal space without turning a
+      // century-scale map into an unusably wide strip.
+      const xSpan = Math.max(1180, Math.min(2800, span * 54));
+      const xForYear = year => ((year - minYear) / span - 0.5) * xSpan;
+      const laneMeta = [];
+      let cursorY = 0;
+
+      lineages.forEach((lineage, laneIndex) => {
+        const members = nodes
+          .filter(node => (node.lineage || 'Other') === lineage)
+          .sort((a, b) => yearOf(a) - yearOf(b) || a.name.localeCompare(b.name));
+        const trackEnds = [];
+        const placements = [];
+        members.forEach(node => {
+          const x = xForYear(yearOf(node));
+          // Approximate the label footprint in graph units. Packing intervals,
+          // rather than only counting identical years, also separates long
+          // adjacent labels such as several point releases in one year.
+          const halfWidth = Math.min(150, 28 + Math.min(34, node.name.length) * 3.25);
+          const start = x - halfWidth;
+          const end = x + halfWidth;
+          let track = trackEnds.findIndex(trackEnd => start > trackEnd + 16);
+          if(track < 0){ track = trackEnds.length; trackEnds.push(end); }
+          else trackEnds[track] = end;
+          placements.push({node, x, track});
+        });
+        const trackCount = Math.max(1, trackEnds.length);
+        const laneHeight = Math.max(72, trackCount * 46 + 30);
+        const laneTop = cursorY;
+        const centreY = laneTop + laneHeight / 2;
+        placements.forEach(({node, x, track}) => {
+          const y = centreY + (track - (trackCount - 1) / 2) * 46;
+          setFixedTarget(node, x, y, depthForNode(node, depth(node.id), laneIndex), null);
+        });
+        laneMeta.push({name: lineage, top: laneTop, bottom: laneTop + laneHeight, centre: centreY, tracks: trackCount});
+        cursorY += laneHeight + 22;
+      });
+
+      const totalHeight = Math.max(1, cursorY - 22);
+      const yOffset = -totalHeight / 2;
+      nodes.forEach(node => {
+        if(node._target) node._target.y += yOffset;
+      });
+      laneMeta.forEach(lane => {
+        lane.top += yOffset;
+        lane.bottom += yOffset;
+        lane.centre += yOffset;
+      });
+      const targetTickCount = Math.max(4, Math.min(12, Math.round(xSpan / 180)));
+      const rawStep = span / targetTickCount;
+      const stepChoices = [1, 2, 5, 10, 20, 25, 50, 100];
+      const yearStep = stepChoices.find(step => step >= rawStep) || 100;
+      const years = [];
+      for(let year = Math.ceil(minYear / yearStep) * yearStep; year <= maxYear; year += yearStep) years.push(year);
+      if(!years.includes(minYear)) years.unshift(minYear);
+      if(!years.includes(maxYear)) years.push(maxYear);
+      timelineLayout = {
+        minYear, maxYear, xMin: -xSpan / 2, xMax: xSpan / 2,
+        yMin: -totalHeight / 2, yMax: totalHeight / 2,
+        years: [...new Set(years)].sort((a,b) => a-b), lanes: laneMeta, xForYear
+      };
+      return;
+    }
+
     nodes.forEach(node => {
       const lane = lineages.indexOf(node.lineage || 'Other');
       const y = (lane - (lineages.length - 1) / 2) * 72;
-      const year = yearOf(node);
-      const x = currentView === 'timeline'
-        ? (((year || minYear) - minYear) / Math.max(1, maxYear - minYear) - 0.5) * 1100
-        : (depth(node.id) - 4) * 145;
-      const z = currentView === 'timeline'
-        ? depthForNode(node, depth(node.id), lane - (lineages.length - 1) / 2)
-        : (renderMode === '3d' ? (lane - (lineages.length - 1) / 2) * 95 + (stableUnit(`${node.id}:layer`) - 0.5) * 70 : 0);
+      const x = (depth(node.id) - 4) * 145;
+      const z = renderMode === '3d' ? (lane - (lineages.length - 1) / 2) * 95 + (stableUnit(`${node.id}:layer`) - 0.5) * 70 : 0;
       setFixedTarget(node, x, y, z, null);
     });
   }
+}
+
+function drawTimelineBackdrop(ctx, globalScale){
+  if(currentView !== 'timeline' || !timelineLayout || renderMode !== '2d') return;
+  const {xMin, xMax, yMin, yMax, years, lanes, xForYear} = timelineLayout;
+  ctx.save();
+  ctx.lineWidth = 1 / globalScale;
+  years.forEach(year => {
+    const x = xForYear(year);
+    ctx.beginPath();
+    ctx.moveTo(x, yMin - 28 / globalScale);
+    ctx.lineTo(x, yMax + 12 / globalScale);
+    ctx.strokeStyle = year === new Date().getUTCFullYear() ? 'rgba(56,189,248,.32)' : 'rgba(148,163,184,.13)';
+    ctx.stroke();
+    ctx.font = `${11 / globalScale}px Inter, Arial, sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'bottom';
+    ctx.fillStyle = year === new Date().getUTCFullYear() ? '#7dd3fc' : '#9fb0c8';
+    ctx.fillText(String(year), x, yMin - 8 / globalScale);
+  });
+  lanes.forEach((lane, index) => {
+    if(index % 2 === 0){
+      ctx.fillStyle = 'rgba(148,163,184,.035)';
+      ctx.fillRect(xMin - 18 / globalScale, lane.top, xMax - xMin + 36 / globalScale, lane.bottom - lane.top);
+    }
+    ctx.beginPath();
+    ctx.moveTo(xMin, lane.bottom);
+    ctx.lineTo(xMax, lane.bottom);
+    ctx.strokeStyle = 'rgba(148,163,184,.12)';
+    ctx.stroke();
+    ctx.font = `700 ${11 / globalScale}px Inter, Arial, sans-serif`;
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = '#c7d2fe';
+    ctx.fillText(lane.name, xMin - 14 / globalScale, lane.centre);
+  });
+  ctx.restore();
 }
 
 function setFixedTarget(node, tx, ty, tz = 0, arc = null){
@@ -752,8 +856,9 @@ function initGraph2D(){
     .linkDirectionalParticles(link => link.type === 'successor' ? 1 : 0)
     .linkDirectionalParticleWidth(1.8)
     .linkDirectionalParticleSpeed(0.006)
-    .onRenderFramePre(() => {
+    .onRenderFramePre((ctx, globalScale) => {
       frameLabelRects = [];
+      drawTimelineBackdrop(ctx, globalScale);
       if(FREE_VIEWS.has(currentView)) rememberPositions(graphData.nodes);
     })
     .nodeCanvasObjectMode(() => 'replace')
@@ -871,8 +976,9 @@ function animateLayoutTargets(){
     arc: node._arc ? { ...node._arc } : null
   }]));
   const startTime = performance.now();
+  const duration = reducedMotion ? 1 : LAYOUT_MS;
   const tick = now => {
-    const t = easeInOutCubic(Math.min(1, (now - startTime) / LAYOUT_MS));
+    const t = easeInOutCubic(Math.min(1, (now - startTime) / duration));
     targets.forEach(node => {
       const start = starts.get(node.id);
       const target = node._target;
@@ -904,19 +1010,21 @@ function animateLayoutTargets(){
 }
 
 function fitGraph(duration = VIEWPORT_MS, padding = 70){
-  graph?.zoomToFit?.(duration, padding);
+  graph?.zoomToFit?.(reducedMotion ? 0 : duration, padding);
 }
 
 function resetViewport(){
-  if(renderMode === '3d') graph?.cameraPosition?.({ x: 480, y: 360, z: 1250 }, { x: 0, y: 0, z: 0 }, VIEWPORT_MS);
+  const duration = reducedMotion ? 0 : VIEWPORT_MS;
+  if(renderMode === '3d') graph?.cameraPosition?.({ x: 480, y: 360, z: 1250 }, { x: 0, y: 0, z: 0 }, duration);
   else {
-    graph?.centerAt?.(0, 0, VIEWPORT_MS);
-    graph?.zoom?.(1, VIEWPORT_MS);
+    graph?.centerAt?.(0, 0, duration);
+    graph?.zoom?.(1, duration);
   }
 }
 
 function focusViewport(node){
   if(!node || !graph) return;
+  const duration = reducedMotion ? 0 : VIEWPORT_MS;
   if(renderMode === '3d') {
     const dist = 360;
     const x = node.x || 0, y = node.y || 0, z = node.z || 0;
@@ -925,11 +1033,11 @@ function focusViewport(node){
       x: x + dist * (x || 120) / len + 120,
       y: y + dist * (y || 80) / len + 80,
       z: z + dist * (z || 180) / len + 220
-    }, node, VIEWPORT_MS);
+    }, node, duration);
     return;
   }
-  graph.centerAt?.(node.x || 0, node.y || 0, VIEWPORT_MS);
-  graph.zoom?.(2.3, VIEWPORT_MS);
+  graph.centerAt?.(node.x || 0, node.y || 0, duration);
+  graph.zoom?.(2.3, duration);
 }
 
 const LABEL_PRIORITY = { root: 0, family: 1, engine: 2, tool: 3, sourcePort: 4, mod: 5, game: 6 };

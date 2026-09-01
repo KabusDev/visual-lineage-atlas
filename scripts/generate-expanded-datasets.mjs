@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { applyGeneratedExpansions, expandStoredDatasets } from './atlas-expansions.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const verifiedOn = '2026-09-01';
@@ -382,6 +383,9 @@ const broadcast = buildDataset({
     ['analytics','encoding','feedback-to','Stream-health evidence informs encoder changes.']
   ]
 });
+
+applyGeneratedExpansions({programming, ai, esports, broadcast});
+expandStoredDatasets(root);
 
 for(const dataset of [programming, ai, esports, broadcast]){
   const output = path.join(root, 'data', 'lineages', `${dataset.id}.json`);

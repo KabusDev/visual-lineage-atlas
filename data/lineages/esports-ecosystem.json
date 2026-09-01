@@ -57,6 +57,27 @@
       "description": "Connect L2 Unit 5 and L3 Units 3, 7, 10 and 11 through revenue, sponsorship, audience, brand, social media, casting and employability roles.",
       "tag": "enterprise",
       "view": "force"
+    },
+    {
+      "id": "circuits",
+      "title": "Publisher and multi-title circuits",
+      "description": "Compare VCT, ALGS, Rainbow Six, CDL, fighting-game tours and EWC by governance, qualification and title ownership.",
+      "tag": "current",
+      "view": "force"
+    },
+    {
+      "id": "platforms-integrity",
+      "title": "Platforms and competitive integrity",
+      "description": "Trace ladders, tournament platforms, anti-cheat, eligibility, officials, evidence and appeals across a credible competition.",
+      "tag": "ethics",
+      "view": "layered"
+    },
+    {
+      "id": "people-welfare",
+      "title": "Teams, careers and player welfare",
+      "description": "Map playing, coaching, management, content, community, safeguarding and welfare responsibilities within a sustainable team.",
+      "tag": "l3-u1",
+      "view": "radial"
     }
   ],
   "sources": [
@@ -143,6 +164,66 @@
       "label": "YouTube Live",
       "url": "https://www.youtube.com/live",
       "note": "Live video distribution platform."
+    },
+    {
+      "id": "ewc2026",
+      "label": "Esports World Cup 2026 competitions",
+      "url": "https://esportsworldcup.com/en/competitions/2026",
+      "note": "Official multi-title competition listing."
+    },
+    {
+      "id": "ewc-rules",
+      "label": "EWC 2026 competitive operations",
+      "url": "https://resources.esportsworldcup.com/en/competitive-ops",
+      "note": "Official global and per-title rule resources."
+    },
+    {
+      "id": "algs",
+      "label": "Apex Legends Global Series",
+      "url": "https://algs.ea.com/",
+      "note": "Official ALGS Year 6 portal."
+    },
+    {
+      "id": "r6",
+      "label": "Rainbow Six competition hub",
+      "url": "https://www.ubisoft.com/en-gb/esports/rainbow-six/siege/competition-hub",
+      "note": "Official Ubisoft competition portal."
+    },
+    {
+      "id": "cdl",
+      "label": "Call of Duty League",
+      "url": "https://callofdutyleague.com/",
+      "note": "Official CDL scores, schedules and competition portal."
+    },
+    {
+      "id": "cpt",
+      "label": "Capcom Pro Tour",
+      "url": "https://sf.esports.capcom.com/cpt/",
+      "note": "Official Street Fighter esports circuit."
+    },
+    {
+      "id": "twt",
+      "label": "Tekken World Tour",
+      "url": "https://tekkenworldtour.com/",
+      "note": "Official Tekken competition circuit."
+    },
+    {
+      "id": "faceit",
+      "label": "FACEIT",
+      "url": "https://www.faceit.com/",
+      "note": "Competitive platform and tournament service."
+    },
+    {
+      "id": "nuel",
+      "label": "University esports from NUEL",
+      "url": "https://thenuel.com/",
+      "note": "UK university esports community and competition pathway."
+    },
+    {
+      "id": "worldskills",
+      "label": "British Esports and WorldSkills UK",
+      "url": "https://britishesports.org/the-hub/press-releases/british-esports-worldskills-uk-next-generation-esports-leaders/",
+      "note": "Current education and employability pathway example."
     }
   ],
   "nodes": [
@@ -906,6 +987,565 @@
       ],
       "verifiedOn": "2026-09-01",
       "status": "curriculum concept"
+    },
+    {
+      "id": "multi-title",
+      "name": "Multi-title Festivals and Circuits",
+      "year": "2010s-present",
+      "type": "family",
+      "lineage": "Multi-title",
+      "parent": "root",
+      "branch": true,
+      "note": "Multi-title events aggregate separate games, rulebooks and publishers into one event or club narrative.",
+      "hook": "Compare per-title competition with cross-title club scoring and identify governance conflicts.",
+      "tags": [
+        "l3-u1",
+        "l3-u5",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "ewc2026",
+        "ewc-rules"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "ewc",
+      "name": "Esports World Cup",
+      "year": "2024-present",
+      "type": "engine",
+      "lineage": "Multi-title",
+      "parent": "multi-title",
+      "note": "EWC combines many title tournaments with a cross-title Club Championship.",
+      "hook": "Audit title ownership, qualification and club scoring using current official rules.",
+      "tags": [
+        "current",
+        "l3-u1",
+        "l3-u5",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "ewc2026",
+        "ewc-rules"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current circuit"
+    },
+    {
+      "id": "ewc-clubs",
+      "name": "EWC Club Championship",
+      "year": "2024-present",
+      "type": "tool",
+      "lineage": "Multi-title",
+      "parent": "ewc",
+      "note": "Clubs earn points across multiple title tournaments within the wider event.",
+      "hook": "Model how specialist and multi-title clubs face different strategic incentives.",
+      "tags": [
+        "current",
+        "l3-u5",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "ewc2026"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current competition"
+    },
+    {
+      "id": "publisher-circuits",
+      "name": "Additional Publisher Circuits",
+      "year": "2010s-present",
+      "type": "family",
+      "lineage": "Publisher circuits",
+      "parent": "root",
+      "branch": true,
+      "note": "Publisher circuits translate intellectual-property control into formal competitive pathways.",
+      "hook": "Compare three circuits by openness, region, team size and championship structure.",
+      "tags": [
+        "l2-u1",
+        "l3-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "algs",
+        "r6",
+        "cdl"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "algs",
+      "name": "Apex Legends Global Series",
+      "year": "2019-present",
+      "type": "engine",
+      "lineage": "Publisher circuits",
+      "parent": "publisher-circuits",
+      "note": "ALGS is EA’s official Apex Legends global competition circuit.",
+      "hook": "Map online qualification, regional competition and global LAN stages.",
+      "tags": [
+        "current",
+        "l2-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "algs"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current season"
+    },
+    {
+      "id": "r6-esports",
+      "name": "Rainbow Six Esports",
+      "year": "2016-present",
+      "type": "engine",
+      "lineage": "Publisher circuits",
+      "parent": "publisher-circuits",
+      "note": "Ubisoft’s Rainbow Six ecosystem includes regional and international competition pathways.",
+      "hook": "Use the current competition hub to separate challenger and top-tier stages.",
+      "tags": [
+        "current",
+        "l2-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "r6"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current season"
+    },
+    {
+      "id": "cdl",
+      "name": "Call of Duty League",
+      "year": "2020-present",
+      "type": "engine",
+      "lineage": "Publisher circuits",
+      "parent": "publisher-circuits",
+      "note": "CDL is the official franchised Call of Duty competition league.",
+      "hook": "Investigate how annual game releases affect rules, practice and audience continuity.",
+      "tags": [
+        "current",
+        "l2-u1",
+        "l3-u1",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "cdl"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current league"
+    },
+    {
+      "id": "fighting-circuits",
+      "name": "Fighting Game Circuits",
+      "year": "1990s-present",
+      "type": "sourcePort",
+      "lineage": "Publisher circuits",
+      "parent": "publisher-circuits",
+      "note": "Fighting-game esports combines publisher tours, open brackets, community majors and ranking points.",
+      "hook": "Compare open-bracket access with closed or qualification-led structures.",
+      "tags": [
+        "l2-u1",
+        "l3-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "cpt",
+        "twt"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active ecosystem"
+    },
+    {
+      "id": "cpt",
+      "name": "Capcom Pro Tour",
+      "year": "2014-present",
+      "type": "tool",
+      "lineage": "Publisher circuits",
+      "parent": "fighting-circuits",
+      "note": "CPT is Capcom’s official Street Fighter circuit leading to Capcom Cup.",
+      "hook": "Trace regional qualification and explain the role of World Warrior events.",
+      "tags": [
+        "current",
+        "l2-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "cpt"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current circuit"
+    },
+    {
+      "id": "twt",
+      "name": "Tekken World Tour",
+      "year": "2017-present",
+      "type": "tool",
+      "lineage": "Publisher circuits",
+      "parent": "fighting-circuits",
+      "note": "TWT is Bandai Namco’s official Tekken competition circuit.",
+      "hook": "Compare points-based qualification with direct event qualification.",
+      "tags": [
+        "current",
+        "l2-u1",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "twt"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current circuit"
+    },
+    {
+      "id": "platforms",
+      "name": "Competitive Platforms",
+      "year": "2000s-present",
+      "type": "family",
+      "lineage": "Platforms",
+      "parent": "root",
+      "branch": true,
+      "note": "Ladders and tournament platforms provide accounts, matchmaking, anti-cheat, brackets and administration.",
+      "hook": "Identify what a platform controls compared with a publisher or event operator.",
+      "tags": [
+        "l2-u1",
+        "l3-u1",
+        "l3-u5",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "faceit"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "faceit",
+      "name": "FACEIT platform",
+      "year": "2012-present",
+      "type": "engine",
+      "lineage": "Platforms",
+      "parent": "platforms",
+      "note": "FACEIT provides competitive matchmaking and tournament infrastructure within EFG.",
+      "hook": "Design a small tournament workflow using check-in, seeding, reporting and dispute tools.",
+      "tags": [
+        "l2-u1",
+        "l3-u5",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "faceit",
+        "efg"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active platform"
+    },
+    {
+      "id": "ranked-ladders",
+      "name": "Ranked ladders",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Platforms",
+      "parent": "platforms",
+      "note": "In-game or third-party ladders create persistent rating and qualification pathways.",
+      "hook": "Compare Elo-like ratings with tournament placement as evidence of performance.",
+      "tags": [
+        "l2-u1",
+        "l3-u1"
+      ],
+      "sourceIds": [
+        "faceit"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "competition mechanism"
+    },
+    {
+      "id": "anti-cheat",
+      "name": "Anti-cheat and account integrity",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Platforms",
+      "parent": "platforms",
+      "note": "Competitive platforms combine technical detection, identity controls and human review.",
+      "hook": "Create an appeals process that balances evidence, privacy and competitive integrity.",
+      "tags": [
+        "l3-u1",
+        "l3-u5",
+        "ethics"
+      ],
+      "sourceIds": [
+        "ewc-rules"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "integrity function"
+    },
+    {
+      "id": "education-more",
+      "name": "Education and Skills Pathways",
+      "year": "2010s-present",
+      "type": "sourcePort",
+      "lineage": "Education",
+      "parent": "grassroots",
+      "note": "Qualifications, competitions, employer projects and skills programmes can form distinct progression routes.",
+      "hook": "Map curriculum evidence to a competition, portfolio and employability outcome.",
+      "tags": [
+        "l3-u1",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "pearson-l3",
+        "worldskills"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active pathway"
+    },
+    {
+      "id": "nuel",
+      "name": "NUEL",
+      "year": "2010-present",
+      "type": "tool",
+      "lineage": "Education",
+      "parent": "nse",
+      "note": "NUEL is another UK university esports community and competition pathway.",
+      "hook": "Compare NUEL and NSE provision without assuming identical eligibility or titles.",
+      "tags": [
+        "l2-u1",
+        "l3-u1"
+      ],
+      "sourceIds": [
+        "nuel",
+        "nse"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "worldskills-path",
+      "name": "WorldSkills esports leadership pathway",
+      "year": "2026",
+      "type": "tool",
+      "lineage": "Education",
+      "parent": "education-more",
+      "note": "British Esports and WorldSkills UK created a current skills-focused opportunity linked to Level 3 study and enterprise knowledge.",
+      "hook": "Identify the portfolio evidence a learner could reuse across curriculum and employability contexts.",
+      "tags": [
+        "current",
+        "enterprise",
+        "l3-u1"
+      ],
+      "sourceIds": [
+        "worldskills"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current programme"
+    },
+    {
+      "id": "team-business",
+      "name": "Team Organisation Functions",
+      "year": "ongoing",
+      "type": "sourcePort",
+      "lineage": "People",
+      "parent": "people",
+      "note": "Teams require business, performance, content and welfare functions beyond the playing roster.",
+      "hook": "Draw an organisation chart for a small team and identify roles that must be combined.",
+      "tags": [
+        "l3-u1",
+        "enterprise"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active function"
+    },
+    {
+      "id": "team-manager",
+      "name": "Team manager",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "People",
+      "parent": "team-business",
+      "note": "Managers coordinate schedules, travel, registration, communication and player support.",
+      "hook": "Build a tournament-week checklist separating logistics from coaching.",
+      "tags": [
+        "l3-u1",
+        "enterprise",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active role"
+    },
+    {
+      "id": "content-creator",
+      "name": "Content creator",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "People",
+      "parent": "team-business",
+      "note": "Creators convert competitive activity into audience-facing stories and sponsor inventory.",
+      "hook": "Turn one match into live, short-form and long-form content with distinct objectives.",
+      "tags": [
+        "enterprise",
+        "l3-u1"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active role"
+    },
+    {
+      "id": "community-manager",
+      "name": "Community manager",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "People",
+      "parent": "team-business",
+      "note": "Community managers moderate spaces, publish updates and feed audience insight back to the organisation.",
+      "hook": "Create an escalation policy and response-time standard for a team community.",
+      "tags": [
+        "enterprise",
+        "ethics"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active role"
+    },
+    {
+      "id": "player-welfare",
+      "name": "Player welfare and safeguarding",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "People",
+      "parent": "team-business",
+      "note": "Welfare includes workload, sleep, travel, mental health, safeguarding and reporting routes.",
+      "hook": "Add welfare controls to a training and travel schedule.",
+      "tags": [
+        "l3-u1",
+        "ethics"
+      ],
+      "sourceIds": [
+        "worldskills"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "support function"
+    },
+    {
+      "id": "venue",
+      "name": "Venue and Stage",
+      "year": "ongoing",
+      "type": "sourcePort",
+      "lineage": "Competition",
+      "parent": "events-ops",
+      "note": "Venue delivery covers power, networking, stage, audience flow, accessibility and safety.",
+      "hook": "Produce a site survey that separates assumptions from verified capacity.",
+      "tags": [
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "event function"
+    },
+    {
+      "id": "hardware-ops",
+      "name": "Hardware and peripheral operations",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Competition",
+      "parent": "events-ops",
+      "note": "Competition stations require standardised images, accounts, peripherals, spares and reset procedures.",
+      "hook": "Create a station turnover checklist with fault-isolation steps.",
+      "tags": [
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "event function"
+    },
+    {
+      "id": "ticketing",
+      "name": "Ticketing and audience operations",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Commercial",
+      "parent": "commercial",
+      "note": "Ticketing links capacity, pricing, access control, safeguarding and customer experience.",
+      "hook": "Calculate break-even attendance and design an accessible entry process.",
+      "tags": [
+        "enterprise",
+        "l3-u5"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "commercial function"
+    },
+    {
+      "id": "merch",
+      "name": "Merchandise and licensing",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Commercial",
+      "parent": "commercial",
+      "note": "Merchandise monetises identity but introduces inventory, fulfilment, rights and sustainability risks.",
+      "hook": "Compare print-on-demand with stocked inventory using margin and risk.",
+      "tags": [
+        "enterprise"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "commercial function"
+    },
+    {
+      "id": "media-rights",
+      "name": "Media and distribution rights",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Commercial",
+      "parent": "commercial",
+      "note": "Rights agreements determine who may broadcast, clip, localise or monetise competition footage.",
+      "hook": "Draft a rights matrix for live, VOD, highlights, co-streaming and classroom use.",
+      "tags": [
+        "enterprise",
+        "l3-u5",
+        "ethics"
+      ],
+      "sourceIds": [
+        "ewc-rules"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "commercial control"
+    },
+    {
+      "id": "data-analytics",
+      "name": "Audience and performance analytics",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Commercial",
+      "parent": "commercial",
+      "note": "Viewership, engagement, conversion and game data inform decisions but require valid definitions and responsible use.",
+      "hook": "Turn one objective into a metric, data source, limitation and decision threshold.",
+      "tags": [
+        "enterprise",
+        "ethics"
+      ],
+      "sourceIds": [
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "analytical function"
     }
   ],
   "edges": [
@@ -1214,6 +1854,216 @@
       "type": "activates",
       "strength": 0.72,
       "note": "Brand content can activate sponsorship rights."
+    },
+    {
+      "source": "root",
+      "target": "multi-title",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "multi-title",
+      "target": "ewc",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "ewc",
+      "target": "ewc-clubs",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "publisher-circuits",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "publisher-circuits",
+      "target": "algs",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "publisher-circuits",
+      "target": "r6-esports",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "publisher-circuits",
+      "target": "cdl",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "publisher-circuits",
+      "target": "fighting-circuits",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "fighting-circuits",
+      "target": "cpt",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "fighting-circuits",
+      "target": "twt",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "platforms",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "platforms",
+      "target": "faceit",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "platforms",
+      "target": "ranked-ladders",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "platforms",
+      "target": "anti-cheat",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "grassroots",
+      "target": "education-more",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "nse",
+      "target": "nuel",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "education-more",
+      "target": "worldskills-path",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "people",
+      "target": "team-business",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "team-business",
+      "target": "team-manager",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "team-business",
+      "target": "content-creator",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "team-business",
+      "target": "community-manager",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "team-business",
+      "target": "player-welfare",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "events-ops",
+      "target": "venue",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "events-ops",
+      "target": "hardware-ops",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "commercial",
+      "target": "ticketing",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "commercial",
+      "target": "merch",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "commercial",
+      "target": "media-rights",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "commercial",
+      "target": "data-analytics",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "ea",
+      "target": "algs",
+      "type": "rights-holder",
+      "strength": 0.72,
+      "note": "EA owns Apex Legends and the ALGS competition."
+    },
+    {
+      "source": "fighting-circuits",
+      "target": "ewc",
+      "type": "title-events",
+      "strength": 0.72,
+      "note": "Fighting-game circuits can connect to multi-title events."
+    },
+    {
+      "source": "faceit",
+      "target": "efg",
+      "type": "owned-by",
+      "strength": 0.72,
+      "note": "FACEIT is part of ESL FACEIT Group."
+    },
+    {
+      "source": "media-rights",
+      "target": "broadcast",
+      "type": "governs",
+      "strength": 0.72,
+      "note": "Media rights constrain broadcast and clipping activity."
+    },
+    {
+      "source": "data-analytics",
+      "target": "sponsors",
+      "type": "measures",
+      "strength": 0.72,
+      "note": "Analytics support sponsorship evaluation."
+    },
+    {
+      "source": "player-welfare",
+      "target": "players",
+      "type": "supports",
+      "strength": 0.72,
+      "note": "Welfare systems support sustainable player participation."
     }
   ]
 }

@@ -58,126 +58,2059 @@
       "description": "Distinguish fixed editions, revised RFCs, modular snapshots and living standards. Use status and source dates when judging whether guidance is current.",
       "tag": "standards",
       "view": "radial"
+    },
+    {
+      "id": "accessibility",
+      "title": "Accessible web foundations",
+      "description": "Trace WCAG 1.0 to 2.2, then test semantic HTML, keyboard focus, target size, contrast and reduced motion in a real interface.",
+      "tag": "accessibility",
+      "view": "timeline"
+    },
+    {
+      "id": "web-security",
+      "title": "Web security foundations",
+      "description": "Connect origins, CORS, CSP, TLS and HTTP semantics. Threat-model trust boundaries rather than treating HTTPS as complete security.",
+      "tag": "security",
+      "view": "layered"
+    },
+    {
+      "id": "media-compute",
+      "title": "Browser media and compute APIs",
+      "description": "Compare WebGL, WebGPU, WebRTC, WebCodecs and WebNN by capability, compatibility, privacy and fallback.",
+      "tag": "web-apps",
+      "view": "force"
     }
   ],
   "sources": [
-    {"id":"html-history","label":"WHATWG HTML Standard: History","url":"https://html.spec.whatwg.org/multipage/introduction.html#history-2","note":"Primary standards history for early HTML, W3C development and the WHATWG branch."},
-    {"id":"html-current","label":"WHATWG HTML Living Standard","url":"https://html.spec.whatwg.org/","note":"Current HTML Living Standard, checked 2026-09-01."},
-    {"id":"html2","label":"IETF RFC 1866: Hypertext Markup Language 2.0","url":"https://www.rfc-editor.org/rfc/rfc1866","note":"Primary HTML 2.0 specification, November 1995."},
-    {"id":"html4","label":"W3C HTML 4.01 Specification","url":"https://www.w3.org/TR/html401/","note":"Primary HTML 4.01 Recommendation, December 1999."},
-    {"id":"xhtml1","label":"W3C XHTML 1.0 Second Edition","url":"https://www.w3.org/TR/xhtml1/","note":"Primary specification for reformulating HTML 4 in XML."},
-    {"id":"css1","label":"W3C CSS Level 1 Recommendation","url":"https://www.w3.org/TR/CSS1/","note":"Primary CSS1 Recommendation."},
-    {"id":"css21","label":"W3C CSS 2.1 Recommendation","url":"https://www.w3.org/TR/2011/REC-CSS2-20110607/","note":"Explains that CSS 2.1 builds on CSS2 and CSS1 and reflects interoperable implementation."},
-    {"id":"css2026","label":"W3C CSS Snapshot 2026","url":"https://www.w3.org/TR/css-2026/","note":"Current 2026 snapshot of the modular CSS standard."},
-    {"id":"ecma2026","label":"Ecma ECMA-262, 17th edition","url":"https://262.ecma-international.org/17.0/","note":"ECMAScript 2026 specification and official edition history, June 2026."},
-    {"id":"http-semantics","label":"IETF RFC 9110: HTTP Semantics","url":"https://www.rfc-editor.org/rfc/rfc9110","note":"Current shared HTTP semantics and protocol history."},
-    {"id":"http11","label":"IETF RFC 9112: HTTP/1.1","url":"https://www.rfc-editor.org/rfc/rfc9112","note":"Current HTTP/1.1 message syntax and connection management."},
-    {"id":"http2","label":"IETF RFC 9113: HTTP/2","url":"https://www.rfc-editor.org/rfc/rfc9113","note":"Current HTTP/2 specification."},
-    {"id":"http3","label":"IETF RFC 9114: HTTP/3","url":"https://www.rfc-editor.org/rfc/rfc9114","note":"HTTP/3 mapping over QUIC."},
-    {"id":"websocket","label":"IETF RFC 6455: WebSocket Protocol","url":"https://www.rfc-editor.org/rfc/rfc6455","note":"Primary WebSocket protocol specification."},
-    {"id":"dom","label":"WHATWG DOM Standard","url":"https://dom.spec.whatwg.org/","note":"Current DOM Living Standard."},
-    {"id":"fetch","label":"WHATWG Fetch Standard","url":"https://fetch.spec.whatwg.org/","note":"Current standard unifying fetching, redirects, cross-origin handling and related infrastructure."},
-    {"id":"service-workers","label":"W3C Service Workers","url":"https://www.w3.org/TR/service-workers/","note":"Current service worker specification, including fetch events and offline application support."},
-    {"id":"wasm","label":"W3C WebAssembly Core Specification","url":"https://www.w3.org/TR/wasm-core-2/","note":"Current core specification page, describing release 3.0 as checked 2026-09-01."},
-    {"id":"webgpu","label":"W3C WebGPU","url":"https://www.w3.org/TR/webgpu/","note":"Current WebGPU specification for browser-accessible GPU computation and rendering."}
+    {
+      "id": "html-history",
+      "label": "WHATWG HTML Standard: History",
+      "url": "https://html.spec.whatwg.org/multipage/introduction.html#history-2",
+      "note": "Primary standards history for early HTML, W3C development and the WHATWG branch."
+    },
+    {
+      "id": "html-current",
+      "label": "WHATWG HTML Living Standard",
+      "url": "https://html.spec.whatwg.org/",
+      "note": "Current HTML Living Standard, checked 2026-09-01."
+    },
+    {
+      "id": "html2",
+      "label": "IETF RFC 1866: Hypertext Markup Language 2.0",
+      "url": "https://www.rfc-editor.org/rfc/rfc1866",
+      "note": "Primary HTML 2.0 specification, November 1995."
+    },
+    {
+      "id": "html4",
+      "label": "W3C HTML 4.01 Specification",
+      "url": "https://www.w3.org/TR/html401/",
+      "note": "Primary HTML 4.01 Recommendation, December 1999."
+    },
+    {
+      "id": "xhtml1",
+      "label": "W3C XHTML 1.0 Second Edition",
+      "url": "https://www.w3.org/TR/xhtml1/",
+      "note": "Primary specification for reformulating HTML 4 in XML."
+    },
+    {
+      "id": "css1",
+      "label": "W3C CSS Level 1 Recommendation",
+      "url": "https://www.w3.org/TR/CSS1/",
+      "note": "Primary CSS1 Recommendation."
+    },
+    {
+      "id": "css21",
+      "label": "W3C CSS 2.1 Recommendation",
+      "url": "https://www.w3.org/TR/2011/REC-CSS2-20110607/",
+      "note": "Explains that CSS 2.1 builds on CSS2 and CSS1 and reflects interoperable implementation."
+    },
+    {
+      "id": "css2026",
+      "label": "W3C CSS Snapshot 2026",
+      "url": "https://www.w3.org/TR/css-2026/",
+      "note": "Current 2026 snapshot of the modular CSS standard."
+    },
+    {
+      "id": "ecma2026",
+      "label": "Ecma ECMA-262, 17th edition",
+      "url": "https://262.ecma-international.org/17.0/",
+      "note": "ECMAScript 2026 specification and official edition history, June 2026."
+    },
+    {
+      "id": "http-semantics",
+      "label": "IETF RFC 9110: HTTP Semantics",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110",
+      "note": "Current shared HTTP semantics and protocol history."
+    },
+    {
+      "id": "http11",
+      "label": "IETF RFC 9112: HTTP/1.1",
+      "url": "https://www.rfc-editor.org/rfc/rfc9112",
+      "note": "Current HTTP/1.1 message syntax and connection management."
+    },
+    {
+      "id": "http2",
+      "label": "IETF RFC 9113: HTTP/2",
+      "url": "https://www.rfc-editor.org/rfc/rfc9113",
+      "note": "Current HTTP/2 specification."
+    },
+    {
+      "id": "http3",
+      "label": "IETF RFC 9114: HTTP/3",
+      "url": "https://www.rfc-editor.org/rfc/rfc9114",
+      "note": "HTTP/3 mapping over QUIC."
+    },
+    {
+      "id": "websocket",
+      "label": "IETF RFC 6455: WebSocket Protocol",
+      "url": "https://www.rfc-editor.org/rfc/rfc6455",
+      "note": "Primary WebSocket protocol specification."
+    },
+    {
+      "id": "dom",
+      "label": "WHATWG DOM Standard",
+      "url": "https://dom.spec.whatwg.org/",
+      "note": "Current DOM Living Standard."
+    },
+    {
+      "id": "fetch",
+      "label": "WHATWG Fetch Standard",
+      "url": "https://fetch.spec.whatwg.org/",
+      "note": "Current standard unifying fetching, redirects, cross-origin handling and related infrastructure."
+    },
+    {
+      "id": "service-workers",
+      "label": "W3C Service Workers",
+      "url": "https://www.w3.org/TR/service-workers/",
+      "note": "Current service worker specification, including fetch events and offline application support."
+    },
+    {
+      "id": "wasm",
+      "label": "W3C WebAssembly Core Specification",
+      "url": "https://www.w3.org/TR/wasm-core-2/",
+      "note": "Current core specification page, describing release 3.0 as checked 2026-09-01."
+    },
+    {
+      "id": "webgpu",
+      "label": "W3C WebGPU",
+      "url": "https://www.w3.org/TR/webgpu/",
+      "note": "Current WebGPU specification for browser-accessible GPU computation and rendering."
+    },
+    {
+      "id": "wcag22",
+      "label": "W3C Web Content Accessibility Guidelines 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "note": "Current W3C Recommendation for web accessibility."
+    },
+    {
+      "id": "web-components",
+      "label": "HTML Standard: custom elements",
+      "url": "https://html.spec.whatwg.org/multipage/custom-elements.html",
+      "note": "Primary custom-elements standard."
+    },
+    {
+      "id": "indexeddb",
+      "label": "W3C Indexed Database API 3.0",
+      "url": "https://www.w3.org/TR/IndexedDB-3/",
+      "note": "Primary browser database specification."
+    },
+    {
+      "id": "webrtc",
+      "label": "W3C WebRTC",
+      "url": "https://www.w3.org/TR/webrtc/",
+      "note": "Primary real-time browser communications specification."
+    },
+    {
+      "id": "webgl",
+      "label": "Khronos WebGL",
+      "url": "https://www.khronos.org/webgl/",
+      "note": "Primary WebGL standard and conformance information."
+    },
+    {
+      "id": "webcodecs",
+      "label": "W3C WebCodecs",
+      "url": "https://www.w3.org/TR/webcodecs/",
+      "note": "Low-level media codec API specification."
+    },
+    {
+      "id": "webnn",
+      "label": "W3C Web Neural Network API",
+      "url": "https://www.w3.org/TR/webnn/",
+      "note": "WebNN specification checked 2026-09-01."
+    },
+    {
+      "id": "css-contain",
+      "label": "W3C CSS Containment Level 3",
+      "url": "https://www.w3.org/TR/css-contain-3/",
+      "note": "Container-query specification."
+    },
+    {
+      "id": "view-transitions",
+      "label": "W3C CSS View Transitions Level 2",
+      "url": "https://www.w3.org/TR/css-view-transitions-2/",
+      "note": "Cross-document view-transition specification."
+    },
+    {
+      "id": "tls13",
+      "label": "IETF RFC 8446: TLS 1.3",
+      "url": "https://www.rfc-editor.org/rfc/rfc8446",
+      "note": "Primary TLS 1.3 specification."
+    },
+    {
+      "id": "http-semantics2",
+      "label": "IETF RFC 9110: HTTP Semantics",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110",
+      "note": "Current HTTP semantics specification."
+    },
+    {
+      "id": "csp3",
+      "label": "W3C Content Security Policy Level 3",
+      "url": "https://www.w3.org/TR/CSP3/",
+      "note": "Primary Content Security Policy specification."
+    }
   ],
   "nodes": [
-    {"id":"root","name":"Web Platform","year":"1990-present","type":"root","lineage":"Web Platform","parent":null,"branch":true,"note":"The web platform is a coordinated collection of standards, not one technology. Its major strands evolve independently and integrate through browser implementations.","hook":"Ask learners to separate structure, presentation, behaviour, transport and application APIs before tracing their dependencies.","tags":["overview","core","standards"],"sourceIds":["html-current","http-semantics"],"verifiedOn":"2026-09-01","status":"living ecosystem"},
-
-    {"id":"markup","name":"Document and Markup","year":"1991-present","type":"family","lineage":"HTML","parent":"root","branch":true,"note":"HTML evolved from early document markup into a living application and document standard.","hook":"Compare a fixed recommendation with a living standard and discuss how each model handles change.","tags":["core","markup","standards"],"sourceIds":["html-history","html-current"],"verifiedOn":"2026-09-01","status":"living standard"},
-    {"id":"html-early","name":"Early HTML","year":"1991","type":"engine","lineage":"HTML","parent":"markup","note":"Early HTML established hypertext documents before formal standardisation moved through IETF and W3C processes.","hook":"Identify which modern responsibilities were already present and which were later separated into CSS and APIs.","tags":["markup","history"],"sourceIds":["html-history"],"verifiedOn":"2026-09-01","status":"historical"},
-    {"id":"html2","name":"HTML 2.0","year":"1995","type":"engine","lineage":"HTML","parent":"html-early","note":"RFC 1866 documented the HTML in common use before November 1995.","hook":"Use the RFC to show that standards often consolidate existing practice rather than invent everything at once.","tags":["markup","standards"],"sourceIds":["html2"],"verifiedOn":"2026-09-01","status":"superseded"},
-    {"id":"html32","name":"HTML 3.2","year":"1997","type":"engine","lineage":"HTML","parent":"html2","note":"HTML 3.2 was the first W3C HTML Recommendation and captured widely deployed browser features.","hook":"Discuss the tension between implementation-led features and clean standards design.","tags":["markup","standards"],"sourceIds":["html-history"],"verifiedOn":"2026-09-01","status":"superseded"},
-    {"id":"html4","name":"HTML 4.01","year":"1999","type":"engine","lineage":"HTML","parent":"html32","note":"HTML 4.01 refined HTML 4 and strengthened the separation of document structure from presentation.","hook":"Find deprecated presentational features and relate their removal to CSS responsibility.","tags":["markup","core","standards"],"sourceIds":["html4"],"verifiedOn":"2026-09-01","status":"superseded"},
-    {"id":"xhtml1","name":"XHTML 1.0","year":"2000","type":"sourcePort","lineage":"HTML","parent":"html4","note":"XHTML 1.0 reformulated the three HTML 4 document types as XML applications.","hook":"Compare strict XML parsing expectations with error-tolerant HTML parsing.","tags":["markup","xml","parallel"],"sourceIds":["xhtml1"],"verifiedOn":"2026-09-01","status":"parallel historical branch"},
-    {"id":"html5","name":"HTML5","year":"2014","type":"engine","lineage":"HTML","parent":"html4","note":"HTML5 consolidated modern document semantics and web application capabilities after renewed W3C and WHATWG work.","hook":"Classify HTML5 additions as semantic elements, media features or application support.","tags":["markup","core","web-apps"],"sourceIds":["html-history","html-current"],"verifiedOn":"2026-09-01","status":"historical snapshot"},
-    {"id":"html-living","name":"HTML Living Standard","year":"2011-present","type":"engine","lineage":"HTML","parent":"html5","note":"WHATWG uses continuous development rather than numbered HTML versions. The standard was current to 31 August 2026 when checked.","hook":"Explain why saying HTML6 is the next normal release would misrepresent the current standards model.","tags":["markup","core","standards","current"],"sourceIds":["html-current"],"verifiedOn":"2026-09-01","status":"living standard"},
-
-    {"id":"styling","name":"Presentation and Layout","year":"1996-present","type":"family","lineage":"CSS","parent":"root","branch":true,"note":"CSS moved presentation out of markup, then shifted from monolithic levels to independently evolving modules and snapshots.","hook":"Relate modular standards development to browser compatibility and progressive enhancement.","tags":["core","css","standards"],"sourceIds":["css1","css2026"],"verifiedOn":"2026-09-01","status":"modular standard"},
-    {"id":"css1","name":"CSS Level 1","year":"1996","type":"engine","lineage":"CSS","parent":"styling","note":"CSS1 standardised foundational selectors, properties and cascading behaviour.","hook":"Identify which CSS1 concepts remain fundamental in current stylesheets.","tags":["css","core","history"],"sourceIds":["css1"],"verifiedOn":"2026-09-01","status":"historical recommendation"},
-    {"id":"css2","name":"CSS Level 2","year":"1998","type":"engine","lineage":"CSS","parent":"css1","note":"CSS2 expanded layout, media and positioning capabilities before implementation experience drove revision.","hook":"Use CSS2 to discuss why a published standard may need correction after implementation.","tags":["css","standards"],"sourceIds":["css21"],"verifiedOn":"2026-09-01","status":"superseded"},
-    {"id":"css21","name":"CSS 2.1","year":"2011","type":"engine","lineage":"CSS","parent":"css2","note":"CSS 2.1 corrected CSS2 and documented features with interoperable implementation experience.","hook":"Contrast specification completeness with features browsers actually implement consistently.","tags":["css","core","standards"],"sourceIds":["css21"],"verifiedOn":"2026-09-01","status":"recommendation"},
-    {"id":"css-modules","name":"CSS Modules","year":"2011-present","type":"sourcePort","lineage":"CSS","parent":"css21","note":"CSS beyond Level 2 is developed as modules at different maturity levels rather than one monolithic CSS3 release.","hook":"Challenge the misconception that all CSS3 features share one version or support level.","tags":["css","parallel","standards","current"],"sourceIds":["css2026"],"verifiedOn":"2026-09-01","status":"modular development"},
-    {"id":"css-grid","name":"CSS Grid Layout","year":"2017-present","type":"tool","lineage":"CSS","parent":"css-modules","note":"Grid is one major CSS module for two-dimensional layout and continues to evolve independently.","hook":"Compare Grid and Flexbox by layout problem rather than treating one as a replacement for the other.","tags":["css","layout","web-apps"],"sourceIds":["css2026"],"verifiedOn":"2026-09-01","status":"current module"},
-    {"id":"css2026","name":"CSS Snapshot 2026","year":"2026","type":"engine","lineage":"CSS","parent":"css-modules","note":"The 2026 snapshot collects the specifications that define the current state of CSS by stability, not browser adoption alone.","hook":"Ask learners why a current snapshot still does not guarantee universal browser support.","tags":["css","core","standards","current"],"sourceIds":["css2026"],"verifiedOn":"2026-09-01","status":"group note"},
-
-    {"id":"scripting","name":"Browser Scripting","year":"1995-present","type":"family","lineage":"ECMAScript","parent":"root","branch":true,"note":"JavaScript originated in browsers and was standardised as ECMAScript, which now follows annual editions.","hook":"Separate JavaScript implementations, the ECMAScript language specification and browser APIs.","tags":["core","javascript","standards"],"sourceIds":["ecma2026"],"verifiedOn":"2026-09-01","status":"annual standard"},
-    {"id":"javascript","name":"JavaScript","year":"1995","type":"engine","lineage":"ECMAScript","parent":"scripting","note":"JavaScript first appeared in Netscape Navigator 2.0 and became a principal originating technology for ECMAScript.","hook":"Explain why JavaScript and ECMAScript are related names but not interchangeable in every context.","tags":["javascript","history"],"sourceIds":["ecma2026"],"verifiedOn":"2026-09-01","status":"originating implementation"},
-    {"id":"es1","name":"ECMAScript 1","year":"1997","type":"engine","lineage":"ECMAScript","parent":"javascript","note":"The first ECMA-262 edition was adopted in June 1997.","hook":"Use standardisation to discuss interoperability between competing browser implementations.","tags":["javascript","standards"],"sourceIds":["ecma2026"],"verifiedOn":"2026-09-01","status":"superseded"},
-    {"id":"es3","name":"ECMAScript 3","year":"1999","type":"engine","lineage":"ECMAScript","parent":"es1","note":"The third edition became a long-lived baseline for pre-modern JavaScript.","hook":"Compare legacy syntax constraints with current language features.","tags":["javascript","history"],"sourceIds":["ecma2026"],"verifiedOn":"2026-09-01","status":"superseded"},
-    {"id":"es5","name":"ECMAScript 5.1","year":"2011","type":"engine","lineage":"ECMAScript","parent":"es3","note":"ES5.1 consolidated the pre-ES2015 language and aligned with ISO/IEC 16262:2011.","hook":"Identify common code patterns that pre-date classes, modules and arrow functions.","tags":["javascript","core","standards"],"sourceIds":["ecma2026"],"verifiedOn":"2026-09-01","status":"superseded edition"},
-    {"id":"es2015","name":"ECMAScript 2015","year":"2015","type":"engine","lineage":"ECMAScript","parent":"es5","note":"The sixth edition introduced the year-based naming convention and a major expansion of the language.","hook":"Connect modules, classes, promises and lexical declarations to modern application structure.","tags":["javascript","core","web-apps"],"sourceIds":["ecma2026"],"verifiedOn":"2026-09-01","status":"historical edition"},
-    {"id":"es2026","name":"ECMAScript 2026","year":"2026","type":"engine","lineage":"ECMAScript","parent":"es2015","note":"ECMA-262 17th edition defines ECMAScript 2026 and was approved in June 2026.","hook":"Use the current edition to verify language claims rather than relying on undated JavaScript tutorials.","tags":["javascript","core","standards","current"],"sourceIds":["ecma2026"],"verifiedOn":"2026-09-01","status":"current edition"},
-
-    {"id":"transport","name":"Web Transport","year":"1990-present","type":"family","lineage":"HTTP","parent":"root","branch":true,"note":"HTTP versions share semantics but use different message framing and transport approaches.","hook":"Prevent learners from reducing HTTP evolution to a simple speed-version ladder.","tags":["protocol","networking","standards"],"sourceIds":["http-semantics"],"verifiedOn":"2026-09-01","status":"multi-version protocol"},
-    {"id":"http09","name":"HTTP/0.9","year":"1991","type":"engine","lineage":"HTTP","parent":"transport","note":"The earliest HTTP form was a minimal request and response protocol for hypertext transfer.","hook":"Compare its limited exchange with the metadata and methods expected today.","tags":["protocol","networking","history"],"sourceIds":["http-semantics"],"verifiedOn":"2026-09-01","status":"historical"},
-    {"id":"http10","name":"HTTP/1.0","year":"1996","type":"engine","lineage":"HTTP","parent":"http09","note":"HTTP/1.0 was documented in RFC 1945 as internet use expanded beyond the earliest protocol.","hook":"Trace why headers, status codes and content types became necessary.","tags":["protocol","networking","standards"],"sourceIds":["http-semantics"],"verifiedOn":"2026-09-01","status":"historical"},
-    {"id":"http11","name":"HTTP/1.1","year":"1997-present","type":"engine","lineage":"HTTP","parent":"http10","note":"HTTP/1.1 remains current, with its message syntax and connection management revised in RFC 9112 in 2022.","hook":"Explain why HTTP/1.1 remains relevant even when HTTP/2 and HTTP/3 are available.","tags":["protocol","networking","core","current"],"sourceIds":["http11"],"verifiedOn":"2026-09-01","status":"current"},
-    {"id":"http2","name":"HTTP/2","year":"2015-present","type":"engine","lineage":"HTTP","parent":"http11","note":"HTTP/2 uses binary framing and multiplexed streams while retaining HTTP semantics.","hook":"Model how multiplexing differs from opening independent sequential requests.","tags":["protocol","networking","current"],"sourceIds":["http2","http-semantics"],"verifiedOn":"2026-09-01","status":"current"},
-    {"id":"http3","name":"HTTP/3","year":"2022-present","type":"engine","lineage":"HTTP","parent":"http2","note":"HTTP/3 maps HTTP semantics over QUIC rather than TCP.","hook":"Separate application semantics from the transport used to carry them.","tags":["protocol","networking","current"],"sourceIds":["http3","http-semantics"],"verifiedOn":"2026-09-01","status":"current"},
-    {"id":"websocket","name":"WebSocket","year":"2011","type":"tool","lineage":"HTTP","parent":"http11","note":"WebSocket begins with an HTTP upgrade handshake and then provides full-duplex messaging under its own protocol.","hook":"Choose between request-response, server-sent updates and bidirectional messaging for sample applications.","tags":["protocol","networking","web-apps"],"sourceIds":["websocket"],"verifiedOn":"2026-09-01","status":"standard"},
-
-    {"id":"browser-apis","name":"Browser APIs","year":"1998-present","type":"family","lineage":"Browser APIs","parent":"root","branch":true,"note":"Browser APIs connect documents, scripting, networking, storage, background work and hardware capabilities.","hook":"Ask which capabilities belong to ECMAScript itself and which come from the host browser.","tags":["web-apps","api","standards"],"sourceIds":["dom","fetch"],"verifiedOn":"2026-09-01","status":"living standards"},
-    {"id":"dom1","name":"DOM Level 1","year":"1998","type":"tool","lineage":"Browser APIs","parent":"browser-apis","note":"DOM Level 1 standardised a platform-neutral way to represent and manipulate document structure.","hook":"Connect the document tree model to selectors, events and scripted updates.","tags":["api","dom","history"],"sourceIds":["dom"],"verifiedOn":"2026-09-01","status":"historical"},
-    {"id":"dom2","name":"DOM Level 2","year":"2000","type":"tool","lineage":"Browser APIs","parent":"dom1","note":"DOM Level 2 extended the model across areas including events, style and traversal.","hook":"Relate modular API growth to the later living-standard model.","tags":["api","dom","history"],"sourceIds":["dom"],"verifiedOn":"2026-09-01","status":"historical"},
-    {"id":"dom-living","name":"DOM Living Standard","year":"2004-present","type":"tool","lineage":"Browser APIs","parent":"dom2","note":"The WHATWG DOM Standard continuously defines the core node, event and mutation model used by other web standards.","hook":"Trace one DOM method from specification concept to a browser console example.","tags":["api","dom","core","current","standards"],"sourceIds":["dom"],"verifiedOn":"2026-09-01","status":"living standard"},
-    {"id":"xhr","name":"XMLHttpRequest","year":"2006","type":"tool","lineage":"Browser APIs","parent":"browser-apis","note":"XMLHttpRequest standardised scripted network requests that had already enabled early asynchronous web applications.","hook":"Compare callback-oriented XHR with promise-oriented Fetch code.","tags":["api","networking","web-apps","history"],"sourceIds":["fetch"],"verifiedOn":"2026-09-01","status":"legacy but supported"},
-    {"id":"fetch","name":"Fetch Standard","year":"2015-present","type":"tool","lineage":"Browser APIs","parent":"xhr","note":"Fetch unifies network fetching concepts used across browsers, including requests, responses, CORS and service worker integration.","hook":"Follow a request through URL parsing, policy checks, HTTP and response handling.","tags":["api","networking","web-apps","current"],"sourceIds":["fetch"],"verifiedOn":"2026-09-01","status":"living standard"},
-    {"id":"service-workers","name":"Service Workers","year":"2014-present","type":"tool","lineage":"Browser APIs","parent":"fetch","note":"Service workers receive events outside a page context and can intercept fetches to support offline and background behaviour.","hook":"Design a caching strategy and identify when stale data becomes a risk.","tags":["api","web-apps","offline","current"],"sourceIds":["service-workers","fetch"],"verifiedOn":"2026-09-01","status":"current specification"},
-    {"id":"webgpu","name":"WebGPU","year":"2025-present","type":"tool","lineage":"Browser APIs","parent":"browser-apis","note":"WebGPU exposes modern GPU rendering and compute capabilities through a web standard.","hook":"Compare the security and portability constraints of browser GPU access with native graphics APIs.","tags":["api","web-apps","graphics","current"],"sourceIds":["webgpu"],"verifiedOn":"2026-09-01","status":"current specification"},
-
-    {"id":"portable-runtime","name":"Portable Binary Runtime","year":"2017-present","type":"family","lineage":"WebAssembly","parent":"root","branch":true,"note":"WebAssembly provides a portable low-level code format that integrates with JavaScript and browser APIs rather than replacing them.","hook":"Challenge the misconception that WebAssembly is simply a new JavaScript version.","tags":["web-apps","runtime","standards"],"sourceIds":["wasm"],"verifiedOn":"2026-09-01","status":"current standard"},
-    {"id":"wasm1","name":"WebAssembly 1.0","year":"2019","type":"tool","lineage":"WebAssembly","parent":"portable-runtime","note":"The first core WebAssembly recommendation established the portable stack-machine format.","hook":"Map source language, compiler, Wasm module and browser runtime as separate stages.","tags":["runtime","web-apps","history"],"sourceIds":["wasm"],"verifiedOn":"2026-09-01","status":"historical release"},
-    {"id":"wasm2","name":"WebAssembly 2.0","year":"2025","type":"tool","lineage":"WebAssembly","parent":"wasm1","note":"WebAssembly 2.0 expanded the core standard before the current 3.0 release line.","hook":"Use versioned binary formats to discuss backwards compatibility and feature detection.","tags":["runtime","web-apps","standards"],"sourceIds":["wasm"],"verifiedOn":"2026-09-01","status":"superseded release"},
-    {"id":"wasm3","name":"WebAssembly 3.0","year":"2026","type":"tool","lineage":"WebAssembly","parent":"wasm2","note":"The current W3C core specification page describes release 3.0, checked in September 2026.","hook":"Verify runtime support separately from the publication date of a standard.","tags":["runtime","web-apps","standards","current"],"sourceIds":["wasm"],"verifiedOn":"2026-09-01","status":"current release"}
+    {
+      "id": "root",
+      "name": "Web Platform",
+      "year": "1990-present",
+      "type": "root",
+      "lineage": "Web Platform",
+      "parent": null,
+      "branch": true,
+      "note": "The web platform is a coordinated collection of standards, not one technology. Its major strands evolve independently and integrate through browser implementations.",
+      "hook": "Ask learners to separate structure, presentation, behaviour, transport and application APIs before tracing their dependencies.",
+      "tags": [
+        "overview",
+        "core",
+        "standards"
+      ],
+      "sourceIds": [
+        "html-current",
+        "http-semantics"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "living ecosystem"
+    },
+    {
+      "id": "markup",
+      "name": "Document and Markup",
+      "year": "1991-present",
+      "type": "family",
+      "lineage": "HTML",
+      "parent": "root",
+      "branch": true,
+      "note": "HTML evolved from early document markup into a living application and document standard.",
+      "hook": "Compare a fixed recommendation with a living standard and discuss how each model handles change.",
+      "tags": [
+        "core",
+        "markup",
+        "standards"
+      ],
+      "sourceIds": [
+        "html-history",
+        "html-current"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "living standard"
+    },
+    {
+      "id": "html-early",
+      "name": "Early HTML",
+      "year": "1991",
+      "type": "engine",
+      "lineage": "HTML",
+      "parent": "markup",
+      "note": "Early HTML established hypertext documents before formal standardisation moved through IETF and W3C processes.",
+      "hook": "Identify which modern responsibilities were already present and which were later separated into CSS and APIs.",
+      "tags": [
+        "markup",
+        "history"
+      ],
+      "sourceIds": [
+        "html-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical"
+    },
+    {
+      "id": "html2",
+      "name": "HTML 2.0",
+      "year": "1995",
+      "type": "engine",
+      "lineage": "HTML",
+      "parent": "html-early",
+      "note": "RFC 1866 documented the HTML in common use before November 1995.",
+      "hook": "Use the RFC to show that standards often consolidate existing practice rather than invent everything at once.",
+      "tags": [
+        "markup",
+        "standards"
+      ],
+      "sourceIds": [
+        "html2"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded"
+    },
+    {
+      "id": "html32",
+      "name": "HTML 3.2",
+      "year": "1997",
+      "type": "engine",
+      "lineage": "HTML",
+      "parent": "html2",
+      "note": "HTML 3.2 was the first W3C HTML Recommendation and captured widely deployed browser features.",
+      "hook": "Discuss the tension between implementation-led features and clean standards design.",
+      "tags": [
+        "markup",
+        "standards"
+      ],
+      "sourceIds": [
+        "html-history"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded"
+    },
+    {
+      "id": "html4",
+      "name": "HTML 4.01",
+      "year": "1999",
+      "type": "engine",
+      "lineage": "HTML",
+      "parent": "html32",
+      "note": "HTML 4.01 refined HTML 4 and strengthened the separation of document structure from presentation.",
+      "hook": "Find deprecated presentational features and relate their removal to CSS responsibility.",
+      "tags": [
+        "markup",
+        "core",
+        "standards"
+      ],
+      "sourceIds": [
+        "html4"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded"
+    },
+    {
+      "id": "xhtml1",
+      "name": "XHTML 1.0",
+      "year": "2000",
+      "type": "sourcePort",
+      "lineage": "HTML",
+      "parent": "html4",
+      "note": "XHTML 1.0 reformulated the three HTML 4 document types as XML applications.",
+      "hook": "Compare strict XML parsing expectations with error-tolerant HTML parsing.",
+      "tags": [
+        "markup",
+        "xml",
+        "parallel"
+      ],
+      "sourceIds": [
+        "xhtml1"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "parallel historical branch"
+    },
+    {
+      "id": "html5",
+      "name": "HTML5",
+      "year": "2014",
+      "type": "engine",
+      "lineage": "HTML",
+      "parent": "html4",
+      "note": "HTML5 consolidated modern document semantics and web application capabilities after renewed W3C and WHATWG work.",
+      "hook": "Classify HTML5 additions as semantic elements, media features or application support.",
+      "tags": [
+        "markup",
+        "core",
+        "web-apps"
+      ],
+      "sourceIds": [
+        "html-history",
+        "html-current"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical snapshot"
+    },
+    {
+      "id": "html-living",
+      "name": "HTML Living Standard",
+      "year": "2011-present",
+      "type": "engine",
+      "lineage": "HTML",
+      "parent": "html5",
+      "note": "WHATWG uses continuous development rather than numbered HTML versions. The standard was current to 31 August 2026 when checked.",
+      "hook": "Explain why saying HTML6 is the next normal release would misrepresent the current standards model.",
+      "tags": [
+        "markup",
+        "core",
+        "standards",
+        "current"
+      ],
+      "sourceIds": [
+        "html-current"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "living standard"
+    },
+    {
+      "id": "styling",
+      "name": "Presentation and Layout",
+      "year": "1996-present",
+      "type": "family",
+      "lineage": "CSS",
+      "parent": "root",
+      "branch": true,
+      "note": "CSS moved presentation out of markup, then shifted from monolithic levels to independently evolving modules and snapshots.",
+      "hook": "Relate modular standards development to browser compatibility and progressive enhancement.",
+      "tags": [
+        "core",
+        "css",
+        "standards"
+      ],
+      "sourceIds": [
+        "css1",
+        "css2026"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "modular standard"
+    },
+    {
+      "id": "css1",
+      "name": "CSS Level 1",
+      "year": "1996",
+      "type": "engine",
+      "lineage": "CSS",
+      "parent": "styling",
+      "note": "CSS1 standardised foundational selectors, properties and cascading behaviour.",
+      "hook": "Identify which CSS1 concepts remain fundamental in current stylesheets.",
+      "tags": [
+        "css",
+        "core",
+        "history"
+      ],
+      "sourceIds": [
+        "css1"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical recommendation"
+    },
+    {
+      "id": "css2",
+      "name": "CSS Level 2",
+      "year": "1998",
+      "type": "engine",
+      "lineage": "CSS",
+      "parent": "css1",
+      "note": "CSS2 expanded layout, media and positioning capabilities before implementation experience drove revision.",
+      "hook": "Use CSS2 to discuss why a published standard may need correction after implementation.",
+      "tags": [
+        "css",
+        "standards"
+      ],
+      "sourceIds": [
+        "css21"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded"
+    },
+    {
+      "id": "css21",
+      "name": "CSS 2.1",
+      "year": "2011",
+      "type": "engine",
+      "lineage": "CSS",
+      "parent": "css2",
+      "note": "CSS 2.1 corrected CSS2 and documented features with interoperable implementation experience.",
+      "hook": "Contrast specification completeness with features browsers actually implement consistently.",
+      "tags": [
+        "css",
+        "core",
+        "standards"
+      ],
+      "sourceIds": [
+        "css21"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "recommendation"
+    },
+    {
+      "id": "css-modules",
+      "name": "CSS Modules",
+      "year": "2011-present",
+      "type": "sourcePort",
+      "lineage": "CSS",
+      "parent": "css21",
+      "note": "CSS beyond Level 2 is developed as modules at different maturity levels rather than one monolithic CSS3 release.",
+      "hook": "Challenge the misconception that all CSS3 features share one version or support level.",
+      "tags": [
+        "css",
+        "parallel",
+        "standards",
+        "current"
+      ],
+      "sourceIds": [
+        "css2026"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "modular development"
+    },
+    {
+      "id": "css-grid",
+      "name": "CSS Grid Layout",
+      "year": "2017-present",
+      "type": "tool",
+      "lineage": "CSS",
+      "parent": "css-modules",
+      "note": "Grid is one major CSS module for two-dimensional layout and continues to evolve independently.",
+      "hook": "Compare Grid and Flexbox by layout problem rather than treating one as a replacement for the other.",
+      "tags": [
+        "css",
+        "layout",
+        "web-apps"
+      ],
+      "sourceIds": [
+        "css2026"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current module"
+    },
+    {
+      "id": "css2026",
+      "name": "CSS Snapshot 2026",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "CSS",
+      "parent": "css-modules",
+      "note": "The 2026 snapshot collects the specifications that define the current state of CSS by stability, not browser adoption alone.",
+      "hook": "Ask learners why a current snapshot still does not guarantee universal browser support.",
+      "tags": [
+        "css",
+        "core",
+        "standards",
+        "current"
+      ],
+      "sourceIds": [
+        "css2026"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "group note"
+    },
+    {
+      "id": "scripting",
+      "name": "Browser Scripting",
+      "year": "1995-present",
+      "type": "family",
+      "lineage": "ECMAScript",
+      "parent": "root",
+      "branch": true,
+      "note": "JavaScript originated in browsers and was standardised as ECMAScript, which now follows annual editions.",
+      "hook": "Separate JavaScript implementations, the ECMAScript language specification and browser APIs.",
+      "tags": [
+        "core",
+        "javascript",
+        "standards"
+      ],
+      "sourceIds": [
+        "ecma2026"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "annual standard"
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "year": "1995",
+      "type": "engine",
+      "lineage": "ECMAScript",
+      "parent": "scripting",
+      "note": "JavaScript first appeared in Netscape Navigator 2.0 and became a principal originating technology for ECMAScript.",
+      "hook": "Explain why JavaScript and ECMAScript are related names but not interchangeable in every context.",
+      "tags": [
+        "javascript",
+        "history"
+      ],
+      "sourceIds": [
+        "ecma2026"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "originating implementation"
+    },
+    {
+      "id": "es1",
+      "name": "ECMAScript 1",
+      "year": "1997",
+      "type": "engine",
+      "lineage": "ECMAScript",
+      "parent": "javascript",
+      "note": "The first ECMA-262 edition was adopted in June 1997.",
+      "hook": "Use standardisation to discuss interoperability between competing browser implementations.",
+      "tags": [
+        "javascript",
+        "standards"
+      ],
+      "sourceIds": [
+        "ecma2026"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded"
+    },
+    {
+      "id": "es3",
+      "name": "ECMAScript 3",
+      "year": "1999",
+      "type": "engine",
+      "lineage": "ECMAScript",
+      "parent": "es1",
+      "note": "The third edition became a long-lived baseline for pre-modern JavaScript.",
+      "hook": "Compare legacy syntax constraints with current language features.",
+      "tags": [
+        "javascript",
+        "history"
+      ],
+      "sourceIds": [
+        "ecma2026"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded"
+    },
+    {
+      "id": "es5",
+      "name": "ECMAScript 5.1",
+      "year": "2011",
+      "type": "engine",
+      "lineage": "ECMAScript",
+      "parent": "es3",
+      "note": "ES5.1 consolidated the pre-ES2015 language and aligned with ISO/IEC 16262:2011.",
+      "hook": "Identify common code patterns that pre-date classes, modules and arrow functions.",
+      "tags": [
+        "javascript",
+        "core",
+        "standards"
+      ],
+      "sourceIds": [
+        "ecma2026"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded edition"
+    },
+    {
+      "id": "es2015",
+      "name": "ECMAScript 2015",
+      "year": "2015",
+      "type": "engine",
+      "lineage": "ECMAScript",
+      "parent": "es5",
+      "note": "The sixth edition introduced the year-based naming convention and a major expansion of the language.",
+      "hook": "Connect modules, classes, promises and lexical declarations to modern application structure.",
+      "tags": [
+        "javascript",
+        "core",
+        "web-apps"
+      ],
+      "sourceIds": [
+        "ecma2026"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical edition"
+    },
+    {
+      "id": "es2026",
+      "name": "ECMAScript 2026",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "ECMAScript",
+      "parent": "es2015",
+      "note": "ECMA-262 17th edition defines ECMAScript 2026 and was approved in June 2026.",
+      "hook": "Use the current edition to verify language claims rather than relying on undated JavaScript tutorials.",
+      "tags": [
+        "javascript",
+        "core",
+        "standards",
+        "current"
+      ],
+      "sourceIds": [
+        "ecma2026"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current edition"
+    },
+    {
+      "id": "transport",
+      "name": "Web Transport",
+      "year": "1990-present",
+      "type": "family",
+      "lineage": "HTTP",
+      "parent": "root",
+      "branch": true,
+      "note": "HTTP versions share semantics but use different message framing and transport approaches.",
+      "hook": "Prevent learners from reducing HTTP evolution to a simple speed-version ladder.",
+      "tags": [
+        "protocol",
+        "networking",
+        "standards"
+      ],
+      "sourceIds": [
+        "http-semantics"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "multi-version protocol"
+    },
+    {
+      "id": "http09",
+      "name": "HTTP/0.9",
+      "year": "1991",
+      "type": "engine",
+      "lineage": "HTTP",
+      "parent": "transport",
+      "note": "The earliest HTTP form was a minimal request and response protocol for hypertext transfer.",
+      "hook": "Compare its limited exchange with the metadata and methods expected today.",
+      "tags": [
+        "protocol",
+        "networking",
+        "history"
+      ],
+      "sourceIds": [
+        "http-semantics"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical"
+    },
+    {
+      "id": "http10",
+      "name": "HTTP/1.0",
+      "year": "1996",
+      "type": "engine",
+      "lineage": "HTTP",
+      "parent": "http09",
+      "note": "HTTP/1.0 was documented in RFC 1945 as internet use expanded beyond the earliest protocol.",
+      "hook": "Trace why headers, status codes and content types became necessary.",
+      "tags": [
+        "protocol",
+        "networking",
+        "standards"
+      ],
+      "sourceIds": [
+        "http-semantics"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical"
+    },
+    {
+      "id": "http11",
+      "name": "HTTP/1.1",
+      "year": "1997-present",
+      "type": "engine",
+      "lineage": "HTTP",
+      "parent": "http10",
+      "note": "HTTP/1.1 remains current, with its message syntax and connection management revised in RFC 9112 in 2022.",
+      "hook": "Explain why HTTP/1.1 remains relevant even when HTTP/2 and HTTP/3 are available.",
+      "tags": [
+        "protocol",
+        "networking",
+        "core",
+        "current"
+      ],
+      "sourceIds": [
+        "http11"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current"
+    },
+    {
+      "id": "http2",
+      "name": "HTTP/2",
+      "year": "2015-present",
+      "type": "engine",
+      "lineage": "HTTP",
+      "parent": "http11",
+      "note": "HTTP/2 uses binary framing and multiplexed streams while retaining HTTP semantics.",
+      "hook": "Model how multiplexing differs from opening independent sequential requests.",
+      "tags": [
+        "protocol",
+        "networking",
+        "current"
+      ],
+      "sourceIds": [
+        "http2",
+        "http-semantics"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current"
+    },
+    {
+      "id": "http3",
+      "name": "HTTP/3",
+      "year": "2022-present",
+      "type": "engine",
+      "lineage": "HTTP",
+      "parent": "http2",
+      "note": "HTTP/3 maps HTTP semantics over QUIC rather than TCP.",
+      "hook": "Separate application semantics from the transport used to carry them.",
+      "tags": [
+        "protocol",
+        "networking",
+        "current"
+      ],
+      "sourceIds": [
+        "http3",
+        "http-semantics"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current"
+    },
+    {
+      "id": "websocket",
+      "name": "WebSocket",
+      "year": "2011",
+      "type": "tool",
+      "lineage": "HTTP",
+      "parent": "http11",
+      "note": "WebSocket begins with an HTTP upgrade handshake and then provides full-duplex messaging under its own protocol.",
+      "hook": "Choose between request-response, server-sent updates and bidirectional messaging for sample applications.",
+      "tags": [
+        "protocol",
+        "networking",
+        "web-apps"
+      ],
+      "sourceIds": [
+        "websocket"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "standard"
+    },
+    {
+      "id": "browser-apis",
+      "name": "Browser APIs",
+      "year": "1998-present",
+      "type": "family",
+      "lineage": "Browser APIs",
+      "parent": "root",
+      "branch": true,
+      "note": "Browser APIs connect documents, scripting, networking, storage, background work and hardware capabilities.",
+      "hook": "Ask which capabilities belong to ECMAScript itself and which come from the host browser.",
+      "tags": [
+        "web-apps",
+        "api",
+        "standards"
+      ],
+      "sourceIds": [
+        "dom",
+        "fetch"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "living standards"
+    },
+    {
+      "id": "dom1",
+      "name": "DOM Level 1",
+      "year": "1998",
+      "type": "tool",
+      "lineage": "Browser APIs",
+      "parent": "browser-apis",
+      "note": "DOM Level 1 standardised a platform-neutral way to represent and manipulate document structure.",
+      "hook": "Connect the document tree model to selectors, events and scripted updates.",
+      "tags": [
+        "api",
+        "dom",
+        "history"
+      ],
+      "sourceIds": [
+        "dom"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical"
+    },
+    {
+      "id": "dom2",
+      "name": "DOM Level 2",
+      "year": "2000",
+      "type": "tool",
+      "lineage": "Browser APIs",
+      "parent": "dom1",
+      "note": "DOM Level 2 extended the model across areas including events, style and traversal.",
+      "hook": "Relate modular API growth to the later living-standard model.",
+      "tags": [
+        "api",
+        "dom",
+        "history"
+      ],
+      "sourceIds": [
+        "dom"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical"
+    },
+    {
+      "id": "dom-living",
+      "name": "DOM Living Standard",
+      "year": "2004-present",
+      "type": "tool",
+      "lineage": "Browser APIs",
+      "parent": "dom2",
+      "note": "The WHATWG DOM Standard continuously defines the core node, event and mutation model used by other web standards.",
+      "hook": "Trace one DOM method from specification concept to a browser console example.",
+      "tags": [
+        "api",
+        "dom",
+        "core",
+        "current",
+        "standards"
+      ],
+      "sourceIds": [
+        "dom"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "living standard"
+    },
+    {
+      "id": "xhr",
+      "name": "XMLHttpRequest",
+      "year": "2006",
+      "type": "tool",
+      "lineage": "Browser APIs",
+      "parent": "browser-apis",
+      "note": "XMLHttpRequest standardised scripted network requests that had already enabled early asynchronous web applications.",
+      "hook": "Compare callback-oriented XHR with promise-oriented Fetch code.",
+      "tags": [
+        "api",
+        "networking",
+        "web-apps",
+        "history"
+      ],
+      "sourceIds": [
+        "fetch"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "legacy but supported"
+    },
+    {
+      "id": "fetch",
+      "name": "Fetch Standard",
+      "year": "2015-present",
+      "type": "tool",
+      "lineage": "Browser APIs",
+      "parent": "xhr",
+      "note": "Fetch unifies network fetching concepts used across browsers, including requests, responses, CORS and service worker integration.",
+      "hook": "Follow a request through URL parsing, policy checks, HTTP and response handling.",
+      "tags": [
+        "api",
+        "networking",
+        "web-apps",
+        "current"
+      ],
+      "sourceIds": [
+        "fetch"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "living standard"
+    },
+    {
+      "id": "service-workers",
+      "name": "Service Workers",
+      "year": "2014-present",
+      "type": "tool",
+      "lineage": "Browser APIs",
+      "parent": "fetch",
+      "note": "Service workers receive events outside a page context and can intercept fetches to support offline and background behaviour.",
+      "hook": "Design a caching strategy and identify when stale data becomes a risk.",
+      "tags": [
+        "api",
+        "web-apps",
+        "offline",
+        "current"
+      ],
+      "sourceIds": [
+        "service-workers",
+        "fetch"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current specification"
+    },
+    {
+      "id": "webgpu",
+      "name": "WebGPU",
+      "year": "2025-present",
+      "type": "tool",
+      "lineage": "Browser APIs",
+      "parent": "browser-apis",
+      "note": "WebGPU exposes modern GPU rendering and compute capabilities through a web standard.",
+      "hook": "Compare the security and portability constraints of browser GPU access with native graphics APIs.",
+      "tags": [
+        "api",
+        "web-apps",
+        "graphics",
+        "current"
+      ],
+      "sourceIds": [
+        "webgpu"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current specification"
+    },
+    {
+      "id": "portable-runtime",
+      "name": "Portable Binary Runtime",
+      "year": "2017-present",
+      "type": "family",
+      "lineage": "WebAssembly",
+      "parent": "root",
+      "branch": true,
+      "note": "WebAssembly provides a portable low-level code format that integrates with JavaScript and browser APIs rather than replacing them.",
+      "hook": "Challenge the misconception that WebAssembly is simply a new JavaScript version.",
+      "tags": [
+        "web-apps",
+        "runtime",
+        "standards"
+      ],
+      "sourceIds": [
+        "wasm"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current standard"
+    },
+    {
+      "id": "wasm1",
+      "name": "WebAssembly 1.0",
+      "year": "2019",
+      "type": "tool",
+      "lineage": "WebAssembly",
+      "parent": "portable-runtime",
+      "note": "The first core WebAssembly recommendation established the portable stack-machine format.",
+      "hook": "Map source language, compiler, Wasm module and browser runtime as separate stages.",
+      "tags": [
+        "runtime",
+        "web-apps",
+        "history"
+      ],
+      "sourceIds": [
+        "wasm"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "historical release"
+    },
+    {
+      "id": "wasm2",
+      "name": "WebAssembly 2.0",
+      "year": "2025",
+      "type": "tool",
+      "lineage": "WebAssembly",
+      "parent": "wasm1",
+      "note": "WebAssembly 2.0 expanded the core standard before the current 3.0 release line.",
+      "hook": "Use versioned binary formats to discuss backwards compatibility and feature detection.",
+      "tags": [
+        "runtime",
+        "web-apps",
+        "standards"
+      ],
+      "sourceIds": [
+        "wasm"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded release"
+    },
+    {
+      "id": "wasm3",
+      "name": "WebAssembly 3.0",
+      "year": "2026",
+      "type": "tool",
+      "lineage": "WebAssembly",
+      "parent": "wasm2",
+      "note": "The current W3C core specification page describes release 3.0, checked in September 2026.",
+      "hook": "Verify runtime support separately from the publication date of a standard.",
+      "tags": [
+        "runtime",
+        "web-apps",
+        "standards",
+        "current"
+      ],
+      "sourceIds": [
+        "wasm"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current release"
+    },
+    {
+      "id": "accessibility",
+      "name": "Accessibility Standards",
+      "year": "1999-present",
+      "type": "family",
+      "lineage": "Accessibility",
+      "parent": "root",
+      "branch": true,
+      "note": "Accessible web content depends on semantic platform features, author practice and testable guidance.",
+      "hook": "Audit one page with automated checks, keyboard use and a screen reader, then separate tool findings from human judgement.",
+      "tags": [
+        "core",
+        "standards",
+        "accessibility"
+      ],
+      "sourceIds": [
+        "wcag22"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active standards"
+    },
+    {
+      "id": "wcag1",
+      "name": "WCAG 1.0",
+      "year": "1999",
+      "type": "engine",
+      "lineage": "Accessibility",
+      "parent": "accessibility",
+      "note": "WCAG 1.0 established early W3C web-accessibility guidance.",
+      "hook": "Compare technology-specific checkpoints with later principle-based criteria.",
+      "tags": [
+        "history",
+        "standards",
+        "accessibility"
+      ],
+      "sourceIds": [
+        "wcag22"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded recommendation"
+    },
+    {
+      "id": "wcag20",
+      "name": "WCAG 2.0",
+      "year": "2008",
+      "type": "engine",
+      "lineage": "Accessibility",
+      "parent": "wcag1",
+      "note": "WCAG 2.0 organised testable criteria around perceivable, operable, understandable and robust principles.",
+      "hook": "Map one barrier to principle, guideline and success criterion.",
+      "tags": [
+        "standards",
+        "accessibility"
+      ],
+      "sourceIds": [
+        "wcag22"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded recommendation"
+    },
+    {
+      "id": "wcag21",
+      "name": "WCAG 2.1",
+      "year": "2018",
+      "type": "engine",
+      "lineage": "Accessibility",
+      "parent": "wcag20",
+      "note": "WCAG 2.1 added criteria addressing mobile, low vision and cognitive accessibility.",
+      "hook": "Identify which new criterion addresses a mobile interaction barrier.",
+      "tags": [
+        "standards",
+        "accessibility"
+      ],
+      "sourceIds": [
+        "wcag22"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "superseded recommendation"
+    },
+    {
+      "id": "wcag22",
+      "name": "WCAG 2.2",
+      "year": "2023",
+      "type": "engine",
+      "lineage": "Accessibility",
+      "parent": "wcag21",
+      "note": "WCAG 2.2 is the current W3C Recommendation in this lineage.",
+      "hook": "Test a focus-appearance or target-size criterion on the atlas interface.",
+      "tags": [
+        "core",
+        "standards",
+        "accessibility"
+      ],
+      "sourceIds": [
+        "wcag22"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current recommendation"
+    },
+    {
+      "id": "component-platform",
+      "name": "Component and Application APIs",
+      "year": "2011-present",
+      "type": "family",
+      "lineage": "Application APIs",
+      "parent": "root",
+      "branch": true,
+      "note": "Modern web applications combine component encapsulation, storage, graphics, media and device APIs.",
+      "hook": "Choose APIs from requirements and check compatibility, permission, security and fallback.",
+      "tags": [
+        "web-apps",
+        "standards"
+      ],
+      "sourceIds": [
+        "web-components",
+        "indexeddb"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "living ecosystem"
+    },
+    {
+      "id": "web-components",
+      "name": "Web Components",
+      "year": "2011-present",
+      "type": "engine",
+      "lineage": "Application APIs",
+      "parent": "component-platform",
+      "note": "Custom elements, shadow DOM and templates support browser-native reusable components.",
+      "hook": "Build a custom element and explain its lifecycle and encapsulation boundary.",
+      "tags": [
+        "web-apps",
+        "standards"
+      ],
+      "sourceIds": [
+        "web-components"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "living standards"
+    },
+    {
+      "id": "custom-elements",
+      "name": "Custom Elements",
+      "year": "2016-present",
+      "type": "tool",
+      "lineage": "Application APIs",
+      "parent": "web-components",
+      "note": "Custom elements let authors define new HTML element behaviour.",
+      "hook": "Implement observed attributes and test upgrade timing.",
+      "tags": [
+        "web-apps"
+      ],
+      "sourceIds": [
+        "web-components"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "living standard"
+    },
+    {
+      "id": "shadow-dom",
+      "name": "Shadow DOM",
+      "year": "2015-present",
+      "type": "tool",
+      "lineage": "Application APIs",
+      "parent": "web-components",
+      "note": "Shadow DOM creates an encapsulated component tree with defined style and event behaviour.",
+      "hook": "Investigate which styles and events cross the shadow boundary.",
+      "tags": [
+        "web-apps"
+      ],
+      "sourceIds": [
+        "web-components"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "living standard"
+    },
+    {
+      "id": "indexeddb",
+      "name": "IndexedDB 3.0",
+      "year": "2018-present",
+      "type": "engine",
+      "lineage": "Application APIs",
+      "parent": "component-platform",
+      "note": "IndexedDB provides transactional structured storage in the browser.",
+      "hook": "Design keys and indexes for an offline dataset and handle failed transactions.",
+      "tags": [
+        "web-apps",
+        "data"
+      ],
+      "sourceIds": [
+        "indexeddb"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current specification"
+    },
+    {
+      "id": "webrtc",
+      "name": "WebRTC",
+      "year": "2011-present",
+      "type": "engine",
+      "lineage": "Application APIs",
+      "parent": "component-platform",
+      "note": "WebRTC provides real-time media and data communication between browsers and compatible endpoints.",
+      "hook": "Trace signalling, ICE, media transport and application logic as separate concerns.",
+      "tags": [
+        "web-apps",
+        "protocol"
+      ],
+      "sourceIds": [
+        "webrtc"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current standard"
+    },
+    {
+      "id": "webgl",
+      "name": "WebGL",
+      "year": "2011-present",
+      "type": "engine",
+      "lineage": "Application APIs",
+      "parent": "component-platform",
+      "note": "WebGL exposes GPU-accelerated graphics through a browser API based on OpenGL ES concepts.",
+      "hook": "Separate graphics API, shader language, canvas and GPU driver responsibilities.",
+      "tags": [
+        "web-apps",
+        "graphics"
+      ],
+      "sourceIds": [
+        "webgl"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active standard"
+    },
+    {
+      "id": "webgl2",
+      "name": "WebGL 2",
+      "year": "2017-present",
+      "type": "engine",
+      "lineage": "Application APIs",
+      "parent": "webgl",
+      "note": "WebGL 2 expands browser graphics capabilities over the first version.",
+      "hook": "Check required extensions and fallback before using a feature.",
+      "tags": [
+        "web-apps",
+        "graphics"
+      ],
+      "sourceIds": [
+        "webgl"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active standard"
+    },
+    {
+      "id": "webcodecs",
+      "name": "WebCodecs",
+      "year": "2021-present",
+      "type": "engine",
+      "lineage": "Application APIs",
+      "parent": "component-platform",
+      "note": "WebCodecs exposes low-level audio and video encoding or decoding primitives to web applications.",
+      "hook": "Explain why container parsing, transport and rendering remain separate tasks.",
+      "tags": [
+        "web-apps",
+        "media"
+      ],
+      "sourceIds": [
+        "webcodecs"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current draft"
+    },
+    {
+      "id": "webnn",
+      "name": "WebNN",
+      "year": "2021-present",
+      "type": "sourcePort",
+      "lineage": "Application APIs",
+      "parent": "component-platform",
+      "note": "WebNN defines a hardware-agnostic graph API for neural-network inference in web applications.",
+      "hook": "Assess support, privacy, model size and fallback before proposing client-side inference.",
+      "tags": [
+        "web-apps",
+        "current",
+        "ethics"
+      ],
+      "sourceIds": [
+        "webnn"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current candidate specification"
+    },
+    {
+      "id": "modern-css",
+      "name": "Modern Responsive CSS",
+      "year": "2017-present",
+      "type": "sourcePort",
+      "lineage": "CSS",
+      "parent": "css-modules",
+      "note": "Modern CSS adds component-aware queries and navigation transition primitives beyond viewport media queries.",
+      "hook": "Choose layout or transition features based on content and reduced-motion requirements.",
+      "tags": [
+        "core",
+        "web-apps",
+        "standards"
+      ],
+      "sourceIds": [
+        "css-contain",
+        "view-transitions"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active modules"
+    },
+    {
+      "id": "container-queries",
+      "name": "Container Queries",
+      "year": "2022-present",
+      "type": "tool",
+      "lineage": "CSS",
+      "parent": "modern-css",
+      "note": "Container queries let component styles respond to a containing element rather than only the viewport.",
+      "hook": "Refactor a component from viewport breakpoints to container conditions.",
+      "tags": [
+        "core",
+        "web-apps"
+      ],
+      "sourceIds": [
+        "css-contain"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active standard"
+    },
+    {
+      "id": "view-transitions",
+      "name": "View Transitions",
+      "year": "2023-present",
+      "type": "tool",
+      "lineage": "CSS",
+      "parent": "modern-css",
+      "note": "View Transition APIs coordinate visual changes within and across eligible documents.",
+      "hook": "Provide a reduced-motion path and justify which state changes should animate.",
+      "tags": [
+        "web-apps",
+        "accessibility"
+      ],
+      "sourceIds": [
+        "view-transitions"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active standard"
+    },
+    {
+      "id": "security-platform",
+      "name": "Web Security Foundations",
+      "year": "1994-present",
+      "type": "family",
+      "lineage": "Security",
+      "parent": "root",
+      "branch": true,
+      "note": "Origin boundaries, transport security and content policy constrain how web resources interact.",
+      "hook": "Threat-model data in transit, cross-origin access, injected script and credential storage separately.",
+      "tags": [
+        "protocol",
+        "standards",
+        "security"
+      ],
+      "sourceIds": [
+        "tls13",
+        "csp3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active standards"
+    },
+    {
+      "id": "same-origin",
+      "name": "Same-origin policy",
+      "year": "1995-present",
+      "type": "engine",
+      "lineage": "Security",
+      "parent": "security-platform",
+      "note": "The same-origin model restricts how documents and scripts from different origins interact.",
+      "hook": "Classify scheme, host and port for several URLs before predicting access.",
+      "tags": [
+        "web-apps",
+        "security"
+      ],
+      "sourceIds": [
+        "csp3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "platform security model"
+    },
+    {
+      "id": "cors",
+      "name": "Cross-Origin Resource Sharing",
+      "year": "2009-present",
+      "type": "tool",
+      "lineage": "Security",
+      "parent": "same-origin",
+      "note": "CORS adds HTTP-based permission signals for selected cross-origin requests.",
+      "hook": "Trace a preflight and avoid treating CORS as authentication.",
+      "tags": [
+        "protocol",
+        "security"
+      ],
+      "sourceIds": [
+        "http-semantics2"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "living standard"
+    },
+    {
+      "id": "csp",
+      "name": "Content Security Policy",
+      "year": "2012-present",
+      "type": "tool",
+      "lineage": "Security",
+      "parent": "same-origin",
+      "note": "CSP limits permitted content sources and can reduce impact from injection vulnerabilities.",
+      "hook": "Start with report-only policy, inspect violations and tighten without breaking required content.",
+      "tags": [
+        "web-apps",
+        "security"
+      ],
+      "sourceIds": [
+        "csp3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current specification"
+    },
+    {
+      "id": "tls12",
+      "name": "TLS 1.2",
+      "year": "2008",
+      "type": "engine",
+      "lineage": "Security",
+      "parent": "security-platform",
+      "note": "TLS 1.2 protected HTTP and other application protocols across a long deployment period.",
+      "hook": "Separate encryption, identity validation and application authentication.",
+      "tags": [
+        "protocol",
+        "security"
+      ],
+      "sourceIds": [
+        "tls13"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "widely deployed"
+    },
+    {
+      "id": "tls13",
+      "name": "TLS 1.3",
+      "year": "2018",
+      "type": "engine",
+      "lineage": "Security",
+      "parent": "tls12",
+      "note": "TLS 1.3 simplified the protocol and removed obsolete cryptographic options.",
+      "hook": "Compare handshake flow and downgrade protection with TLS 1.2.",
+      "tags": [
+        "protocol",
+        "security"
+      ],
+      "sourceIds": [
+        "tls13"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current standard"
+    },
+    {
+      "id": "http-semantics",
+      "name": "HTTP Semantics RFC 9110",
+      "year": "2022",
+      "type": "tool",
+      "lineage": "HTTP",
+      "parent": "http3",
+      "note": "RFC 9110 consolidates HTTP method, status, field and representation semantics independently of a transport version.",
+      "hook": "Explain why HTTP/3 changes transport without redefining GET or 404.",
+      "tags": [
+        "protocol",
+        "standards"
+      ],
+      "sourceIds": [
+        "http-semantics2"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current standard"
+    }
   ],
   "edges": [
-    {"source":"root","target":"markup","type":"branch","strength":1},
-    {"source":"markup","target":"html-early","type":"branch","strength":1},
-    {"source":"html-early","target":"html2","type":"successor","strength":1},
-    {"source":"html2","target":"html32","type":"successor","strength":1},
-    {"source":"html32","target":"html4","type":"successor","strength":1},
-    {"source":"html4","target":"xhtml1","type":"parallel branch","strength":0.8},
-    {"source":"html4","target":"html5","type":"successor","strength":1},
-    {"source":"html5","target":"html-living","type":"continuous development","strength":1},
-    {"source":"root","target":"styling","type":"branch","strength":1},
-    {"source":"styling","target":"css1","type":"branch","strength":1},
-    {"source":"css1","target":"css2","type":"successor","strength":1},
-    {"source":"css2","target":"css21","type":"revision","strength":1},
-    {"source":"css21","target":"css-modules","type":"modularisation","strength":1},
-    {"source":"css-modules","target":"css-grid","type":"module","strength":0.8},
-    {"source":"css-modules","target":"css2026","type":"snapshot","strength":1},
-    {"source":"root","target":"scripting","type":"branch","strength":1},
-    {"source":"scripting","target":"javascript","type":"branch","strength":1},
-    {"source":"javascript","target":"es1","type":"standardised as","strength":1},
-    {"source":"es1","target":"es3","type":"successor","strength":1},
-    {"source":"es3","target":"es5","type":"successor","strength":1},
-    {"source":"es5","target":"es2015","type":"successor","strength":1},
-    {"source":"es2015","target":"es2026","type":"annual editions","strength":1},
-    {"source":"root","target":"transport","type":"branch","strength":1},
-    {"source":"transport","target":"http09","type":"branch","strength":1},
-    {"source":"http09","target":"http10","type":"successor","strength":1},
-    {"source":"http10","target":"http11","type":"successor","strength":1},
-    {"source":"http11","target":"http2","type":"successor","strength":1},
-    {"source":"http2","target":"http3","type":"successor","strength":1},
-    {"source":"http11","target":"websocket","type":"upgrade handshake","strength":0.7},
-    {"source":"root","target":"browser-apis","type":"branch","strength":1},
-    {"source":"browser-apis","target":"dom1","type":"branch","strength":1},
-    {"source":"dom1","target":"dom2","type":"successor","strength":1},
-    {"source":"dom2","target":"dom-living","type":"continuous development","strength":1},
-    {"source":"browser-apis","target":"xhr","type":"branch","strength":0.8},
-    {"source":"xhr","target":"fetch","type":"modern API path","strength":0.9},
-    {"source":"fetch","target":"service-workers","type":"integration","strength":1},
-    {"source":"browser-apis","target":"webgpu","type":"hardware API","strength":0.8},
-    {"source":"root","target":"portable-runtime","type":"branch","strength":1},
-    {"source":"portable-runtime","target":"wasm1","type":"branch","strength":1},
-    {"source":"wasm1","target":"wasm2","type":"successor","strength":1},
-    {"source":"wasm2","target":"wasm3","type":"successor","strength":1},
-    {"source":"html-living","target":"dom-living","type":"integration","strength":0.6},
-    {"source":"es2026","target":"dom-living","type":"host integration","strength":0.6},
-    {"source":"http3","target":"fetch","type":"transport path","strength":0.6},
-    {"source":"service-workers","target":"html-living","type":"application integration","strength":0.6},
-    {"source":"wasm3","target":"es2026","type":"JavaScript integration","strength":0.7},
-    {"source":"wasm3","target":"webgpu","type":"runtime integration","strength":0.5}
+    {
+      "source": "root",
+      "target": "markup",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "markup",
+      "target": "html-early",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "html-early",
+      "target": "html2",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "html2",
+      "target": "html32",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "html32",
+      "target": "html4",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "html4",
+      "target": "xhtml1",
+      "type": "parallel branch",
+      "strength": 0.8
+    },
+    {
+      "source": "html4",
+      "target": "html5",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "html5",
+      "target": "html-living",
+      "type": "continuous development",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "styling",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "styling",
+      "target": "css1",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "css1",
+      "target": "css2",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "css2",
+      "target": "css21",
+      "type": "revision",
+      "strength": 1
+    },
+    {
+      "source": "css21",
+      "target": "css-modules",
+      "type": "modularisation",
+      "strength": 1
+    },
+    {
+      "source": "css-modules",
+      "target": "css-grid",
+      "type": "module",
+      "strength": 0.8
+    },
+    {
+      "source": "css-modules",
+      "target": "css2026",
+      "type": "snapshot",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "scripting",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "scripting",
+      "target": "javascript",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "javascript",
+      "target": "es1",
+      "type": "standardised as",
+      "strength": 1
+    },
+    {
+      "source": "es1",
+      "target": "es3",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "es3",
+      "target": "es5",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "es5",
+      "target": "es2015",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "es2015",
+      "target": "es2026",
+      "type": "annual editions",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "transport",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "transport",
+      "target": "http09",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "http09",
+      "target": "http10",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "http10",
+      "target": "http11",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "http11",
+      "target": "http2",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "http2",
+      "target": "http3",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "http11",
+      "target": "websocket",
+      "type": "upgrade handshake",
+      "strength": 0.7
+    },
+    {
+      "source": "root",
+      "target": "browser-apis",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "browser-apis",
+      "target": "dom1",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "dom1",
+      "target": "dom2",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "dom2",
+      "target": "dom-living",
+      "type": "continuous development",
+      "strength": 1
+    },
+    {
+      "source": "browser-apis",
+      "target": "xhr",
+      "type": "branch",
+      "strength": 0.8
+    },
+    {
+      "source": "xhr",
+      "target": "fetch",
+      "type": "modern API path",
+      "strength": 0.9
+    },
+    {
+      "source": "fetch",
+      "target": "service-workers",
+      "type": "integration",
+      "strength": 1
+    },
+    {
+      "source": "browser-apis",
+      "target": "webgpu",
+      "type": "hardware API",
+      "strength": 0.8
+    },
+    {
+      "source": "root",
+      "target": "portable-runtime",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "portable-runtime",
+      "target": "wasm1",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "wasm1",
+      "target": "wasm2",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "wasm2",
+      "target": "wasm3",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "html-living",
+      "target": "dom-living",
+      "type": "integration",
+      "strength": 0.6
+    },
+    {
+      "source": "es2026",
+      "target": "dom-living",
+      "type": "host integration",
+      "strength": 0.6
+    },
+    {
+      "source": "http3",
+      "target": "fetch",
+      "type": "transport path",
+      "strength": 0.6
+    },
+    {
+      "source": "service-workers",
+      "target": "html-living",
+      "type": "application integration",
+      "strength": 0.6
+    },
+    {
+      "source": "wasm3",
+      "target": "es2026",
+      "type": "JavaScript integration",
+      "strength": 0.7
+    },
+    {
+      "source": "wasm3",
+      "target": "webgpu",
+      "type": "runtime integration",
+      "strength": 0.5
+    },
+    {
+      "source": "root",
+      "target": "accessibility",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "accessibility",
+      "target": "wcag1",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "wcag1",
+      "target": "wcag20",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "wcag20",
+      "target": "wcag21",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "wcag21",
+      "target": "wcag22",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "component-platform",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "component-platform",
+      "target": "web-components",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "web-components",
+      "target": "custom-elements",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "web-components",
+      "target": "shadow-dom",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "component-platform",
+      "target": "indexeddb",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "component-platform",
+      "target": "webrtc",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "component-platform",
+      "target": "webgl",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "webgl",
+      "target": "webgl2",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "component-platform",
+      "target": "webcodecs",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "component-platform",
+      "target": "webnn",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "css-modules",
+      "target": "modern-css",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "modern-css",
+      "target": "container-queries",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "modern-css",
+      "target": "view-transitions",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "security-platform",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "security-platform",
+      "target": "same-origin",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "same-origin",
+      "target": "cors",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "same-origin",
+      "target": "csp",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "security-platform",
+      "target": "tls12",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "tls12",
+      "target": "tls13",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "http3",
+      "target": "http-semantics",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "html-living",
+      "target": "web-components",
+      "type": "defines",
+      "strength": 0.72,
+      "note": "Custom elements and templates integrate with the HTML Standard."
+    },
+    {
+      "source": "javascript",
+      "target": "custom-elements",
+      "type": "controls",
+      "strength": 0.72,
+      "note": "JavaScript defines custom-element behaviour."
+    },
+    {
+      "source": "css-modules",
+      "target": "shadow-dom",
+      "type": "styles",
+      "strength": 0.72,
+      "note": "CSS participates in shadow-tree styling and encapsulation."
+    },
+    {
+      "source": "webrtc",
+      "target": "webcodecs",
+      "type": "media-integration",
+      "strength": 0.72,
+      "note": "Low-level codecs can support advanced real-time media applications."
+    },
+    {
+      "source": "webgpu",
+      "target": "webnn",
+      "type": "compute-backend",
+      "strength": 0.72,
+      "note": "Both expose hardware-accelerated computation through constrained web APIs."
+    },
+    {
+      "source": "tls13",
+      "target": "http3",
+      "type": "secures",
+      "strength": 0.72,
+      "note": "HTTP/3 uses TLS 1.3 within QUIC."
+    },
+    {
+      "source": "cors",
+      "target": "fetch",
+      "type": "governs",
+      "strength": 0.72,
+      "note": "Fetch applies cross-origin request rules."
+    },
+    {
+      "source": "csp",
+      "target": "html-living",
+      "type": "constrains",
+      "strength": 0.72,
+      "note": "CSP constrains resources used by an HTML document."
+    },
+    {
+      "source": "wcag22",
+      "target": "html-living",
+      "type": "implemented-through",
+      "strength": 0.72,
+      "note": "Semantic HTML is one foundation for accessible conformance."
+    }
   ]
 }

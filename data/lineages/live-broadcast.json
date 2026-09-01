@@ -57,6 +57,27 @@
       "description": "Start at the viewer symptom, work upstream through platform, transport, encoder, mixer and source, and record evidence before changing settings.",
       "tag": "troubleshoot",
       "view": "layered"
+    },
+    {
+      "id": "codecs-delivery",
+      "title": "Codecs and adaptive delivery",
+      "description": "Compare H.264, HEVC and AV1, then trace encoding, renditions, HLS, CDN delivery and adaptive playback.",
+      "tag": "networking",
+      "view": "timeline"
+    },
+    {
+      "id": "ip-production",
+      "title": "Professional media over IP",
+      "description": "Locate NDI, Dante, SMPTE ST 2110, PTP, SRT, RIST and WebRTC within LAN production and WAN contribution contexts.",
+      "tag": "networking",
+      "view": "layered"
+    },
+    {
+      "id": "accessible-secure",
+      "title": "Accessible and secure broadcasting",
+      "description": "Audit captions, graphics, loudness, moderation, rights, credentials and post-event evidence as production controls.",
+      "tag": "ethics",
+      "view": "force"
     }
   ],
   "sources": [
@@ -125,6 +146,54 @@
       "label": "Elgato: choosing a capture card",
       "url": "https://www.elgato.com/explorer/products/capture/which-elgato-capture-card-is-right-for-you/",
       "note": "Official capture-card workflow guidance."
+    },
+    {
+      "id": "smpte2110",
+      "label": "SMPTE ST 2110 standards suite",
+      "url": "https://www.smpte.org/standards/st2110",
+      "note": "Primary professional media-over-IP standards overview."
+    },
+    {
+      "id": "webrtc",
+      "label": "W3C WebRTC",
+      "url": "https://www.w3.org/TR/webrtc/",
+      "note": "Primary real-time browser communications specification."
+    },
+    {
+      "id": "av1",
+      "label": "Alliance for Open Media: AV1",
+      "url": "https://aomedia.org/specifications/av1/",
+      "note": "Primary AV1 specification information."
+    },
+    {
+      "id": "ffmpeg",
+      "label": "FFmpeg",
+      "url": "https://ffmpeg.org/",
+      "note": "Primary multimedia framework project."
+    },
+    {
+      "id": "vmix",
+      "label": "vMix",
+      "url": "https://www.vmix.com/",
+      "note": "Official live production software information."
+    },
+    {
+      "id": "dante",
+      "label": "Audinate Dante",
+      "url": "https://www.getdante.com/",
+      "note": "Official networked audio technology information."
+    },
+    {
+      "id": "wcag22",
+      "label": "W3C WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "note": "Primary accessibility standard."
+    },
+    {
+      "id": "rist",
+      "label": "RIST Forum",
+      "url": "https://www.rist.tv/",
+      "note": "Reliable Internet Stream Transport information and profiles."
     }
   ],
   "nodes": [
@@ -863,6 +932,522 @@
       ],
       "verifiedOn": "2026-09-01",
       "status": "governance control"
+    },
+    {
+      "id": "physical-video",
+      "name": "HDMI and SDI video",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Sources",
+      "parent": "game-source",
+      "note": "Physical baseband connections carry uncompressed video with format, distance and connector constraints.",
+      "hook": "Document resolution, frame rate, colour, cable length and adapter risk for each run.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "elgato"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active interface"
+    },
+    {
+      "id": "sync",
+      "name": "Genlock and reference sync",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Sources",
+      "parent": "sources",
+      "note": "Shared timing helps cameras and production systems switch cleanly and remain aligned.",
+      "hook": "Explain when a frame synchroniser can substitute for shared reference and what latency it adds.",
+      "tags": [
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "smpte2110"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "production control"
+    },
+    {
+      "id": "remote-guest",
+      "name": "Remote guests and contribution",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Sources",
+      "parent": "sources",
+      "note": "Remote presenters add browser, return-video, echo, network and consent requirements.",
+      "hook": "Create a guest technical check and fallback contact path.",
+      "tags": [
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "webrtc"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active source"
+    },
+    {
+      "id": "audio-network",
+      "name": "Networked audio",
+      "year": "ongoing",
+      "type": "sourcePort",
+      "lineage": "Capture",
+      "parent": "capture",
+      "note": "Audio-over-IP can separate routing from physical point-to-point cabling.",
+      "hook": "Create a channel, clock, multicast and permission plan before connecting devices.",
+      "tags": [
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "dante",
+        "smpte2110"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active technology"
+    },
+    {
+      "id": "dante",
+      "name": "Dante audio network",
+      "year": "ongoing",
+      "type": "engine",
+      "lineage": "Capture",
+      "parent": "audio-network",
+      "note": "Dante provides networked audio routing and device-management workflows.",
+      "hook": "Trace clock leader, transmitter, receiver and subscription for one commentary channel.",
+      "tags": [
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "dante"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active technology"
+    },
+    {
+      "id": "st2110",
+      "name": "SMPTE ST 2110",
+      "year": "2017-present",
+      "type": "sourcePort",
+      "lineage": "Capture",
+      "parent": "capture",
+      "note": "ST 2110 transports separate professional video, audio and ancillary-data essences over managed IP networks.",
+      "hook": "Compare ST 2110 facility transport with SRT contribution over the public internet.",
+      "tags": [
+        "l3-u6",
+        "networking"
+      ],
+      "sourceIds": [
+        "smpte2110"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active standards suite"
+    },
+    {
+      "id": "ptp",
+      "name": "Precision timing and PTP",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Capture",
+      "parent": "st2110",
+      "note": "Professional IP media systems use precise shared timing for aligned essences and switching.",
+      "hook": "Identify the grandmaster, timing domain and failure behaviour in a network diagram.",
+      "tags": [
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "smpte2110"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "network control"
+    },
+    {
+      "id": "vmix",
+      "name": "vMix",
+      "year": "ongoing",
+      "type": "sourcePort",
+      "lineage": "Production",
+      "parent": "production",
+      "note": "vMix is an alternative software production environment with switching, graphics, replay and remote-contribution functions.",
+      "hook": "Compare OBS and vMix against the same functional requirements rather than feature count alone.",
+      "tags": [
+        "l3-u6"
+      ],
+      "sourceIds": [
+        "vmix"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active software"
+    },
+    {
+      "id": "multiview",
+      "name": "Multiview and confidence displays",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Production",
+      "parent": "production",
+      "note": "Multiviews combine preview, programme, sources, meters, clocks and status for operators.",
+      "hook": "Design a multiview that exposes the most dangerous failures at a glance.",
+      "tags": [
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "obs",
+        "vmix"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "production control"
+    },
+    {
+      "id": "browser-graphics",
+      "name": "Browser-source graphics",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Production",
+      "parent": "overlays",
+      "note": "HTML/CSS/JavaScript graphics can connect live data to overlays through a browser source.",
+      "hook": "Build a read-only data flow and validate escaping, dimensions and fallback state.",
+      "tags": [
+        "l3-u6",
+        "software"
+      ],
+      "sourceIds": [
+        "obs"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "production method"
+    },
+    {
+      "id": "replay-system",
+      "name": "Replay buffer and highlights",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Production",
+      "parent": "observer-replay",
+      "note": "Replay systems record recent feeds, mark events and return selected clips to programme.",
+      "hook": "Define operator cues and storage bandwidth for a two-angle replay.",
+      "tags": [
+        "l3-u6"
+      ],
+      "sourceIds": [
+        "vmix",
+        "obs"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "production method"
+    },
+    {
+      "id": "recording",
+      "name": "ISO and multitrack recording",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Production",
+      "parent": "production",
+      "note": "Isolated source and multitrack recordings enable repair, highlights and evidence but multiply storage and data duties.",
+      "hook": "Calculate storage for programme plus four isolated feeds and set a retention rule.",
+      "tags": [
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "obs",
+        "vmix"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "production method"
+    },
+    {
+      "id": "codecs",
+      "name": "Video Codec Families",
+      "year": "ongoing",
+      "type": "family",
+      "lineage": "Codecs",
+      "parent": "root",
+      "branch": true,
+      "note": "Codecs trade compression efficiency, quality, compute, latency, compatibility and licensing.",
+      "hook": "Compare codecs at equivalent visual quality, hardware support and end-to-end latency.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "networking"
+      ],
+      "sourceIds": [
+        "av1",
+        "youtube-settings"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active stage"
+    },
+    {
+      "id": "h264",
+      "name": "H.264 / AVC",
+      "year": "2003-present",
+      "type": "engine",
+      "lineage": "Codecs",
+      "parent": "codecs",
+      "note": "H.264 remains a common live-streaming compatibility baseline.",
+      "hook": "Explain profile, level and hardware encoder support in a deployment decision.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "networking"
+      ],
+      "sourceIds": [
+        "youtube-settings"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active codec"
+    },
+    {
+      "id": "h265",
+      "name": "H.265 / HEVC",
+      "year": "2013-present",
+      "type": "engine",
+      "lineage": "Codecs",
+      "parent": "h264",
+      "note": "HEVC can improve compression efficiency but has compatibility and licensing considerations.",
+      "hook": "Check platform ingest and viewer playback support before selecting HEVC.",
+      "tags": [
+        "l3-u6",
+        "networking"
+      ],
+      "sourceIds": [
+        "youtube-settings"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active codec"
+    },
+    {
+      "id": "av1",
+      "name": "AV1",
+      "year": "2018-present",
+      "type": "sourcePort",
+      "lineage": "Codecs",
+      "parent": "codecs",
+      "note": "AV1 is an open media codec designed for efficient internet video delivery.",
+      "hook": "Measure encoder speed, device decode support and bitrate savings on the same clip.",
+      "tags": [
+        "l3-u6",
+        "networking"
+      ],
+      "sourceIds": [
+        "av1"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active codec"
+    },
+    {
+      "id": "ffmpeg",
+      "name": "FFmpeg processing",
+      "year": "2000-present",
+      "type": "tool",
+      "lineage": "Encoding",
+      "parent": "encoding",
+      "note": "FFmpeg provides command-line encoding, decoding, filtering, packaging and protocol tools.",
+      "hook": "Create a reproducible transcode command and verify output with probe data.",
+      "tags": [
+        "l3-u6",
+        "software",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "ffmpeg"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active tool"
+    },
+    {
+      "id": "rist",
+      "name": "RIST contribution",
+      "year": "2018-present",
+      "type": "sourcePort",
+      "lineage": "Transport",
+      "parent": "transport",
+      "note": "RIST profiles provide interoperable reliable contribution across lossy IP networks.",
+      "hook": "Compare packet recovery, encryption and interoperability requirements with SRT.",
+      "tags": [
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "rist"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active protocol"
+    },
+    {
+      "id": "webrtc",
+      "name": "WebRTC contribution",
+      "year": "2011-present",
+      "type": "sourcePort",
+      "lineage": "Transport",
+      "parent": "transport",
+      "note": "WebRTC supports interactive low-latency browser communication with negotiation and network traversal.",
+      "hook": "Explain why interactive latency and broadcast scale need different delivery paths.",
+      "tags": [
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "webrtc"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active protocol"
+    },
+    {
+      "id": "vlan-qos",
+      "name": "VLANs, multicast and QoS",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Transport",
+      "parent": "connectivity",
+      "note": "Managed production networks use segmentation and traffic controls to protect media and control flows.",
+      "hook": "Design VLAN and QoS intent without claiming it can create bandwidth that does not exist.",
+      "tags": [
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "ndi",
+        "smpte2110"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "network control"
+    },
+    {
+      "id": "cdn",
+      "name": "Content delivery network",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Distribution",
+      "parent": "distribution",
+      "note": "CDNs replicate or cache viewer delivery close to audiences and absorb large request volumes.",
+      "hook": "Explain why contribution upload capacity and viewer distribution scale are different problems.",
+      "tags": [
+        "l3-u6",
+        "networking"
+      ],
+      "sourceIds": [
+        "hls"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "platform function"
+    },
+    {
+      "id": "abr",
+      "name": "Adaptive bitrate logic",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Distribution",
+      "parent": "transcoding",
+      "note": "Players select among renditions based on throughput, buffer, device and policy.",
+      "hook": "Interpret a rendition-switch timeline and distinguish congestion from encoder failure.",
+      "tags": [
+        "l3-u6",
+        "networking",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "hls"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "platform function"
+    },
+    {
+      "id": "captions",
+      "name": "Live captions and accessibility",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Audience",
+      "parent": "audience",
+      "note": "Captions, readable graphics, audio description and accessible interaction widen access and may be required by policy.",
+      "hook": "Test caption accuracy, delay, speaker identification and graphics contrast.",
+      "tags": [
+        "l3-u6",
+        "ethics"
+      ],
+      "sourceIds": [
+        "wcag22",
+        "smpte2110"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "accessibility control"
+    },
+    {
+      "id": "loudness",
+      "name": "Loudness and true-peak control",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Audience",
+      "parent": "audience",
+      "note": "Consistent programme loudness and peak control reduce listener fatigue and platform distortion.",
+      "hook": "Measure speech, game and final programme rather than mixing only by ear.",
+      "tags": [
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "obs"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "quality control"
+    },
+    {
+      "id": "security",
+      "name": "Broadcast security",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Audience",
+      "parent": "archive-rights",
+      "note": "Stream keys, remote-control interfaces, browser sources and accounts create attack paths.",
+      "hook": "Threat-model credential theft, malicious overlays and unauthorised restreaming.",
+      "tags": [
+        "l3-u6",
+        "networking",
+        "ethics"
+      ],
+      "sourceIds": [
+        "twitch-broadcast",
+        "youtube-encoder"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "governance control"
+    },
+    {
+      "id": "postmortem",
+      "name": "Technical post-event review",
+      "year": "ongoing",
+      "type": "tool",
+      "lineage": "Audience",
+      "parent": "analytics",
+      "note": "Logs, recordings, incidents and audience data support systematic improvement.",
+      "hook": "Write one evidence-based cause, correction, owner and verification test per incident.",
+      "tags": [
+        "l2-u3",
+        "l3-u6",
+        "troubleshoot"
+      ],
+      "sourceIds": [
+        "pearson-l2",
+        "pearson-l3"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "review process"
     }
   ],
   "edges": [
@@ -1208,6 +1793,239 @@
       "type": "feedback-to",
       "strength": 0.72,
       "note": "Stream-health evidence informs encoder changes."
+    },
+    {
+      "source": "game-source",
+      "target": "physical-video",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "sources",
+      "target": "sync",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "sources",
+      "target": "remote-guest",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "capture",
+      "target": "audio-network",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "audio-network",
+      "target": "dante",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "capture",
+      "target": "st2110",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "st2110",
+      "target": "ptp",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "production",
+      "target": "vmix",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "production",
+      "target": "multiview",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "overlays",
+      "target": "browser-graphics",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "observer-replay",
+      "target": "replay-system",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "production",
+      "target": "recording",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "codecs",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "codecs",
+      "target": "h264",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "h264",
+      "target": "h265",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "codecs",
+      "target": "av1",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "encoding",
+      "target": "ffmpeg",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "transport",
+      "target": "rist",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "transport",
+      "target": "webrtc",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "connectivity",
+      "target": "vlan-qos",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "distribution",
+      "target": "cdn",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "transcoding",
+      "target": "abr",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "audience",
+      "target": "captions",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "audience",
+      "target": "loudness",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "archive-rights",
+      "target": "security",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "analytics",
+      "target": "postmortem",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "remote-guest",
+      "target": "webrtc",
+      "type": "contributes-via",
+      "strength": 0.72,
+      "note": "Remote guests commonly use interactive real-time contribution."
+    },
+    {
+      "source": "dante",
+      "target": "audio-mix",
+      "type": "feeds",
+      "strength": 0.72,
+      "note": "Network audio is routed into the programme mix."
+    },
+    {
+      "source": "st2110",
+      "target": "production",
+      "type": "feeds",
+      "strength": 0.72,
+      "note": "Managed-IP media feeds professional production systems."
+    },
+    {
+      "source": "browser-graphics",
+      "target": "overlays",
+      "type": "renders",
+      "strength": 0.72,
+      "note": "Browser sources render data-driven graphics."
+    },
+    {
+      "source": "codecs",
+      "target": "software-encode",
+      "type": "implemented-by",
+      "strength": 0.72,
+      "note": "Software encoders implement codec choices."
+    },
+    {
+      "source": "codecs",
+      "target": "hardware-encode",
+      "type": "implemented-by",
+      "strength": 0.72,
+      "note": "Hardware blocks implement supported codecs."
+    },
+    {
+      "source": "ffmpeg",
+      "target": "hls",
+      "type": "packages",
+      "strength": 0.72,
+      "note": "FFmpeg can package compatible media for HLS workflows."
+    },
+    {
+      "source": "rist",
+      "target": "distribution",
+      "type": "ingest-to",
+      "strength": 0.72,
+      "note": "RIST contribution terminates at a compatible platform or gateway."
+    },
+    {
+      "source": "transcoding",
+      "target": "cdn",
+      "type": "distributed-through",
+      "strength": 0.72,
+      "note": "Packaged renditions are delivered through CDN infrastructure."
+    },
+    {
+      "source": "captions",
+      "target": "hls",
+      "type": "packaged-with",
+      "strength": 0.72,
+      "note": "Caption tracks can accompany adaptive delivery."
+    },
+    {
+      "source": "postmortem",
+      "target": "production",
+      "type": "improves",
+      "strength": 0.72,
+      "note": "Post-event evidence informs production changes."
     }
   ]
 }

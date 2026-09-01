@@ -53,6 +53,20 @@
         "showPorts": false,
         "showTools": false
       }
+    },
+    {
+      "id": "education-engines",
+      "title": "Accessible engines and frameworks",
+      "description": "Compare Godot, Bevy, Defold, Phaser, MonoGame, Roblox Studio and other accessible tools by workflow, language, licence and deployment.",
+      "tag": "education",
+      "view": "radial"
+    },
+    {
+      "id": "open-source",
+      "title": "Open-source engine ecosystems",
+      "description": "Trace source releases, reimplementations and community engines while distinguishing licence, code lineage and API compatibility.",
+      "tag": "open source",
+      "view": "force"
     }
   ],
   "nodes": [
@@ -6300,6 +6314,294 @@
         "esports",
         "current"
       ]
+    },
+    {
+      "id": "bevy_root",
+      "name": "Bevy Engine lineage",
+      "year": "2020-present",
+      "type": "family",
+      "lineage": "Bevy",
+      "parent": "accessible_engines_root",
+      "branch": true,
+      "note": "Bevy is a data-driven open-source engine written in Rust.",
+      "hook": "Compare entity-component-system architecture with an object-oriented scene hierarchy.",
+      "tags": [
+        "open source",
+        "education",
+        "Rust",
+        "current"
+      ],
+      "sourceIds": [
+        "bevy"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "bevy_engine",
+      "name": "Bevy",
+      "year": "2020-present",
+      "type": "engine",
+      "lineage": "Bevy",
+      "parent": "bevy_root",
+      "note": "Bevy uses an ECS-focused architecture and a rapid pre-1.0 release cadence.",
+      "hook": "Pin a version and inspect migration guides before using tutorials.",
+      "tags": [
+        "open source",
+        "Rust",
+        "indie"
+      ],
+      "sourceIds": [
+        "bevy"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active development"
+    },
+    {
+      "id": "defold_root",
+      "name": "Defold lineage",
+      "year": "2016-present",
+      "type": "family",
+      "lineage": "Defold",
+      "parent": "accessible_engines_root",
+      "branch": true,
+      "note": "Defold is a free source-available cross-platform engine using Lua scripting.",
+      "hook": "Compare licence terminology, editor workflow and export targets with Godot.",
+      "tags": [
+        "indie",
+        "Lua",
+        "cross-platform"
+      ],
+      "sourceIds": [
+        "defold"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "defold_engine",
+      "name": "Defold",
+      "year": "2016-present",
+      "type": "engine",
+      "lineage": "Defold",
+      "parent": "defold_root",
+      "note": "Defold combines a component model, Lua scripting and multi-platform build service.",
+      "hook": "Prototype the same 2D behaviour in Defold and another educational engine.",
+      "tags": [
+        "indie",
+        "Lua",
+        "education"
+      ],
+      "sourceIds": [
+        "defold"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "phaser_root",
+      "name": "Phaser lineage",
+      "year": "2013-present",
+      "type": "family",
+      "lineage": "Phaser",
+      "parent": "accessible_engines_root",
+      "branch": true,
+      "note": "Phaser is an HTML5 game framework for browser games.",
+      "hook": "Distinguish a framework from a complete editor-led engine.",
+      "tags": [
+        "HTML5",
+        "JavaScript",
+        "education"
+      ],
+      "sourceIds": [
+        "phaser"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "phaser3",
+      "name": "Phaser 3",
+      "year": "2018-present",
+      "type": "engine",
+      "lineage": "Phaser",
+      "parent": "phaser_root",
+      "note": "Phaser 3 is the established modern framework line.",
+      "hook": "Trace scene, input, asset and rendering responsibilities in a small browser game.",
+      "tags": [
+        "HTML5",
+        "JavaScript",
+        "2D"
+      ],
+      "sourceIds": [
+        "phaser"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "monogame_root",
+      "name": "MonoGame lineage",
+      "year": "2009-present",
+      "type": "family",
+      "lineage": "MonoGame",
+      "parent": "accessible_engines_root",
+      "branch": true,
+      "note": "MonoGame is an open-source implementation of the Microsoft XNA 4 framework APIs.",
+      "hook": "Explain API reimplementation without claiming inherited proprietary source code.",
+      "tags": [
+        "open source",
+        "C#",
+        "education"
+      ],
+      "sourceIds": [
+        "monogame"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "xna4",
+      "name": "Microsoft XNA 4",
+      "year": "2010",
+      "type": "engine",
+      "lineage": "MonoGame",
+      "parent": "monogame_root",
+      "note": "XNA 4 provided the API baseline later implemented by MonoGame.",
+      "hook": "Identify framework services a developer must still build into a full game architecture.",
+      "tags": [
+        "C#",
+        "historical",
+        "framework"
+      ],
+      "sourceIds": [
+        "monogame"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "discontinued"
+    },
+    {
+      "id": "monogame",
+      "name": "MonoGame",
+      "year": "2009-present",
+      "type": "sourcePort",
+      "lineage": "MonoGame",
+      "parent": "xna4",
+      "note": "MonoGame carries XNA-style development across modern platforms.",
+      "hook": "Port a small XNA-style sample and document platform-specific changes.",
+      "tags": [
+        "open source",
+        "C#",
+        "cross-platform"
+      ],
+      "sourceIds": [
+        "monogame"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": "roblox_root",
+      "name": "Roblox creation platform",
+      "year": "2006-present",
+      "type": "family",
+      "lineage": "Roblox",
+      "parent": "root",
+      "branch": true,
+      "note": "Roblox combines a proprietary engine, hosted platform, editor, marketplace and live-service ecosystem.",
+      "hook": "Separate engine, platform, creator tools, distribution and monetisation.",
+      "tags": [
+        "platform",
+        "UGC",
+        "education",
+        "current"
+      ],
+      "sourceIds": [
+        "roblox-studio"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active platform"
+    },
+    {
+      "id": "roblox_studio",
+      "name": "Roblox Studio",
+      "year": "2006-present",
+      "type": "engine",
+      "lineage": "Roblox",
+      "parent": "roblox_root",
+      "note": "Roblox Studio is the creation environment for experiences deployed to Roblox.",
+      "hook": "Audit client/server script placement and platform dependency in a prototype.",
+      "tags": [
+        "UGC",
+        "Lua",
+        "education"
+      ],
+      "sourceIds": [
+        "roblox-studio"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "active tool"
+    },
+    {
+      "id": "godot45",
+      "name": "Godot 4.5",
+      "year": "2025",
+      "type": "engine",
+      "lineage": "Godot",
+      "parent": "godot_4",
+      "note": "Godot 4.5 continued the 4.x engine line with an official stable release.",
+      "hook": "Use the archive to distinguish stable, maintenance and development builds.",
+      "tags": [
+        "open source",
+        "current",
+        "education"
+      ],
+      "sourceIds": [
+        "godot-releases"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "released"
+    },
+    {
+      "id": "godot46",
+      "name": "Godot 4.6",
+      "year": "2026",
+      "type": "engine",
+      "lineage": "Godot",
+      "parent": "godot45",
+      "note": "Godot 4.6 is a current 2026 release line in the official archive.",
+      "hook": "Check project upgrade notes and keep a recoverable copy before migration.",
+      "tags": [
+        "open source",
+        "current",
+        "education"
+      ],
+      "sourceIds": [
+        "godot-releases"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current stable"
+    },
+    {
+      "id": "marvel_rivals",
+      "name": "Marvel Rivals",
+      "year": "2024",
+      "type": "game",
+      "lineage": "Epic",
+      "parent": "ue5",
+      "note": "Marvel Rivals is a competitive hero shooter developed with Unreal Engine 5.",
+      "hook": "Compare engine capability with the separate networking, design and live-operations work of the game team.",
+      "tags": [
+        "esports",
+        "hero shooter",
+        "UE5",
+        "current"
+      ],
+      "sourceIds": [
+        "marvel-rivals"
+      ],
+      "verifiedOn": "2026-09-01",
+      "status": "current esports title"
     }
   ],
   "edges": [
@@ -8966,6 +9268,84 @@
       "target": "rocket_league",
       "type": "future migration preview",
       "strength": 0.3
+    },
+    {
+      "source": "accessible_engines_root",
+      "target": "bevy_root",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "bevy_root",
+      "target": "bevy_engine",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "accessible_engines_root",
+      "target": "defold_root",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "defold_root",
+      "target": "defold_engine",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "accessible_engines_root",
+      "target": "phaser_root",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "phaser_root",
+      "target": "phaser3",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "accessible_engines_root",
+      "target": "monogame_root",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "monogame_root",
+      "target": "xna4",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "xna4",
+      "target": "monogame",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "root",
+      "target": "roblox_root",
+      "type": "branch",
+      "strength": 1
+    },
+    {
+      "source": "roblox_root",
+      "target": "roblox_studio",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "godot_4",
+      "target": "godot45",
+      "type": "successor",
+      "strength": 1
+    },
+    {
+      "source": "godot45",
+      "target": "godot46",
+      "type": "successor",
+      "strength": 1
     }
   ],
   "sources": [
@@ -9242,6 +9622,48 @@
       "label": "IO Interactive: 007 First Light launches globally",
       "url": "https://ioi.dk/007firstlightgame/news/2026/007-first-light-launches-globally",
       "note": "Primary source for the title, release date and launch platforms."
+    },
+    {
+      "id": "bevy",
+      "label": "Bevy Engine",
+      "url": "https://bevyengine.org/",
+      "note": "Official open-source Rust game engine site."
+    },
+    {
+      "id": "defold",
+      "label": "Defold",
+      "url": "https://defold.com/",
+      "note": "Official cross-platform game engine site."
+    },
+    {
+      "id": "phaser",
+      "label": "Phaser",
+      "url": "https://phaser.io/",
+      "note": "Official HTML5 game framework site."
+    },
+    {
+      "id": "monogame",
+      "label": "MonoGame",
+      "url": "https://monogame.net/",
+      "note": "Official open-source .NET game framework site."
+    },
+    {
+      "id": "roblox-studio",
+      "label": "Roblox Studio",
+      "url": "https://create.roblox.com/docs/studio",
+      "note": "Official Roblox creation documentation."
+    },
+    {
+      "id": "godot-releases",
+      "label": "Godot release policy and archive",
+      "url": "https://godotengine.org/download/archive/",
+      "note": "Official Godot release archive."
+    },
+    {
+      "id": "marvel-rivals",
+      "label": "Unreal Engine: Marvel Rivals",
+      "url": "https://www.unrealengine.com/en-US/developer-interviews/marvel-rivals-pushes-the-limits-of-hero-shooters-with-unreal-engine-5",
+      "note": "Official Epic developer interview confirming Unreal Engine 5 use."
     }
   ],
   "updated": "2026-09-01"
