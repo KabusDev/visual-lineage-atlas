@@ -18,4 +18,8 @@ jobs:
         with:
           node-version: 24
           package-manager-cache: false
+      - name: Build dense curriculum datasets
+        run: |
+          node scripts/enrich-computing-datasets.mjs
+          node scripts/enrich-esports-datasets.mjs
       - run: node scripts/validate-data.mjs
