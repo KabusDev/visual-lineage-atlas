@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "citationMode": "referenced",
+  "id": "game-design-concepts",
+  "title": "Game Design Concepts Atlas",
+  "description": "Curriculum-focused map of mechanics, dynamics, feedback, balance, level design, accessibility, UX, playtesting and competitive viability for esports game analysis and design.",
+  "ui": {"typeLabels":{"root":"Atlas","family":"Concept domain","engine":"Core concept","sourcePort":"Process","mod":"Technique","tool":"Evidence / measure"}},
+  "curriculumPresets": [
+    {"id":"all","title":"Full game design system","description":"Explore how rules, mechanics, player behaviour, feedback and testing combine to shape playable systems.","tag":"all","view":"force"},
+    {"id":"u9","title":"L3 Unit 9: Games Design","description":"Focus on mechanics, systems, balance, UX, accessibility, level design and playtesting.","tag":"l3-u9","view":"force"}
+  ],
+  "sources": [
+    {"id":"pearson-l3","label":"Pearson BTEC Level 3 Nationals in Esports specification","url":"https://qualifications.pearson.com/content/dam/pdf/BTEC-Nationals/esports/2020/specification-and-sample-assessments/btec-l3-nat-esports.pdf","note":"Official curriculum context."},
+    {"id":"w3c-wcag","label":"W3C Web Content Accessibility Guidelines 2.2","url":"https://www.w3.org/TR/WCAG22/","note":"Authoritative accessibility principles useful for interface and interaction discussion."}
+  ],
+  "nodes": [
+    {"id":"root","name":"Game Design System","year":"current","type":"root","lineage":"Design","note":"Game design coordinates rules, mechanics, information, challenge, feedback and presentation into a coherent player experience.","hook":"Pick one competitive game and trace how a single rule changes player behaviour.","tags":["l3-u9","esports"],"sourceIds":["pearson-l3"]},
+    {"id":"systems","name":"Rules & Systems","year":"current","type":"family","lineage":"Systems","parent":"root","branch":true,"note":"Rules define what is allowed, what changes game state and what counts as success or failure.","hook":"Identify one explicit rule and one emergent consequence in the same game.","tags":["l3-u9"],"sourceIds":["pearson-l3"]},
+    {"id":"mechanics","name":"Mechanics","year":"current","type":"engine","lineage":"Systems","parent":"systems","note":"Mechanics are actions and rule-governed interactions available to players or game systems.","hook":"Separate a mechanic from an animation or visual effect.","tags":["l3-u9"],"sourceIds":["pearson-l3"]},
+    {"id":"core-loop","name":"Core Gameplay Loop","year":"current","type":"engine","lineage":"Systems","parent":"systems","note":"The core loop describes the repeated pattern of actions, feedback and outcomes that structures play.","hook":"Write the shortest possible loop for a round of your chosen esport.","tags":["l3-u9"],"sourceIds":["pearson-l3"]},
+    {"id":"resources","name":"Resources & Economy","year":"current","type":"engine","lineage":"Systems","parent":"systems","note":"Games use limited resources such as time, health, currency, ammunition, cooldowns or positional control to force trade-offs.","hook":"Find one resource whose value changes depending on game state.","tags":["l3-u9"],"sourceIds":["pearson-l3"]},
+    {"id":"feedback","name":"Feedback","year":"current","type":"family","lineage":"Feedback","parent":"root","branch":true,"note":"Feedback communicates the result, state or consequence of player actions through visual, audio, haptic or systemic responses.","hook":"Find a moment where bad feedback could cause a correct decision to feel wrong.","tags":["l3-u9"],"sourceIds":["pearson-l3"]},
+    {"id":"readability","name":"Readability & Clarity","year":"current","type":"engine","lineage":"Feedback","parent":"feedback","note":"Competitive readability helps players rapidly distinguish threats, allies, objectives, effects and relevant state.","hook":"Pause a chaotic team fight and identify which visual elements preserve or damage clarity.","tags":["l3-u9","esports"],"sourceIds":["pearson-l3"]},
+    {"id":"juice","name":"Game Feel","year":"current","type":"engine","lineage":"Feedback","parent":"feedback","note":"Game feel describes the responsiveness and sensory quality of interaction, including timing, animation, sound and camera response.","hook":"Explain how two games can implement the same mechanic but feel completely different.","tags":["l3-u9"],"sourceIds":["pearson-l3"]},
+    {"id":"balance","name":"Balance","year":"current","type":"family","lineage":"Balance","parent":"root","branch":true,"note":"Balance manages relative power, risk, reward and viable choice so that competition remains meaningful.","hook":"Distinguish balanced from perfectly equal.","tags":["l3-u9","esports"],"sourceIds":["pearson-l3"]},
+    {"id":"risk-reward","name":"Risk & Reward","year":"current","type":"engine","lineage":"Balance","parent":"balance","note":"Risk-reward structures ask players to trade safety, resources or probability for greater potential gain.","hook":"Find one play that is strong because it is risky rather than despite being risky.","tags":["l3-u9"],"sourceIds":["pearson-l3"]},
+    {"id":"counterplay","name":"Counterplay","year":"current","type":"engine","lineage":"Balance","parent":"balance","note":"Counterplay gives opponents meaningful ways to respond, anticipate or punish powerful actions.","hook":"Choose an ability and list what information or options opponents need for fair counterplay.","tags":["l3-u9","esports"],"sourceIds":["pearson-l3"]},
+    {"id":"metagame","name":"Metagame","year":"current","type":"engine","lineage":"Balance","parent":"balance","note":"The metagame is the evolving set of dominant strategies, picks and expectations created by player adaptation around the game rules.","hook":"Explain how a patch can change the metagame without changing the win condition.","tags":["l3-u9","esports"],"sourceIds":["pearson-l3"]},
+    {"id":"space","name":"Level & Spatial Design","year":"current","type":"family","lineage":"Space","parent":"root","branch":true,"note":"Spatial design shapes routes, sightlines, cover, objectives, encounter timings and positional advantage.","hook":"Mark three locations on a map where geometry changes tactical choice.","tags":["l3-u9"],"sourceIds":["pearson-l3"]},
+    {"id":"chokepoint","name":"Chokepoints & Lanes","year":"current","type":"engine","lineage":"Space","parent":"space","note":"Restricted routes concentrate movement and interaction, creating predictable pressure points and control contests.","hook":"Explain how adding one alternate route changes defender advantage.","tags":["l3-u9","esports"],"sourceIds":["pearson-l3"]},
+    {"id":"sightlines","name":"Sightlines","year":"current","type":"engine","lineage":"Space","parent":"space","note":"Sightlines control what can be seen or threatened from a position and strongly influence range, information and exposure.","hook":"Compare a long sightline and a close corner for different weapon or character archetypes.","tags":["l3-u9","esports"],"sourceIds":["pearson-l3"]},
+    {"id":"ux","name":"User Experience & Accessibility","year":"current","type":"family","lineage":"UX","parent":"root","branch":true,"note":"UX concerns how effectively players understand, navigate and interact with the game and its surrounding interfaces.","hook":"Find a usability problem that is not part of the core gameplay challenge.","tags":["l3-u9"],"sourceIds":["pearson-l3"]},
+    {"id":"onboarding","name":"Onboarding","year":"current","type":"engine","lineage":"UX","parent":"ux","note":"Onboarding introduces controls, goals and systems so that new players can form accurate mental models.","hook":"Design one tutorial task that teaches by doing instead of by paragraph.","tags":["l3-u9"],"sourceIds":["pearson-l3"]},
+    {"id":"accessibility","name":"Accessibility","year":"current","type":"engine","lineage":"UX","parent":"ux","note":"Accessibility reduces avoidable barriers through adaptable presentation, input, navigation and communication choices.","hook":"Identify an accessibility feature that improves play without changing competitive rules.","tags":["l3-u9"],"sourceIds":["pearson-l3","w3c-wcag"]},
+    {"id":"testing","name":"Playtesting & Iteration","year":"current","type":"family","lineage":"Testing","parent":"root","branch":true,"note":"Playtesting collects evidence from actual interaction so assumptions can be challenged before changes are accepted.","hook":"Write a test question that can be answered by observation rather than opinion alone.","tags":["l3-u9"],"sourceIds":["pearson-l3"]},
+    {"id":"prototype","name":"Prototype","year":"current","type":"sourcePort","lineage":"Testing","parent":"testing","note":"A prototype is a deliberately limited implementation built to answer specific design questions quickly.","hook":"State what your prototype intentionally does not need to include.","tags":["l3-u9"],"sourceIds":["pearson-l3"]},
+    {"id":"telemetry","name":"Telemetry & Player Data","year":"current","type":"tool","lineage":"Testing","parent":"testing","note":"Telemetry records player or system behaviour to reveal patterns that may not be visible from anecdotal feedback.","hook":"Choose one event worth logging and explain what decision the data could support.","tags":["l3-u9"],"sourceIds":["pearson-l3"]},
+    {"id":"iteration","name":"Iteration","year":"current","type":"sourcePort","lineage":"Testing","parent":"testing","note":"Iteration repeats design, test, evaluation and change until evidence supports a stronger solution.","hook":"Show one change where fixing a problem could introduce a new one elsewhere.","tags":["l3-u9"],"sourceIds":["pearson-l3"]}
+  ],
+  "edges": [
+    {"source":"mechanics","target":"core-loop","type":"forms"},
+    {"source":"resources","target":"risk-reward","type":"creates"},
+    {"source":"feedback","target":"readability","type":"supports"},
+    {"source":"counterplay","target":"balance","type":"supports"},
+    {"source":"metagame","target":"balance","type":"emerges-from"},
+    {"source":"chokepoint","target":"counterplay","type":"can-shape"},
+    {"source":"sightlines","target":"risk-reward","type":"changes"},
+    {"source":"accessibility","target":"readability","type":"can-improve"},
+    {"source":"prototype","target":"testing","type":"enables"},
+    {"source":"telemetry","target":"iteration","type":"informs"},
+    {"source":"testing","target":"iteration","type":"drives"}
+  ]
+}

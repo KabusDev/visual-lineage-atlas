@@ -42,6 +42,41 @@
       "description": "Gameplay and camera sources through capture, production, encoding, transport, distribution and audience assurance.",
       "path": "./data/lineages/live-broadcast.json",
       "defaultView": "layered"
+    },
+    {
+      "id": "esports-performance",
+      "title": "Esports Performance, Coaching & Psychology Atlas",
+      "description": "Performance analysis, practice, coaching, psychology, health and wellbeing concepts for Level 3 Esports.",
+      "path": "./data/lineages/esports-performance.json",
+      "defaultView": "force"
+    },
+    {
+      "id": "game-design-concepts",
+      "title": "Game Design Concepts Atlas",
+      "description": "Mechanics, systems, balance, level design, UX, accessibility, playtesting and competitive viability.",
+      "path": "./data/lineages/game-design-concepts.json",
+      "defaultView": "force"
+    },
+    {
+      "id": "computer-systems-networking",
+      "title": "Computer Systems & Networking Atlas",
+      "description": "Hardware, operating systems, networking, protocols and online-service concepts for Computing and T Level Digital.",
+      "path": "./data/lineages/computer-systems-networking.json",
+      "defaultView": "layered"
+    },
+    {
+      "id": "software-development",
+      "title": "Software Development Concepts Atlas",
+      "description": "Requirements, design, programming, testing, version control, deployment and maintenance.",
+      "path": "./data/lineages/software-development.json",
+      "defaultView": "layered"
+    },
+    {
+      "id": "data-cybersecurity",
+      "title": "Data, Databases & Cybersecurity Atlas",
+      "description": "Relational data, SQL, indexing, cybersecurity risk and defensive controls.",
+      "path": "./data/lineages/data-cybersecurity.json",
+      "defaultView": "force"
     }
   ]
 }
