@@ -77,6 +77,13 @@
       "description": "Relational data, SQL, indexing, cybersecurity risk and defensive controls.",
       "path": "./data/lineages/data-cybersecurity.json",
       "defaultView": "force"
+    },
+    {
+      "id": "esports-enterprise-media-ethics",
+      "title": "Esports Enterprise, Brand, Audience & Ethics Atlas",
+      "description": "Enterprise, branding, social media, audiences, ethics and customer immersion concepts for Level 3 Esports.",
+      "path": "./data/lineages/esports-enterprise-media-ethics.json",
+      "defaultView": "force"
     }
   ]
 }
