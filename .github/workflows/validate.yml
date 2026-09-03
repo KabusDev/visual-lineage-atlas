@@ -22,4 +22,5 @@ jobs:
         run: |
           node scripts/enrich-computing-datasets.mjs
           node scripts/enrich-esports-datasets.mjs
+          node scripts/fix-enrichment-integrity.mjs
       - run: node scripts/validate-data.mjs
